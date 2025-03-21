@@ -1,0 +1,88 @@
+@using DesarrollodeProyectos.Identity
+@model ShirtModel
+
+@{
+    ViewData["Title"] = "Alta de Camisa";
+}
+
+<h1>Alta de Camisa</h1>
+
+<form asp-action="ShirtAdd" asp-controller="Shirt" enctype="multipart/form-data">
+
+    <div class="form-floating mb-3">
+        <input type="text" class="form-control" asp-for="Name" placeholder="Nombre de la camisa">
+        <label asp-for="Name">Nombre</label>
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <div class="form-floating mb-3">
+        <input type="text" class="form-control" asp-for="Color" placeholder="Color de la camisa">
+        <label asp-for="Color">Color</label>
+        <span asp-validation-for="Color" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <select class="form-select" asp-for="SizeId" asp-items="@Model.SizeList">
+            <option value="">Seleccionar talla</option>
+        </select>
+        <span asp-validation-for="SizeId" class="text-danger"></span>
+    </div>
+
+    <div class="form-floating mb-3">
+        <input type="number" class="form-control" asp-for="Price" placeholder="Precio de la Camisa">
+        <label asp-for="Price">Precio</label>
+        <span asp-validation-for="Price" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <select class="form-select" asp-for="MaterialId" asp-items="@Model.MaterialList">
+            <option value="">Seleccionar material</option>
+        </select>
+        <span asp-validation-for="MaterialId" class="text-danger"></span>
+    </div>
+
+    <div class="form-floating mb-3">
+        <input type="number" class="form-control" asp-for="Quantity" placeholder="Cantidad de Camisas">
+        <label asp-for="Quantity">Cantidad</label>
+        <span asp-validation-for="Quantity" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <select class="form-select" asp-for="CategoryId" asp-items="@Model.CategoryList">
+            <option value="">Seleccionar categoría</option>
+        </select>
+        <span asp-validation-for="CategoryId" class="text-danger"></span>
+    </div>
+
+    <!-- Botón para abrir el explorador de archivos -->
+    <div class="mb-3">
+        <label class="form-label" for="Image">Seleccionar Imagen</label>
+        <!-- Botón personalizado para abrir el explorador -->
+        <button type="button" class="btn btn-outline-secondary" id="selectImageButton">Seleccionar Imagen</button>
+
+        <!-- Input oculto para seleccionar la imagen -->
+        <input type="file" class="form-control" asp-for="Image" id="imageInput" style="display: none;" />
+        
+        <span asp-validation-for="Image" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-outline-primary">Guardar</button>
+    <a class="btn btn-outline-secondary" asp-action="ShirtList" asp-controller="Shirt">Regresar</a>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial"/>
+    <script>
+        // Abre el explorador de archivos cuando el usuario haga clic en el botón
+        document.getElementById('selectImageButton').addEventListener('click', function () {
+            document.getElementById('imageInput').click();
+        });
+
+        // Opcional: Muestra el nombre del archivo seleccionado
+        document.getElementById('imageInput').addEventListener('change', function (event) {
+            if (event.target.files.length > 0) {
+                alert("Archivo seleccionado: " + event.target.files[0].name);
+            }
+        });
+    </script>
+}

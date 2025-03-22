@@ -1,0 +1,51 @@
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+
+
+<div class="dropdown text-end">
+    <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown"
+        aria-expanded="false">
+        <img src="~/images/cuenta.png" alt="mdo" width="32" height="32" class="rounded-circle">
+    </a>
+    <ul class="dropdown-menu text-medium dropdown-menu-end">
+            @if (SignInManager.IsSignedIn(User))
+            {
+                <li class="dropdown-item">Hola!, @User.Identity.Name</li>
+                <li>
+                    <hr class="dropdown-divider">
+                </li>
+                <li class="dropdown-item" >
+                    <form asp-action="ChangePassword" asp-controller="User">
+                        <button type="submit" class="nav-link btn btn-link text-dark">
+                            Password
+                        </button>
+                    </form>
+                </li>
+
+                <li class="dropdown-item">
+                    <form asp-action="Logout" asp-controller="User">
+                        <button type="submit" class="nav-link btn btn-link text-dark">
+                            Cerrar Sesión
+                        </button>
+                    </form>
+                </li>
+            }
+            else
+            {
+                <li>
+                    <a class="dropdown-item px-3 py-2" asp-controller="User" asp-action="Registry">
+                        Registrarse
+                    </a>
+                </li>
+                <li>
+                    <a class="dropdown-item px-3 py-2" asp-controller="User" asp-action="Login">
+                        Iniciar Sesión
+                    </a> 
+                </li>
+            }
+    </ul>
+</div>
+
+<ul class="navbar-nav">
+    
+</ul>

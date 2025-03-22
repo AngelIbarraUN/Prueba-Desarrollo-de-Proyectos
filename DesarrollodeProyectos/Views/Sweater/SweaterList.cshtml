@@ -1,0 +1,52 @@
+@using DesarrollodeProyectos.Identity
+@model List<SweaterModel>
+@{
+    ViewData["Title"] = "Lista de Suéteres";
+    int numero = 0;
+}
+
+<h1>@ViewData["Title"]</h1>
+<a class="btn btn-outline-primary" asp-action="SweaterAdd" asp-asp-controller="Sweater">Agregar Suéter</a>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Color</th>
+            <th scope="col">Tamaño</th>
+            <th scope="col">Material</th>
+            <th scope="col">Categoría</th>
+            <th scope="col">Cantidad</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Imagen</th>
+            <th scope="col">Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var sweater in Model)
+        {
+            numero++;
+            <tr>
+                <th scope="row">@numero</th>
+                <td>@sweater.Name</td>
+                <td>@sweater.Color</td>
+                <td>@sweater.Size.Name</td>
+                <td>@sweater.Material.Name</td>
+                <td>@sweater.Category.Name</td>
+                <td>@sweater.Quantity</td>
+                <td>@sweater.Price</td>
+                <td>
+                    @if (!string.IsNullOrEmpty(sweater.ImageUrl))
+                    {
+                        <img src="@sweater.ImageUrl" alt="Imagen del Suéter" style="width: 100px;" />
+                    }
+                </td>
+                <td>
+                    <a class="btn btn-outline-info" asp-action="SweaterEdit" asp-controller="Sweater" asp-route-id="@sweater.Id">Editar</a>
+                    <a class="btn btn-outline-danger" asp-action="SweaterDeleted" asp-controller="Sweater" asp-route-id="@sweater.Id">Borrar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

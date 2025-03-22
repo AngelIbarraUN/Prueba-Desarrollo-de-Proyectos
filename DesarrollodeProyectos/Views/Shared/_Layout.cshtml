@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@using DesarrollodeProyectos.Services;
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -27,12 +29,33 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Shirt" asp-action="ShirtList">Privacy</a>
+                           <a class="nav-link text-dark" asp-area="" asp-controller="Category" asp-action="CategoryList">Lista de Categorías</a>
                         </li>
+                         <li class="nav-item">
+                           <a class="nav-link text-dark" asp-area="" asp-controller="Size" asp-action="SizeList">Lista de Tallas</a>
+                        </li>
+                        <li class="nav-item">
+                           <a class="nav-link text-dark" asp-area="" asp-controller="Material" asp-action="MaterialList">Tipo de Materiales</a>
+                        </li>
+                        <li class="nav-item">
+                           <a class="nav-link text-dark" asp-area="" asp-controller="Cap" asp-action="CapList">Listado de Gorras</a>
+                        </li> 
+                        <li class="nav-item">
+                           <a class="nav-link text-dark" asp-area="" asp-controller="Shirt" asp-action="ShirtList">Listado de Camisas</a>
+                        </li>
+                        <li class="nav-item">
+                           <a class="nav-link text-dark" asp-area="" asp-controller="Sweater" asp-action="SweaterList">Listado de Sueteres</a>
+                        </li>
+                       @if(User.IsInRole(Constantss.RolAdmin))
+                        {<li class="nav-item">
+                           <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="List">Lista de Usuarios</a>
+                        </li>
+                        } 
                     </ul>
                 </div>
             </div>
         </nav>
+        <partial name="_LinksLogin">
     </header>
     <div class="container">
         <main role="main" class="pb-3">

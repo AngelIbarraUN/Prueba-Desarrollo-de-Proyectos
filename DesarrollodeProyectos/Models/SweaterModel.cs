@@ -1,10 +1,11 @@
 using System;
-using System.ComponentModel.DataAnnotations;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using DesarrollodeProyectos.Identity;
 
-namespace DesarrollodeProyectos.Models
+namespace DesarrollodeProyectos.Identity
 {
     public class SweaterModel
     {
@@ -15,19 +16,20 @@ namespace DesarrollodeProyectos.Models
             CategoryList = new List<SelectListItem>();
         }
 
-        public Guid Id { get; set; }  
+        public Guid Id { get; set; }
 
         [Required(ErrorMessage = "El campo {0} es requerido")]
         [Display(Name = "Nombre")]
         public string Name { get; set; }
-        
+
         [Required(ErrorMessage = "El campo {0} es requerido")]
         [Display(Name = "Color")]
         public string Color { get; set; }
 
         [Required(ErrorMessage = "El campo {0} es requerido")]
         [Display(Name = "Talla")]
-        public Guid SizeId { get; set; }
+        public Guid? SizeId { get; set; }
+
         public Size? Size { get; set; }
         public string? SizeName { get; set; }
         public List<SelectListItem> SizeList { get; set; }
@@ -39,7 +41,8 @@ namespace DesarrollodeProyectos.Models
 
         [Required(ErrorMessage = "El campo {0} es requerido")]
         [Display(Name = "Material")]
-        public Guid MaterialId { get; set; }
+        public Guid? MaterialId { get; set; }
+
         public Material? Material { get; set; }
         public string? MaterialName { get; set; }
         public List<SelectListItem> MaterialList { get; set; }
@@ -51,12 +54,15 @@ namespace DesarrollodeProyectos.Models
 
         [Required(ErrorMessage = "El campo {0} es requerido")]
         [Display(Name = "Categoría")]
-        public Guid CategoryId { get; set; }
+        public Guid? CategoryId { get; set; }
+
         public Category? Category { get; set; }
         public string? CategoryName { get; set; }
         public List<SelectListItem> CategoryList { get; set; }
 
         [Display(Name = "Imagen del producto")]
-        public string? ImageUrl { get; set; } 
+        public IFormFile? Image { get; set; }
+
+        public string? ImageUrl { get; set; }
     }
 }

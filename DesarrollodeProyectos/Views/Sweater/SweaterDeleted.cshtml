@@ -1,0 +1,24 @@
+@using DesarrollodeProyectos.Identity
+
+@model SweaterModel
+
+@{
+    ViewData["Title"] = "Borrar el suéter";
+}
+
+<h3 class="mb-3"></h3>
+
+<form asp-asp-controller="Sweater" asp-action="SweaterDeleted">
+
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">Información del Suéter</h5>
+            <h6 class="card-subtitle mb-2 text-body-secondary">¿Está seguro que desea borrar el suéter?</h6>
+            <p class="card-text">Suéter: @Model.Name</p>
+        </div>
+    </div>
+
+    <input type="hidden" asp-for="Id" />
+    <button type="submit" class="btn btn-outline-danger">Borrar</button>
+    <a class="btn btn-outline-secondary" asp-action="SweaterList" asp-controller="Sweater">Cancelar</a>
+</form>

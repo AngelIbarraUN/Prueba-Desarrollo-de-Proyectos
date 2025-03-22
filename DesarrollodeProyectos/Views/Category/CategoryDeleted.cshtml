@@ -1,0 +1,29 @@
+@using DesarrollodeProyectos.Identity
+@model CategoryModel
+
+@{
+    ViewData["Title"] = "Borrar Categoría";
+}
+
+<h3 class="mb-3">¿Está seguro que desea borrar esta categoría?</h3>
+
+<form asp-controller="Category" asp-action="CategoryDelete" method="post">
+
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">Información de la Categoría</h5>
+            <h6 class="card-subtitle mb-2 text-body-secondary">¿Está seguro que desea borrar esta categoría?</h6>
+            <p class="card-text">Categoría: @Model.Name</p>
+            <p class="card-text">Descripción: @Model.Description</p>
+        </div>
+    </div>
+
+    <!-- Campo oculto para enviar el Id de la categoría -->
+    <input type="hidden" asp-for="Id" />
+    
+    <!-- Botón para confirmar la eliminación -->
+    <button type="submit" class="btn btn-outline-danger">Borrar</button>
+
+    <!-- Botón para cancelar -->
+    <a class="btn btn-outline-secondary" asp-action="CategoryList" asp-controller="Category">Cancelar</a>
+</form>

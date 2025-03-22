@@ -29,7 +29,7 @@ namespace DesarrollodeProyectos.Identity
 
         [Required(ErrorMessage = "El campo {0} es requerido")]
         [Display(Name = "Talla")]
-        public Guid SizeId { get; set; }
+        public Guid? SizeId { get; set; }
 
         public Size? Size { get; set; }
         public string? SizeName { get; set; }
@@ -42,7 +42,7 @@ namespace DesarrollodeProyectos.Identity
 
         [Required(ErrorMessage = "El campo {0} es requerido")]
         [Display(Name = "Material")]
-        public Guid MaterialId { get; set; }
+        public Guid? MaterialId { get; set; }
 
         public Material? Material { get; set; }
         public string? MaterialName { get; set; }
@@ -55,7 +55,7 @@ namespace DesarrollodeProyectos.Identity
 
         [Required(ErrorMessage = "El campo {0} es requerido")]
         [Display(Name = "Categoría")]
-        public Guid CategoryId { get; set; }
+        public Guid? CategoryId { get; set; }
 
         public Category? Category { get; set; }
         public string? CategoryName { get; set; }
@@ -63,7 +63,7 @@ namespace DesarrollodeProyectos.Identity
 
         
         [Display(Name = "Imagen del producto")]
-        public IFormFile Image { get; set; } 
+        public IFormFile? Image { get; set; } 
 
         public string? ImageUrl { get; set; } 
     }

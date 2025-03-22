@@ -1,0 +1,35 @@
+@using DesarrollodeProyectos.Identity
+@model List<MaterialModel>
+
+@{
+    ViewData["Title"] = "Lista de Materiales";
+    int numero = 0;
+}
+
+<h1>@ViewData["Title"]</h1>
+<a class="btn btn-outline-primary" asp-action="MaterialAdd" asp-asp-controller="Material">Agregar Material</a>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Descripción</th>
+            <th scope="col">Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var material in Model)
+        {
+            numero++;
+            <tr>
+                <th scope="row">@numero</th>
+                <td>@material.Name</td>
+                <td>@material.Description</td>
+                <td>
+                    <a class="btn btn-outline-info" asp-action="MaterialEdit" asp-controller="Material" asp-route-id="@material.Id">Editar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

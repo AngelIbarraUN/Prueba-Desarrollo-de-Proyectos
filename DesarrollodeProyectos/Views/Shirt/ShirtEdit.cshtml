@@ -1,0 +1,78 @@
+@using DesarrollodeProyectos.Identity
+@model ShirtModel
+@{
+    ViewData["Title"] = "Editar Camisa";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<form asp-action="ShirtEdit" asp-controller="Shirt" enctype="multipart/form-data">
+    <input type="hidden" asp-for="Id">
+
+    <div class="form-floating mb-3">
+        <input type="text" class="form-control" asp-for="Name" placeholder="Nombre de la camisa">
+        <label asp-for="Name">Nombre</label>
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <div class="form-floating mb-3">
+        <input type="text" class="form-control" asp-for="Color" placeholder="Color">
+        <label asp-for="Color">Color</label>
+        <span asp-validation-for="Color" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <select class="form-select" asp-for="SizeId" asp-items="@Model.SizeList">
+            <option>Seleccionar talla</option>
+        </select>
+        <span asp-validation-for="SizeId" class="text-danger"></span>
+    </div>
+
+    <div class="form-floating mb-3">
+        <input type="number" step="0.01" class="form-control" asp-for="Price" placeholder="Precio">
+        <label asp-for="Price">Precio</label>
+        <span asp-validation-for="Price" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <select class="form-select" asp-for="MaterialId" asp-items="@Model.MaterialList">
+            <option>Seleccionar material</option>
+        </select>
+        <span asp-validation-for="MaterialId" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3 d-flex align-items-center">
+        <button type="button" class="btn btn-outline-secondary me-2" id="decreaseQuantity">-</button>
+        <input type="number" class="form-control text-center" asp-for="Quantity" id="quantityInput" min="1">
+        <button type="button" class="btn btn-outline-secondary ms-2" id="increaseQuantity">+</button>
+    </div>
+    <span asp-validation-for="Quantity" class="text-danger"></span>
+
+    <div class="mb-3">
+        <select class="form-select" asp-for="CategoryId" asp-items="@Model.CategoryList">
+            <option>Seleccionar categoría</option>
+        </select>
+        <span asp-validation-for="CategoryId" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label for="Image">Imagen</label>
+        <input type="file" class="form-control" asp-for="Image">
+        @if (!string.IsNullOrEmpty(Model.ImageUrl))
+        {
+            <img src="@Model.ImageUrl" alt="Imagen" style="width: 100px; height: 100px;" class="mt-2">
+        }
+        <span asp-validation-for="Image" class="text-danger"></span>
+    </div>
+
+    <button class="btn btn-outline-primary">Guardar</button>
+    <a class="btn btn-outline-secondary" asp-action="ShirtList" asp-controller="Shirt">Regresar</a>
+</form>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const quantityInput = document.getElementById("quantityInput");
+        document.getElementById("increaseQuantity").addEventListener("click", () => quantityInput.value = parseInt(quantityInput.value || 0) + 1);
+        document.getElementById("decreaseQuantity").addEventListener("click", () => quantityInput.value = Math.max(1, parseInt(quantityInput.value || 0) - 1));
+    });
+</script>

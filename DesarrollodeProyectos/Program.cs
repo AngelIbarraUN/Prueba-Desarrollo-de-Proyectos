@@ -1,6 +1,8 @@
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc.ModelBinding.Binders;
 using Microsoft.EntityFrameworkCore;
+using DesarrollodeProyectos.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,7 +16,7 @@ builder.Services.AddAuthentication();
 
 builder.Services.AddIdentity<IdentityUser, IdentityRole>(
    opc=> {opc.SignIn.RequireConfirmedAccount=false; }
-).AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultTokenProviders(); 
+).AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultTokenProviders().AddErrorDescriber<MensajesDeErrorIdentity>(); 
 
 builder.Services.PostConfigure<CookieAuthenticationOptions>(
     IdentityConstants.ApplicationScheme, opc=>

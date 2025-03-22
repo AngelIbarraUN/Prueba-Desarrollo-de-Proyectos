@@ -897,6 +897,498 @@
       ]
     },
     {
+      "Route": "images/america camisa.hjypio3jiy.jpg",
+      "AssetFile": "images/america camisa.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "8553"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"HR11s7UnGw4F4lNi6518oETxLxTX3d9T2E+khOn2vrg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 21 Mar 2025 20:19:28 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "hjypio3jiy"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-HR11s7UnGw4F4lNi6518oETxLxTX3d9T2E+khOn2vrg="
+        },
+        {
+          "Name": "label",
+          "Value": "images/america camisa.jpg"
+        }
+      ]
+    },
+    {
+      "Route": "images/america camisa.jpg",
+      "AssetFile": "images/america camisa.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "8553"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"HR11s7UnGw4F4lNi6518oETxLxTX3d9T2E+khOn2vrg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 21 Mar 2025 20:19:28 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-HR11s7UnGw4F4lNi6518oETxLxTX3d9T2E+khOn2vrg="
+        }
+      ]
+    },
+    {
+      "Route": "images/camisa zara.ah1cshzwj0.jpg",
+      "AssetFile": "images/camisa zara.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "8780"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"fkJVdOEUwac4z7iOzmmQ2rkkMIMoZjb77gHbeoBifew=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 21 Mar 2025 20:11:47 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ah1cshzwj0"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-fkJVdOEUwac4z7iOzmmQ2rkkMIMoZjb77gHbeoBifew="
+        },
+        {
+          "Name": "label",
+          "Value": "images/camisa zara.jpg"
+        }
+      ]
+    },
+    {
+      "Route": "images/camisa zara.jpg",
+      "AssetFile": "images/camisa zara.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "8780"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"fkJVdOEUwac4z7iOzmmQ2rkkMIMoZjb77gHbeoBifew=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 21 Mar 2025 20:11:47 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-fkJVdOEUwac4z7iOzmmQ2rkkMIMoZjb77gHbeoBifew="
+        }
+      ]
+    },
+    {
+      "Route": "images/cuenta.i6g0p3f0ta.png",
+      "AssetFile": "images/cuenta.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "12221"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"6ua3Q2BqbCYkZdMQVowIiF/TvYBLiBoi2t2PO8WKW2w=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 21 Mar 2025 10:40:30 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "i6g0p3f0ta"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-6ua3Q2BqbCYkZdMQVowIiF/TvYBLiBoi2t2PO8WKW2w="
+        },
+        {
+          "Name": "label",
+          "Value": "images/cuenta.png"
+        }
+      ]
+    },
+    {
+      "Route": "images/cuenta.png",
+      "AssetFile": "images/cuenta.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "12221"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"6ua3Q2BqbCYkZdMQVowIiF/TvYBLiBoi2t2PO8WKW2w=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 21 Mar 2025 10:40:30 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-6ua3Q2BqbCYkZdMQVowIiF/TvYBLiBoi2t2PO8WKW2w="
+        }
+      ]
+    },
+    {
+      "Route": "images/gorra azul.2o1nuvxi3g.jpg",
+      "AssetFile": "images/gorra azul.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2770"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"zk0QmvxsFGaoSdXfAD2NJMJrX9VbsBJ5OzKT5pz/oiY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 22 Mar 2025 01:14:39 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "2o1nuvxi3g"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-zk0QmvxsFGaoSdXfAD2NJMJrX9VbsBJ5OzKT5pz/oiY="
+        },
+        {
+          "Name": "label",
+          "Value": "images/gorra azul.jpg"
+        }
+      ]
+    },
+    {
+      "Route": "images/gorra azul.jpg",
+      "AssetFile": "images/gorra azul.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2770"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"zk0QmvxsFGaoSdXfAD2NJMJrX9VbsBJ5OzKT5pz/oiY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 22 Mar 2025 01:14:39 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-zk0QmvxsFGaoSdXfAD2NJMJrX9VbsBJ5OzKT5pz/oiY="
+        }
+      ]
+    },
+    {
+      "Route": "images/imagen camisa gucci.evigmwyp95.jpg",
+      "AssetFile": "images/imagen camisa gucci.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2942"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"doaq/uKZXXCDSubLZPW+Tszbe7C6ytfYT2LehibS7Ro=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 21 Mar 2025 20:12:02 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "evigmwyp95"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-doaq/uKZXXCDSubLZPW+Tszbe7C6ytfYT2LehibS7Ro="
+        },
+        {
+          "Name": "label",
+          "Value": "images/imagen camisa gucci.jpg"
+        }
+      ]
+    },
+    {
+      "Route": "images/imagen camisa gucci.jpg",
+      "AssetFile": "images/imagen camisa gucci.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2942"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"doaq/uKZXXCDSubLZPW+Tszbe7C6ytfYT2LehibS7Ro=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 21 Mar 2025 20:12:02 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-doaq/uKZXXCDSubLZPW+Tszbe7C6ytfYT2LehibS7Ro="
+        }
+      ]
+    },
+    {
+      "Route": "images/sueter algodon.jpg",
+      "AssetFile": "images/sueter algodon.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5209"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"N4zr7dZsU/ZCe7RP5JGnEE2Vxa6/iSGtrXjdPz25VzQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 22 Mar 2025 01:15:23 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-N4zr7dZsU/ZCe7RP5JGnEE2Vxa6/iSGtrXjdPz25VzQ="
+        }
+      ]
+    },
+    {
+      "Route": "images/sueter algodon.vy5kl3tt1g.jpg",
+      "AssetFile": "images/sueter algodon.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5209"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"N4zr7dZsU/ZCe7RP5JGnEE2Vxa6/iSGtrXjdPz25VzQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 22 Mar 2025 01:15:23 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "vy5kl3tt1g"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-N4zr7dZsU/ZCe7RP5JGnEE2Vxa6/iSGtrXjdPz25VzQ="
+        },
+        {
+          "Name": "label",
+          "Value": "images/sueter algodon.jpg"
+        }
+      ]
+    },
+    {
       "Route": "js/site.js",
       "AssetFile": "js/site.js.gz",
       "Selectors": [

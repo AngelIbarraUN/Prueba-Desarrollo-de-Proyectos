@@ -1,0 +1,52 @@
+@using DesarrollodeProyectos.Identity
+@model List<CapModel>
+@{
+    ViewData["Title"] = "Lista de Gorras";
+    int numero = 0;  
+}
+
+<h1>@ViewData["Title"]</h1>
+<a class="btn btn-outline-primary" asp-action="CapAdd" asp-asp-controller="Cap">Agregar Gorra</a>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Color</th>
+            <th scope="col">Tamaño</th>
+            <th scope="col">Material</th>
+            <th scope="col">Categoría</th>
+            <th scope="col">Cantidad</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Imagen</th>
+            <th scope="col">Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var cap in Model)
+        {
+            numero++; 
+            <tr>
+                <th scope="row">@numero</th>
+                <td>@cap.Name</td>
+                <td>@cap.Color</td>
+                <td>@(cap.Size != null ? cap.Size.Name : "Tamaño no disponible")</td> <!-- Verifica si Size es null -->
+                <td>@(cap.Material != null ? cap.Material.Name : "Material no disponible")</td> <!-- Verifica si Material es null -->
+                <td>@(cap.Category != null ? cap.Category.Name : "Categoría no disponible")</td> <!-- Verifica si Category es null -->
+                <td>@cap.Quantity</td>
+                <td>@cap.Price</td>
+                <td>
+                    @if (!string.IsNullOrEmpty(cap.ImageUrl))
+                    {
+                        <img src="@cap.ImageUrl" alt="Imagen de la Gorra" style="width: 100px;" />
+                    }
+                </td>
+                <td>
+                    <a class="btn btn-outline-info" asp-action="CapEdit" asp-controller="Cap" asp-route-id="@cap.Id">Editar</a>
+                    <a class="btn btn-outline-danger" asp-action="CapDeleted" asp-controller="Cap" asp-route-id="@cap.Id">Borrar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

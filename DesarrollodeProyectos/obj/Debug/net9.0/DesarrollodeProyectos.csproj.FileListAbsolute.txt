@@ -234,3 +234,4 @@ C:\Users\usuario\Desktop\PruebaDesarrollodeProyectos\DesarrollodeProyectos\obj\D
 C:\Users\usuario\Desktop\PruebaDesarrollodeProyectos\DesarrollodeProyectos\obj\Debug\net9.0\DesarrollodeProyectos.pdb
 C:\Users\usuario\Desktop\PruebaDesarrollodeProyectos\DesarrollodeProyectos\obj\Debug\net9.0\DesarrollodeProyectos.genruntimeconfig.cache
 C:\Users\usuario\Desktop\PruebaDesarrollodeProyectos\DesarrollodeProyectos\obj\Debug\net9.0\ref\DesarrollodeProyectos.dll
+C:\Users\usuario\Desktop\PruebaDesarrollodeProyectos\DesarrollodeProyectos\obj\Debug\net9.0\DesarrollodeProyectos.sourcelink.json

@@ -13,6 +13,30 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\usuario\\Desktop\\PruebaDesarrollodeProyectos\\DesarrollodeProyectos\\wwwroot\\images\\america camisa.jpg",
+      "PackagePath": "staticwebassets\\images\\america camisa.jpg"
+    },
+    {
+      "Id": "C:\\Users\\usuario\\Desktop\\PruebaDesarrollodeProyectos\\DesarrollodeProyectos\\wwwroot\\images\\camisa zara.jpg",
+      "PackagePath": "staticwebassets\\images\\camisa zara.jpg"
+    },
+    {
+      "Id": "C:\\Users\\usuario\\Desktop\\PruebaDesarrollodeProyectos\\DesarrollodeProyectos\\wwwroot\\images\\cuenta.png",
+      "PackagePath": "staticwebassets\\images\\cuenta.png"
+    },
+    {
+      "Id": "C:\\Users\\usuario\\Desktop\\PruebaDesarrollodeProyectos\\DesarrollodeProyectos\\wwwroot\\images\\gorra azul.jpg",
+      "PackagePath": "staticwebassets\\images\\gorra azul.jpg"
+    },
+    {
+      "Id": "C:\\Users\\usuario\\Desktop\\PruebaDesarrollodeProyectos\\DesarrollodeProyectos\\wwwroot\\images\\imagen camisa gucci.jpg",
+      "PackagePath": "staticwebassets\\images\\imagen camisa gucci.jpg"
+    },
+    {
+      "Id": "C:\\Users\\usuario\\Desktop\\PruebaDesarrollodeProyectos\\DesarrollodeProyectos\\wwwroot\\images\\sueter algodon.jpg",
+      "PackagePath": "staticwebassets\\images\\sueter algodon.jpg"
+    },
+    {
       "Id": "C:\\Users\\usuario\\Desktop\\PruebaDesarrollodeProyectos\\DesarrollodeProyectos\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

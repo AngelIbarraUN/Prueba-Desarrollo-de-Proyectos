@@ -1,0 +1,25 @@
+@using DesarrollodeProyectos.Identity
+@model SizeModel
+
+@{
+    ViewData["Title"] = "Editar Talla";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<form asp-action="SizeEdit" asp-controller="Size">
+    <input type="hidden" asp-for="Id">
+
+    <div class="form-floating mb-3">
+        <input type="text" class="form-control" asp-for="Name" placeholder="Nombre de la talla">
+        <label asp-for="Name">Talla</label>
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-outline-primary">Guardar</button>
+    <a class="btn btn-outline-secondary" asp-action="SizeList" asp-controller="Size">Regresar</a>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial"/>
+}

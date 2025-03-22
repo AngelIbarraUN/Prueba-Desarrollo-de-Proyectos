@@ -1,0 +1,13 @@
+@using DesarrollodeProyectos.Identity
+@model SizeModel
+@{
+    ViewData["Title"] = "Tamaño Eliminado";
+}
+
+<h3 class="mb-3">El tamaño ha sido eliminado correctamente</h3>
+
+<div class="alert alert-success" role="alert">
+    El tamaño <strong>@Model.Name</strong> ha sido eliminado con éxito.
+</div>
+
+<a class="btn btn-outline-primary" asp-action="SizeList" asp-controller="Size">Volver a la lista de tamaños</a>

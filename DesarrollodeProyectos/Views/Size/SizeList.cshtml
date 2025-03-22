@@ -1,0 +1,34 @@
+@using DesarrollodeProyectos.Identity
+@model List<SizeModel>
+
+@{
+    ViewData["Title"] = "Lista de Tallas";
+    int numero = 0;
+}
+
+<h1>@ViewData["Title"]</h1>
+<a class="btn btn-outline-primary" asp-action="SizeAdd" asp-controller="Size">Agregar Talla</a>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var size in Model)
+        {
+            numero++;
+            <tr>
+                <th scope="row">@numero</th>
+                <td>@size.Name</td>
+                <td>
+                    <a class="btn btn-outline-info" asp-action="SizeEdit" asp-controller="Size" asp-route-id="@size.Id">Editar</a>
+                    <a class="btn btn-outline-danger" asp-action="SizeDelete" asp-controller="Size" asp-route-id="@size.Id">Borrar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

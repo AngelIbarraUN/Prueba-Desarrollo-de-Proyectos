@@ -1,0 +1,52 @@
+@using DesarrollodeProyectos.Identity
+@model List<ShirtModel>
+@{
+    ViewData["Title"] = "Lista de Camisas";
+    int numero = 0;
+}
+
+<h1>@ViewData["Title"]</h1>
+<a class="btn btn-outline-primary" asp-action="ShirtAdd" asp-asp-controller="Shirt">Agregar Camisa</a>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Color</th>
+            <th scope="col">Tamaño</th>
+            <th scope="col">Material</th>
+            <th scope="col">Categoría</th>
+            <th scope="col">Cantidad</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Imagen</th>
+            <th scope="col">Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var shirt in Model)
+        {
+            numero++;
+            <tr>
+                <th scope="row">@numero</th>
+                <td>@shirt.Name</td>
+                <td>@shirt.Color</td>
+                <td>@shirt.Size.Name</td>
+                <td>@shirt.Material.Name</td>
+                <td>@shirt.Category.Name</td>
+                <td>@shirt.Quantity</td>
+                <td>@shirt.Price</td>
+                <td>
+                    @if (!string.IsNullOrEmpty(shirt.ImageUrl))
+                    {
+                        <img src="@shirt.ImageUrl" alt="Imagen de la Camisa" style="width: 100px;" />
+                    }
+                </td>
+                <td>
+                    <a class="btn btn-outline-info" asp-action="ShirtEdit" asp-controller="Shirt" asp-route-id="@shirt.Id">Editar</a>
+                    <a class="btn btn-outline-danger" asp-action="ShirtDeleted" asp-controller="Shirt" asp-route-id="@shirt.Id">Borrar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

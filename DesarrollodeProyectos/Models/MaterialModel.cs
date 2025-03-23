@@ -24,7 +24,10 @@ namespace DesarrollodeProyectos.Identity
         [Display(Name = "Descripción")]
         public string Description { get; set; }
 
-        // Relacionado con los productos (camisas, suéteres, gorras) de este material
+        [Display(Name = "Fecha de creación")]
+        public DateTime CreationTime { get; set; } = DateTime.Now;
+
+
         [Display(Name = "Camisas")]
         public List<SelectListItem> ShirtList { get; set; }
 
@@ -33,6 +36,12 @@ namespace DesarrollodeProyectos.Identity
 
         [Display(Name = "Gorras")]
         public List<SelectListItem> CapList { get; set; }
+
+        [Display(Name = "Proveedores")]
+        public List<SelectListItem> SupplierList { get; set; }
+
+         public bool IsActive { get; set; } = true;
+
 
     }
 }

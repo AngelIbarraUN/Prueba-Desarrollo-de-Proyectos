@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DesarrollodeProyectos.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250323220921_ArregloEntitidades")]
+    partial class ArregloEntitidades
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -108,9 +111,6 @@ namespace DesarrollodeProyectos.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ImageUrl")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
 
@@ -118,12 +118,7 @@ namespace DesarrollodeProyectos.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid?>("SupplierId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.HasKey("Id");
-
-                    b.HasIndex("SupplierId");
 
                     b.ToTable("Materials");
                 });
@@ -196,31 +191,6 @@ namespace DesarrollodeProyectos.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Sizes");
-                });
-
-            modelBuilder.Entity("DesarrollodeProyectos.Identity.Supplier", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<DateTime>("CreationTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<bool>("IsActive")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PhoneNumber")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Supplier");
                 });
 
             modelBuilder.Entity("DesarrollodeProyectos.Identity.Sweater", b =>
@@ -491,15 +461,6 @@ namespace DesarrollodeProyectos.Migrations
                     b.Navigation("Size");
                 });
 
-            modelBuilder.Entity("DesarrollodeProyectos.Identity.Material", b =>
-                {
-                    b.HasOne("DesarrollodeProyectos.Identity.Supplier", "Supplier")
-                        .WithMany("Materials")
-                        .HasForeignKey("SupplierId");
-
-                    b.Navigation("Supplier");
-                });
-
             modelBuilder.Entity("DesarrollodeProyectos.Identity.Shirt", b =>
                 {
                     b.HasOne("DesarrollodeProyectos.Identity.Category", "Category")
@@ -618,11 +579,6 @@ namespace DesarrollodeProyectos.Migrations
                     b.Navigation("Shirts");
 
                     b.Navigation("Sweaters");
-                });
-
-            modelBuilder.Entity("DesarrollodeProyectos.Identity.Supplier", b =>
-                {
-                    b.Navigation("Materials");
                 });
 #pragma warning restore 612, 618
         }

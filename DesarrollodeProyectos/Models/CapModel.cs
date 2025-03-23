@@ -65,5 +65,13 @@ namespace DesarrollodeProyectos.Identity
         public IFormFile? Image { get; set; }
 
         public string? ImageUrl { get; set; } 
+
+        // Campo para marcar si el producto está activo o inactivo
+        [Display(Name = "Activo")]
+        public bool IsActive { get; set; } = true; 
+
+        [Display(Name = "Fecha de creación")]
+        public DateTime CreationTime { get; set; } = DateTime.Now;
+
     }
 }

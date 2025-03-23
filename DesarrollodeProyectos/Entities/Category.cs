@@ -20,7 +20,11 @@ namespace DesarrollodeProyectos.Identity
 
         public string Description { get; set; }
 
-        // Relación con los productos
+        /*Este atributo sirve para marcar como inactivo un registro si se desea borrar*/
+        public bool IsActive { get; set; } = true;
+        public DateTime CreationTime { get; set; } = DateTime.Now;
+
+
         public List<Shirt> Shirts { get; set; }
         public List<Cap> Caps { get; set; }
         public List<Sweater> Sweaters { get; set; }

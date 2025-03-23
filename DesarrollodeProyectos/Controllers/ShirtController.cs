@@ -116,7 +116,7 @@ namespace DesarrollodeProyectos.Controllers
         ImageUrl = s.ImageUrl
     }).ToList();
 
-    return View(shirtModels); // Pasar la lista de ShirtModel a la vista
+    return View(shirtModels); 
 }
         public async Task<IActionResult> ShirtEdit(Guid id)
 {

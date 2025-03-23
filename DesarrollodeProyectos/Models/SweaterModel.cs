@@ -26,6 +26,10 @@ namespace DesarrollodeProyectos.Identity
         [Display(Name = "Color")]
         public string Color { get; set; }
 
+        [Display(Name = "Fecha de creación")]
+        public DateTime CreationTime { get; set; } = DateTime.Now;
+
+
         [Required(ErrorMessage = "El campo {0} es requerido")]
         [Display(Name = "Talla")]
         public Guid? SizeId { get; set; }
@@ -64,5 +68,8 @@ namespace DesarrollodeProyectos.Identity
         public IFormFile? Image { get; set; }
 
         public string? ImageUrl { get; set; }
+
+        public bool IsActive { get; set; } = true;
+
     }
 }

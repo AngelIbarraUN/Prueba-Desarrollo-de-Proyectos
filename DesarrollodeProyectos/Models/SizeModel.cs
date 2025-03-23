@@ -20,7 +20,9 @@ namespace DesarrollodeProyectos.Identity
         [Display(Name = "Nombre de la Talla")]
         public string Name { get; set; }
 
-        // Relacionado con los productos (camisas, suéteres, gorras) de esta talla
+        [Display(Name = "Fecha de creación")]
+        public DateTime CreationTime { get; set; } = DateTime.Now;
+
         [Display(Name = "Camisas")]
         public List<SelectListItem> ShirtList { get; set; }
 
@@ -29,6 +31,9 @@ namespace DesarrollodeProyectos.Identity
 
         [Display(Name = "Gorras")]
         public List<SelectListItem> CapList { get; set; }
+
+        public bool IsActive { get; set; } = true;
+
       
     }
 }

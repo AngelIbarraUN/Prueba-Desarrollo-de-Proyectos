@@ -35,5 +35,11 @@ namespace DesarrollodeProyectos.Identity
         public Category? Category { get; set; }
 
         public string? ImageUrl { get; set; }
+
+        /*Este atributo sirve para marcar como inactivo un registro si se desea borrar*/
+        public bool IsActive { get; set; } = true;
+
+        public DateTime CreationTime { get; set; } = DateTime.Now;
+
     }
 }

@@ -18,6 +18,12 @@ namespace DesarrollodeProyectos.Identity
 
         public string Color { get; set; }
 
+        /*Este atributo sirve para marcar como inactivo un registro si se desea borrar*/
+        public bool IsActive { get; set; } = true;
+
+        public DateTime CreationTime { get; set; } = DateTime.Now;
+
+
         public Guid? SizeId { get; set; }
 
         public Size? Size { get; set; }

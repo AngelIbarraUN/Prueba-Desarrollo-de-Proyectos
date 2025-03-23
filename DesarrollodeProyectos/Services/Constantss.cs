@@ -7,6 +7,6 @@ namespace DesarrollodeProyectos.Services
 {
     public class Constantss
     {
-        public const string RolAdmin = "admin";
+        public const string RolAdmin = "ADMIN";
     }
 }

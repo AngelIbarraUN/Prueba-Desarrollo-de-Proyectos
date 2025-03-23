@@ -1,0 +1,40 @@
+@model RolViewModel
+
+@{
+    ViewData["Title"] = "Borrar Roles de Usuario";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["SuccessMessage"]
+    </div>
+}
+else if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["ErrorMessage"]
+    </div>
+}
+else if (TempData["WarningMessage"] != null)
+{
+    <div class="alert alert-warning">
+        @TempData["WarningMessage"]
+    </div>
+}
+
+<form asp-action="RolDeleted" asp-controller="Rol" method="post">
+    <div class="form-floating mb-3">
+        <input type="text" class="form-control" asp-for="Name" placeholder="Nombre del Rol" readonly>
+        <label asp-for="Name">Nombre del Rol</label>
+    </div>
+
+    @if (Model.Name != "ADMIN")
+    {
+        <button class="btn btn-outline-danger">Eliminar</button>
+    }
+
+    <a class="btn btn-outline-secondary" asp-action="RolList" asp-controller="Rol">Regresar</a>
+</form>

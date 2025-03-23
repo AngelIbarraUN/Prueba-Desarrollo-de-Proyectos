@@ -84,6 +84,22 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWF0ZXJpYWxcTWF0ZXJpYWxMaXN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/usuario/Desktop/PruebaDesarrollodeProyectos/DesarrollodeProyectos/Views/Rol/RolAdd.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9sXFJvbEFkZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/usuario/Desktop/PruebaDesarrollodeProyectos/DesarrollodeProyectos/Views/Rol/RolDeleted.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9sXFJvbERlbGV0ZWQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/usuario/Desktop/PruebaDesarrollodeProyectos/DesarrollodeProyectos/Views/Rol/RolEdit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9sXFJvbEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/usuario/Desktop/PruebaDesarrollodeProyectos/DesarrollodeProyectos/Views/Rol/RolList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9sXFJvbExpc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/usuario/Desktop/PruebaDesarrollodeProyectos/DesarrollodeProyectos/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 

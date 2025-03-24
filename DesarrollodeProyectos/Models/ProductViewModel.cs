@@ -1,16 +1,15 @@
     using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using DesarrollodeProyectos.Identity;
 
 namespace DesarrollodeProyectos.Models
 {
-   public class ProductViewModel
+    public class ProductViewModel
 {
-    public Guid Id { get; set; }
-    public string Name { get; set; }
-    public decimal Price { get; set; }
-    public int Quantity { get; set; }
-    public string ProductType { get; set; }  // "Shirt", "Sweater", etc.
-}
+    public List<ShirtModel> Shirts { get; set; }
+    public List<SweaterModel> Sweaters { get; set; }
+    public List<CapModel> Caps { get; set; }
 
+    }
 }

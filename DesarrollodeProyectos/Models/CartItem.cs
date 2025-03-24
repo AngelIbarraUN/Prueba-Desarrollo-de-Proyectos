@@ -38,6 +38,6 @@ namespace DesarrollodeProyectos.Models
         public Guid CartId { get; set; } // Clave foránea para el carrito
 
     
-        public Cart Cart { get; set; } // Relación con la entidad Cart
+        public Cart? Cart { get; set; } // Relación con la entidad Cart
     }
 }

@@ -26,6 +26,7 @@ namespace DesarrollodeProyectos.Models
     public decimal Price { get; set; }
 
     public decimal TotalPrice => Quantity * Price;
+    public string ProductName { get; set; }
     }
 
 }

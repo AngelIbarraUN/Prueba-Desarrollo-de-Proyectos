@@ -1,0 +1,109 @@
+@model DesarrollodeProyectos.Models.Cart
+
+<div class="container mt-4">
+    <h2 class="mb-4 text-center">Carrito de Compras</h2>
+
+    @if (Model != null && Model.CartItems != null && Model.CartItems.Any())
+    {
+        <div class="table-responsive">
+            <table class="table table-striped table-bordered">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Imagen</th>
+                        <th>Producto</th>
+                        <th>Cantidad</th>
+                        <th>Precio</th>
+                        <th>Total</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.CartItems)
+                    {
+                        <tr data-cart-item-id="@item.Id" data-price="@item.Price">
+                            <td>
+                                @if (item.ProductType == "Shirt" && item.Shirt != null)
+                                {
+                                    <img src="@item.Shirt.ImageUrl" alt="@item.Shirt.Name" style="max-width: 80px; max-height: 80px;" />
+                                }
+                                @if (item.ProductType == "Cap" && item.Cap != null)
+                                {
+                                    <img src="@item.Cap.ImageUrl" alt="@item.Cap.Name" style="max-width: 80px; max-height: 80px;" />
+                                }
+                                @if (item.ProductType == "Sweater" && item.Sweater != null)
+                                {
+                                    <img src="@item.Sweater.ImageUrl" alt="@item.Sweater.Name" style="max-width: 80px; max-height: 80px;" />
+                                }
+                            </td>
+                            <td>
+                                @if (item.ProductType == "Shirt") { @item.Shirt?.Name }
+                                @if (item.ProductType == "Cap") { @item.Cap?.Name }
+                                @if (item.ProductType == "Sweater") { @item.Sweater?.Name }
+                            </td>
+                            <td>
+                                <input type="number" class="quantity-input form-control form-control-sm" value="@item.Quantity" min="1" />
+                            </td>
+                            <td class="price-cell">@item.Price.ToString("C")</td>
+                            <td class="total-cell">@item.TotalPrice.ToString("C")</td>
+                            <td>
+                                <form asp-action="RemoveCartItem" method="post" class="form-inline">
+                                    <input type="hidden" name="cartItemId" value="@item.Id" />
+                                    <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
+                                </form>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        <div class="text-right">
+            <form asp-action="Checkout" method="post">
+                <button type="submit" class="btn btn-success">Realizar Pedido</button>
+            </form>
+        </div>
+    }
+    else
+    {
+        <p class="text-muted text-center">El carrito está vacío.</p>
+    }
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const quantityInputs = document.querySelectorAll('.quantity-input');
+
+        quantityInputs.forEach(input => {
+            input.addEventListener('change', function () {
+                const row = this.closest('tr');
+                const cartItemId = row.dataset.cartItemId;
+                const price = parseFloat(row.dataset.price);
+                const quantity = parseInt(this.value);
+
+                if (quantity < 1) {
+                    this.value = 1;
+                    return;
+                }
+
+                const total = price * quantity;
+                row.querySelector('.total-cell').textContent = total.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+
+                // Actualizar la base de datos mediante AJAX
+                fetch('/Cart/UpdateCartItem', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                    },
+                    body: `cartItemId=${cartItemId}&quantity=${quantity}`,
+                })
+                .then(response => {
+                    if (!response.ok) {
+                        console.error('Error al actualizar el carrito');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error de red:', error);
+                });
+            });
+        });
+    });
+</script>

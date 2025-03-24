@@ -11,6 +11,6 @@ namespace DesarrollodeProyectos.Models
     [Required(ErrorMessage = "El usuario es obligatorio.")]
     public string UserId { get; set; }  // Relación con el usuario (Identity Framework)
 
-    public ICollection<CartItem> Items { get; set; }  // Productos dentro del carrito
+    public List<CartItem> CartItems { get; set; }  // Productos dentro del carrito
     }
 }

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using DesarrollodeProyectos.Models;
 
 namespace DesarrollodeProyectos.Identity
 {
@@ -10,6 +11,7 @@ namespace DesarrollodeProyectos.Identity
             Name = string.Empty;
             Color = string.Empty;
             ImageUrl = string.Empty;
+            CartItems = new List<CartItem>();
         }
 
         public Guid Id { get; set; }
@@ -40,6 +42,8 @@ namespace DesarrollodeProyectos.Identity
         public bool IsActive { get; set; } = true;
 
         public DateTime CreationTime { get; set; } = DateTime.Now;
+
+         public List<CartItem> CartItems { get; set; }
 
     }
 }

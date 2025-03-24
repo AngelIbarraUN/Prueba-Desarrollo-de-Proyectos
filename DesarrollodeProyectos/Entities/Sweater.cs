@@ -1,4 +1,5 @@
 using System;
+using DesarrollodeProyectos.Models;
 
 namespace DesarrollodeProyectos.Identity
 {
@@ -9,6 +10,7 @@ namespace DesarrollodeProyectos.Identity
             Name = string.Empty;
             Color = string.Empty;
             ImageUrl = string.Empty;
+            CartItems = new List<CartItem>();
         }
 
         public Guid Id { get; set; }
@@ -40,5 +42,7 @@ namespace DesarrollodeProyectos.Identity
         public Category? Category { get; set; }
 
         public string? ImageUrl { get; set; }
+
+         public List<CartItem> CartItems { get; set; }
     }
 }

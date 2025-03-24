@@ -16,48 +16,55 @@
 
 @if (Model.UserList is not null)
 {
-
-    <form method="post">
-        <table class="table table-hover">
-            <thead>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Acción</th>
+                <th>User</th>
+                <th>Email</th>
+                <th>Confirmed</th>
+                <th>Roles</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var usuario in Model.UserList)
+            {
                 <tr>
-                    <td>Acción</td>
-                    <td>User</td>
-                    <td>Confirmed</td>
-                    <td>Email</td>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var usuario in Model.UserList)
-                {
-                    <tr>
-                        <td>
-                            <button class="btn btn-primary me-2"
-                            asp-action="HacerAdmin"
-                            asp-route-email="@usuario.Email">
-                                Hacer Admin
-                            </button>
-                            <button class="btn btn-secondary me-2"
-                            asp-action="RemoverAdmin"
-                            asp-route-email="@usuario.Email">
-                                Remover Admin
-                            </button>
-                        </td>
-                        <td>
-                            @usuario.User
-                        </td>
-                        <td>
-                            @usuario.Email
-                        </td>
-                        <td>
-                            @usuario.Confirmed
-                        </td>
-                    </tr>
-                }
-            </tbody>
-        </table>
-    </form>
+                    <td>
+                        @foreach (var role in usuario.Roles)
+                        {
+                            <span class="badge bg-info">@role</span>
 
+                            <!-- Botón para quitar un rol específico -->
+                            <form method="post" class="d-inline" asp-action="QuitarRol" asp-route-email="@usuario.Email" asp-route-rol="@role">
+                                <button type="submit" class="btn btn-warning btn-sm me-2">Quitar @role</button>
+                            </form>
+                        }
+                        
+                        <!-- Lista desplegable para asignar un rol -->
+                        <form method="post" class="d-inline" asp-action="AsignarRol" asp-route-email="@usuario.Email">
+                            <select name="roleToAssign" class="form-control form-control-sm">
+                                @foreach (var role in Model.ListadeRoles) 
+                                {
+                                    <option value="@role">@role</option>
+                                }
+                            </select>
+                            <button type="submit" class="btn btn-success btn-sm me-2">Asignar Rol</button>
+                        </form>
+                    </td>
+                    <td>@usuario.User</td>
+                    <td>@usuario.Email</td>
+                    <td>@usuario.Confirmed</td>
+                    <td>
+                        @foreach (var role in usuario.Roles)
+                        {
+                            <span class="badge bg-info">@role</span>
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
 }
 else
 {

@@ -21,5 +21,7 @@ namespace DesarrollodeProyectos.Models
 
     public bool Confirmed { get; set; }
 
+    public IList<string> Roles { get; set; }
+
     }
 }

@@ -1,31 +1,25 @@
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
+using DesarrollodeProyectos.Models;
+using DesarrollodeProyectos.Services;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using DesarrollodeProyectos.Models;
-using Microsoft.AspNetCore.Authentication;
-using DesarrollodeProyectos.Services;
 using Microsoft.EntityFrameworkCore;
-
-
 
 namespace DesarrollodeProyectos.Controllers
 {
     public class UserController : Controller
-
     {
         private readonly UserManager<IdentityUser> _userManager;
         private readonly SignInManager<IdentityUser> _signInManager;
+        private readonly RoleManager<IdentityRole> _roleManager;
         private readonly ApplicationDbContext _context;
 
-        public UserController(UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager, ApplicationDbContext context)
+        public UserController(UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager, RoleManager<IdentityRole> roleManager, ApplicationDbContext context)
         {
             this._userManager = userManager;
             this._signInManager = signInManager;
+            this._roleManager = roleManager;
             this._context = context;
         }
 
@@ -44,10 +38,10 @@ namespace DesarrollodeProyectos.Controllers
                 return View(model);
             }
 
-            var user = new IdentityUser() 
+            var user = new IdentityUser()
             {
                 Email = model.Email,
-                UserName = model.Email, 
+                UserName = model.Email,
             };
 
             var result = await _userManager.CreateAsync(user, password: model.Password);
@@ -56,7 +50,7 @@ namespace DesarrollodeProyectos.Controllers
                 await _signInManager.SignInAsync(user, isPersistent: true);
                 return RedirectToAction("Index", "Home");
             }
-            else 
+            else
             {
                 foreach (var error in result.Errors)
                 {
@@ -67,10 +61,11 @@ namespace DesarrollodeProyectos.Controllers
             }
         }
 
-    [AllowAnonymous]
+        [AllowAnonymous]
         public IActionResult Login(string message = null)
         {
-            if (message is not null) {
+            if (message is not null)
+            {
                 ViewData["message"] = message;
             }
             return View();
@@ -94,7 +89,6 @@ namespace DesarrollodeProyectos.Controllers
             {
                 ModelState.AddModelError(string.Empty, "El Nombre de usuario o password son incorrectos");
                 return View(model);
-
             }
         }
 
@@ -105,24 +99,38 @@ namespace DesarrollodeProyectos.Controllers
             return RedirectToAction("Index", "Home");
         }
 
-        public IActionResult List(string msg=null)
+        public async Task<IActionResult> List(string msg = null)
         {
-         var userList = _context.Users.Select(x => new UserViewModel
-         {
-        User = x.UserName, 
-        Email = x.Email,   
-        Confirmed = x.EmailConfirmed
-         }).ToList();
+            var users = await _userManager.Users.ToListAsync();
 
-         var userListViewModel = new UserListViewModel();
+            var userList = new List<UserViewModel>();
 
-        userListViewModel.UserList = userList;
-        userListViewModel.Message=msg;
-        return View(userListViewModel);
-        
+            foreach (var user in users)
+            {
+                var roles = await _userManager.GetRolesAsync(user);
+                userList.Add(new UserViewModel
+                {
+                    User = user.UserName,
+                    Email = user.Email,
+                    Confirmed = user.EmailConfirmed,
+                    Roles = roles.ToList()
+                });
+            }
+
+            var allRoles = await _roleManager.Roles.Select(r => r.Name).ToListAsync();
+
+            var userListViewModel = new UserListViewModel
+            {
+                UserList = userList,
+                ListadeRoles = allRoles,
+                Message = msg
+            };
+
+            return View(userListViewModel);
         }
-         [HttpPost]
-        public  async Task<IActionResult> HacerAdmin(string email)
+
+        [HttpPost]
+        public async Task<IActionResult> HacerAdmin(string email)
         {
             var usuario = await _context.Users
                 .FirstOrDefaultAsync(u => u.Email == email);
@@ -134,8 +142,7 @@ namespace DesarrollodeProyectos.Controllers
 
             await _userManager.AddToRoleAsync(usuario, Constantss.RolAdmin);
 
-            return RedirectToAction("List", 
-                routeValues: new { msg = "Rol asignado correctamente a " + email });
+            return RedirectToAction("List", new { msg = "Rol asignado correctamente a " + email });
         }
 
         [HttpPost]
@@ -151,10 +158,57 @@ namespace DesarrollodeProyectos.Controllers
 
             await _userManager.RemoveFromRoleAsync(usuario, Constantss.RolAdmin);
 
-            return RedirectToAction("List",
-                routeValues: new { msg = "Rol removido correctamente a " + email });
+            return RedirectToAction("List", new { msg = "Rol removido correctamente a " + email });
         }
 
+        [HttpPost]
+        public async Task<IActionResult> AsignarRol(string email, string roleToAssign)
+        {
+            var usuario = await _userManager.FindByEmailAsync(email);
 
-    }
+            if (usuario == null)
+            {
+                return NotFound();
+            }
+
+            var result = await _userManager.AddToRoleAsync(usuario, roleToAssign);
+
+            if (result.Succeeded)
+            {
+                return RedirectToAction("List", new { msg = "Rol asignado correctamente." });
+            }
+
+            foreach (var error in result.Errors)
+            {
+                ModelState.AddModelError("", error.Description);
+            }
+
+            return RedirectToAction("List");
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> QuitarRol(string email, string rol)
+        {
+            var usuario = await _userManager.FindByEmailAsync(email);
+
+            if (usuario == null)
+            {
+                return NotFound();
+            }
+
+            var result = await _userManager.RemoveFromRoleAsync(usuario, rol);
+
+            if (result.Succeeded)
+            {
+                return RedirectToAction("List", new { msg = "Rol eliminado correctamente." });
+            }
+
+            foreach (var error in result.Errors)
+            {
+                ModelState.AddModelError("", error.Description);
+            }
+
+            return RedirectToAction("List");
+        }
+    } // Esta es la llave que cierra correctamente el controlador
 }

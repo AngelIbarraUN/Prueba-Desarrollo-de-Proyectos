@@ -12,12 +12,14 @@ namespace DesarrollodeProyectos.Models
         
        public UserListViewModel()
        {
-
+        ListadeRoles = new List<string>();  
 
        }
        
         public List<UserViewModel> UserList { get; set; }
 
         public string Message { get; set; }
+
+         public List<string> ListadeRoles { get; set; }
     }
 }

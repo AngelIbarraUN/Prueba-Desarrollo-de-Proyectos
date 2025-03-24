@@ -2,7 +2,7 @@
 @model List<CapModel>
 @{
     ViewData["Title"] = "Lista de Gorras";
-    int numero = 0;  
+    int numero = 0;
 }
 
 <h1>@ViewData["Title"]</h1>
@@ -20,13 +20,14 @@
             <th scope="col">Cantidad</th>
             <th scope="col">Precio</th>
             <th scope="col">Imagen</th>
+            <th scope="col">Fecha de Registro</th> <!-- Nueva columna para la fecha -->
             <th scope="col">Acciones</th>
         </tr>
     </thead>
     <tbody>
         @foreach (var cap in Model)
         {
-            numero++; 
+            numero++;
             <tr>
                 <th scope="row">@numero</th>
                 <td>@cap.Name</td>
@@ -42,6 +43,7 @@
                         <img src="@cap.ImageUrl" alt="Imagen de la Gorra" style="width: 100px;" />
                     }
                 </td>
+                <td>@cap.CreationTime.ToString("dd/MM/yyyy")</td> <!-- Muestra la fecha de creación -->
                 <td>
                     <a class="btn btn-outline-info" asp-action="CapEdit" asp-controller="Cap" asp-route-id="@cap.Id">Editar</a>
                     <a class="btn btn-outline-danger" asp-action="CapDeleted" asp-controller="Cap" asp-route-id="@cap.Id">Borrar</a>

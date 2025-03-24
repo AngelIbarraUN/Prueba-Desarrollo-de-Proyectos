@@ -67,38 +67,41 @@ namespace DesarrollodeProyectos.Controllers
                 MaterialId = sweaterModel.MaterialId,
                 Quantity = sweaterModel.Quantity,
                 CategoryId = sweaterModel.CategoryId,
-                ImageUrl = sweaterModel.ImageUrl
+                ImageUrl = sweaterModel.ImageUrl,
+                CreationTime = DateTime.Now 
             };
 
             _context.Sweaters.Add(sweaterEntity);
             await _context.SaveChangesAsync();
 
-            return RedirectToAction("SweaterList");
+            return RedirectToAction("SweaterList","Sweater");
         }
 
         public async Task<IActionResult> SweaterList()
+    {
+         var sweaters = await _context.Sweaters
+        .Where(s => s.IsActive) 
+        .Include(s => s.Size)
+        .Include(s => s.Material)
+        .Include(s => s.Category)
+        .ToListAsync();
+
+        var sweaterModels = sweaters.Select(s => new SweaterModel
         {
-            var sweaters = await _context.Sweaters
-                .Include(s => s.Size)
-                .Include(s => s.Material)
-                .Include(s => s.Category)
-                .ToListAsync();
+         Id = s.Id,
+         Name = s.Name,
+         Color = s.Color,
+         Size = s.Size,
+         Material = s.Material,
+         Category = s.Category,
+         Quantity = s.Quantity,
+         Price = s.Price,
+         ImageUrl = s.ImageUrl
+        }).ToList();
 
-            var sweaterModels = sweaters.Select(s => new SweaterModel
-            {
-                Id = s.Id,
-                Name = s.Name,
-                Color = s.Color,
-                Size = s.Size,
-                Material = s.Material,
-                Category = s.Category,
-                Quantity = s.Quantity,
-                Price = s.Price,
-                ImageUrl = s.ImageUrl
-            }).ToList();
+    return View(sweaterModels);
+    }
 
-            return View(sweaterModels);
-        }
 
         public async Task<IActionResult> SweaterEdit(Guid id)
         {
@@ -175,30 +178,56 @@ namespace DesarrollodeProyectos.Controllers
             return RedirectToAction("SweaterList");
         }
 
-        public async Task<IActionResult> SweaterDeleted(Guid id)
+                public async Task<IActionResult> SweaterDeleted(Guid id)
         {
-            var sweater = await _context.Sweaters.FirstOrDefaultAsync(s => s.Id == id);
+            var sweater = await this._context.Sweaters
+                .Where(s => s.Id == id)
+                .FirstOrDefaultAsync();
+
             if (sweater == null)
             {
                 _logger.LogError("No se encontró el suéter");
-                return RedirectToAction("SweaterList");
+                return RedirectToAction("SweaterList", "Sweater");
             }
-            return View(new SweaterModel { Id = sweater.Id, Name = sweater.Name, Quantity = sweater.Quantity, Color = sweater.Color, Price = sweater.Price });
+
+            SweaterModel model = new SweaterModel
+            {
+                Id = sweater.Id,
+                Name = sweater.Name,
+                Quantity = sweater.Quantity,
+                Color = sweater.Color,
+                Size = sweater.Size,
+                Price = sweater.Price,
+                IsActive = sweater.IsActive 
+            };
+
+            return View(model);
         }
 
         [HttpPost]
-        public async Task<IActionResult> SweaterDeleted(SweaterModel model)
+        public async Task<IActionResult> SweaterDeleted(SweaterModel sweater)
         {
-            var sweater = await _context.Sweaters.FindAsync(model.Id);
-            if (sweater == null)
-            {
-                return NotFound();
-            }
+         bool exists = await this._context.Sweaters.AnyAsync(s => s.Id == sweater.Id);
+         if (!exists)
+         {
+                _logger.LogError("No se encontró el suéter");
+             return View(sweater);
+         }
 
-            _context.Sweaters.Remove(sweater);
-            await _context.SaveChangesAsync();
+          // Obtener el suéter de la base de datos
+         Sweater sweaterEntity = await this._context.Sweaters
+                .Where(s => s.Id == sweater.Id)
+                .FirstAsync();
 
-            return RedirectToAction("SweaterList");
+         sweaterEntity.IsActive = false;
+
+         // Guardar los cambios en la base de datos
+         this._context.Update(sweaterEntity);
+            await this._context.SaveChangesAsync();
+
+             // Redirigir a la lista de suéteres
+              return RedirectToAction("SweaterList", "Sweater");
         }
+
     }
 }

@@ -4891,11 +4891,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\usuario\\Desktop\\PruebaDesarrollodeProyectos\\DesarrollodeProyectos\\DesarrollodeProyectos.csproj",
+      "projectUniqueName": "C:\\Users\\usuario\\Desktop\\Prueba2DeProyecto\\Prueba-Desarrollo-de-Proyectos\\DesarrollodeProyectos\\DesarrollodeProyectos.csproj",
       "projectName": "DesarrollodeProyectos",
-      "projectPath": "C:\\Users\\usuario\\Desktop\\PruebaDesarrollodeProyectos\\DesarrollodeProyectos\\DesarrollodeProyectos.csproj",
+      "projectPath": "C:\\Users\\usuario\\Desktop\\Prueba2DeProyecto\\Prueba-Desarrollo-de-Proyectos\\DesarrollodeProyectos\\DesarrollodeProyectos.csproj",
       "packagesPath": "C:\\Users\\usuario\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\usuario\\Desktop\\PruebaDesarrollodeProyectos\\DesarrollodeProyectos\\obj\\",
+      "outputPath": "C:\\Users\\usuario\\Desktop\\Prueba2DeProyecto\\Prueba-Desarrollo-de-Proyectos\\DesarrollodeProyectos\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

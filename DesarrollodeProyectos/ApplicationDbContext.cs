@@ -1,5 +1,5 @@
-
 using DesarrollodeProyectos.Identity;
+using DesarrollodeProyectos.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
@@ -16,5 +16,12 @@ public class ApplicationDbContext : IdentityDbContext
           public DbSet<Category> Categories { get; set; }
           
           public DbSet<Size> Sizes { get; set; }
-    
+
+          public DbSet<Supplier> Suppliers { get; set; }
+
+           public DbSet<Order> Orders { get; set; }
+
+           public DbSet<OrderDetail> OrderDetails { get; set; }
+
+          
 }

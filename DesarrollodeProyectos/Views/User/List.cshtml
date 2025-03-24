@@ -7,10 +7,18 @@
 
 <h1>Listado de usuarios</h1>
 
-@if (Model.Message is not null)
+@if (TempData["Message"] is not null)
 {
     <div class="alert alert-success" role="alert">
-        @Model.Message
+        <strong>✅ Éxito:</strong> @TempData["Message"]
+    </div>
+}
+
+@if (TempData["ErrorMessage"] is not null)
+{
+    <div class="alert alert-danger fw-bold text-danger border border-danger p-2">
+        <i class="bi bi-exclamation-triangle-fill"></i> 
+        ⚠️ <strong>Error:</strong> @TempData["ErrorMessage"]
     </div>
 }
 
@@ -22,7 +30,6 @@
                 <th>Acción</th>
                 <th>User</th>
                 <th>Email</th>
-                <th>Confirmed</th>
                 <th>Roles</th>
             </tr>
         </thead>
@@ -35,13 +42,11 @@
                         {
                             <span class="badge bg-info">@role</span>
 
-                            <!-- Botón para quitar un rol específico -->
                             <form method="post" class="d-inline" asp-action="QuitarRol" asp-route-email="@usuario.Email" asp-route-rol="@role">
                                 <button type="submit" class="btn btn-warning btn-sm me-2">Quitar @role</button>
                             </form>
                         }
                         
-                        <!-- Lista desplegable para asignar un rol -->
                         <form method="post" class="d-inline" asp-action="AsignarRol" asp-route-email="@usuario.Email">
                             <select name="roleToAssign" class="form-control form-control-sm">
                                 @foreach (var role in Model.ListadeRoles) 
@@ -54,7 +59,6 @@
                     </td>
                     <td>@usuario.User</td>
                     <td>@usuario.Email</td>
-                    <td>@usuario.Confirmed</td>
                     <td>
                         @foreach (var role in usuario.Roles)
                         {

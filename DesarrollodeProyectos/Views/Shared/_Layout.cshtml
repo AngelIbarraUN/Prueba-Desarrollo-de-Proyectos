@@ -40,20 +40,23 @@
                         <li class="nav-item">
                            <a class="nav-link text-dark" asp-area="" asp-controller="Cap" asp-action="CapList">Listado de Gorras</a>
                         </li> 
+                         <li class="nav-item">
+                           <a class="nav-link text-dark" asp-area="" asp-controller="Supplier" asp-action="SupplierList">Listado de Proveedores</a>
+                        </li> 
                         <li class="nav-item">
                            <a class="nav-link text-dark" asp-area="" asp-controller="Shirt" asp-action="ShirtList">Listado de Camisas</a>
                         </li>
                         <li class="nav-item">
                            <a class="nav-link text-dark" asp-area="" asp-controller="Sweater" asp-action="SweaterList">Listado de Sueteres</a>
                         </li>
-                       @if(User.IsInRole(Constantss.RolAdmin))
-                        {<li class="nav-item">
+                      
+                        <li class="nav-item">
                            <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="List">Lista de Usuarios</a>
                         </li>
                         <li class="nav-item">
                            <a class="nav-link text-dark" asp-area="" asp-controller="Rol" asp-action="RolList">Lista de Roles</a>
                         </li>
-                        }
+                        
                     </ul>
                 </div>
             </div>

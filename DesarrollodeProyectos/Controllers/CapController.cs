@@ -73,7 +73,8 @@ namespace DesarrollodeProyectos.Controllers
                 MaterialId = capModel.MaterialId,
                 Quantity = capModel.Quantity,
                 CategoryId = capModel.CategoryId,
-                ImageUrl = capModel.ImageUrl
+                ImageUrl = capModel.ImageUrl,
+                CreationTime = DateTime.Now
             };
 
             _context.Caps.Add(capEntity);
@@ -82,9 +83,10 @@ namespace DesarrollodeProyectos.Controllers
             return RedirectToAction("CapList");
         }
 
-        public async Task<IActionResult> CapList()
+                public async Task<IActionResult> CapList()
         {
             var caps = await _context.Caps
+                .Where(c => c.IsActive && c.Category.IsActive ) 
                 .Include(c => c.Size)
                 .Include(c => c.Material)
                 .Include(c => c.Category)
@@ -105,6 +107,7 @@ namespace DesarrollodeProyectos.Controllers
 
             return View(capModels);
         }
+
 
         public async Task<IActionResult> CapEdit(Guid id)
         {
@@ -181,32 +184,56 @@ namespace DesarrollodeProyectos.Controllers
             return RedirectToAction("CapList");
         }
 
-        public async Task<IActionResult> CapDeleted(Guid id)
+             public async Task<IActionResult> CapDeleted(Guid id)
         {
-            var cap = await _context.Caps.FirstOrDefaultAsync(c => c.Id == id);
+            var cap = await this._context.Caps
+                .Where(c => c.Id == id)
+                .FirstOrDefaultAsync();
+
             if (cap == null)
             {
                 _logger.LogError("No se encontró la gorra");
-                return RedirectToAction("CapList");
+                return RedirectToAction("CapList", "Cap");
             }
 
-            return View(new CapModel { Id = cap.Id, Name = cap.Name, Quantity = cap.Quantity, Color = cap.Color, Price = cap.Price });
-        }
+            // Convertir la gorra a CapModel para mostrar en la vista
+            CapModel model = new CapModel
+            {
+                Id = cap.Id,
+                Name = cap.Name,
+                Quantity = cap.Quantity,
+                Color = cap.Color,
+                Size = cap.Size,
+                Price = cap.Price,
+                IsActive = cap.IsActive // Mostrar el estado actual de la gorra
+            };
 
-        [HttpPost]
+            return View(model);
+        }
+                [HttpPost]
         public async Task<IActionResult> CapDeleted(CapModel cap)
         {
-            var capEntity = await _context.Caps.FindAsync(cap.Id);
-            if (capEntity == null)
+            bool exists = await this._context.Caps.AnyAsync(c => c.Id == cap.Id);
+            if (!exists)
             {
                 _logger.LogError("No se encontró la gorra");
                 return View(cap);
             }
 
-            _context.Caps.Remove(capEntity);
-            await _context.SaveChangesAsync();
+            // Obtener la gorra de la base de datos
+            Cap capEntity = await this._context.Caps
+                .Where(c => c.Id == cap.Id)
+                .FirstAsync();
 
-            return RedirectToAction("CapList");
+            capEntity.IsActive = false; // Marcar la gorra como inactiva
+
+            // Guardar los cambios en la base de datos
+            this._context.Update(capEntity);
+            await this._context.SaveChangesAsync();
+
+            // Redirigir a la lista de gorras
+            return RedirectToAction("CapList", "Cap");
         }
+
     }
 }

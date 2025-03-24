@@ -1,0 +1,26 @@
+@using DesarrollodeProyectos.Identity
+
+@model SupplierModel
+
+@{
+    ViewData["Title"] = "Borrar el proveedor";
+}
+
+<h3 class="mb-3"></h3>
+
+<form asp-controller="Supplier" asp-action="SupplierDeleted">
+
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">Información del Proveedor</h5>
+            <h6 class="card-subtitle mb-2 text-body-secondary">¿Está seguro que desea borrar el proveedor?</h6>
+            <p class="card-text">Proveedor: @Model.Name</p>
+            <p class="card-text">Número de Teléfono: @Model.PhoneNumber</p>
+            <p class="card-text">Fecha de Creación: @Model.CreationTime.ToShortDateString()</p>
+        </div>
+    </div>
+
+    <input type="hidden" asp-for="Id" />
+    <button type="submit" class="btn btn-outline-danger">Borrar</button>
+    <a class="btn btn-outline-secondary" asp-action="SupplierList" asp-controller="Supplier">Cancelar</a>
+</form>

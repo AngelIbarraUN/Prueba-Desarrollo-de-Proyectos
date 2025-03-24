@@ -37,7 +37,8 @@ namespace DesarrollodeProyectos.Controllers
             {
                 Id = Guid.NewGuid(),
                 Name = categoryModel.Name,
-                Description = categoryModel.Description
+                Description = categoryModel.Description,
+                CreationTime = DateTime.Now
             };
 
             _context.Categories.Add(categoryEntity);
@@ -46,20 +47,23 @@ namespace DesarrollodeProyectos.Controllers
             return RedirectToAction("CategoryList"); // Redirige a la lista de categorías
         }
 
-        public async Task<IActionResult> CategoryList()
-{
-    var categories = await _context.Categories.ToListAsync();
-    
-    // Mapear las entidades a modelos de vista
-    var categoryModels = categories.Select(c => new CategoryModel
-    {
-        Id = c.Id,
-        Name = c.Name,
-        Description = c.Description
-    }).ToList();
+                public async Task<IActionResult> CategoryList()
+        {
+            var categories = await _context.Categories
+                                   .Where(c => c.IsActive)  
+                                   .ToListAsync();
 
-    return View(categoryModels); // Pasar los modelos a la vista
-}
+            var categoryModels = categories.Select(c => new CategoryModel
+            {
+                Id = c.Id,
+                Name = c.Name,
+                Description = c.Description,
+                IsActive = c.IsActive 
+            }).ToList();
+
+            return View(categoryModels); 
+        }
+
 
 
         // Acción para editar una categoría
@@ -81,7 +85,8 @@ namespace DesarrollodeProyectos.Controllers
             {
                 Id = category.Id,
                 Name = category.Name,
-                Description = category.Description
+                Description = category.Description,
+                CreationTime = DateTime.Now
             };
 
             return View(categoryModel);
@@ -115,7 +120,7 @@ namespace DesarrollodeProyectos.Controllers
         }
 
        [HttpGet]
-       public async Task<IActionResult> CategoryDelete(Guid id)
+public async Task<IActionResult> CategoryDelete(Guid id)
 {
     if (id == Guid.Empty)
     {
@@ -136,7 +141,7 @@ namespace DesarrollodeProyectos.Controllers
         Description = category.Description
     };
 
-    return View(model); // Devolver la vista CategoryDeleted.cshtml con el modelo
+    return View("CategoryDeleted",model); // Devolver la vista CategoryDeleted.cshtml con el modelo
 }
 
 
@@ -150,6 +155,9 @@ public async Task<IActionResult> CategoryDelete(CategoryModel categoryModel)
         return NotFound();
     }
 
+    // Marcar la categoría como inactiva
+    categoryEntity.IsActive = false;
+
     // Actualizar productos asociados para asignarles una categoría nula
     var shirts = await _context.Shirts.Where(s => s.CategoryId == categoryModel.Id).ToListAsync();
     var sweaters = await _context.Sweaters.Where(s => s.CategoryId == categoryModel.Id).ToListAsync();
@@ -157,21 +165,21 @@ public async Task<IActionResult> CategoryDelete(CategoryModel categoryModel)
 
     foreach (var shirt in shirts)
     {
-        shirt.CategoryId = null;
+        shirt.CategoryId = null; // Desasociar la categoría de las camisetas
     }
 
     foreach (var sweater in sweaters)
     {
-        sweater.CategoryId = null;
+        sweater.CategoryId = null; // Desasociar la categoría de los suéteres
     }
 
     foreach (var cap in caps)
     {
-        cap.CategoryId = null;
+        cap.CategoryId = null; // Desasociar la categoría de las gorras
     }
 
-    // Eliminar la categoría
-    _context.Categories.Remove(categoryEntity);
+    // Guardar cambios en la base de datos
+    _context.Update(categoryEntity);
     await _context.SaveChangesAsync();
 
     return RedirectToAction("CategoryList"); // Redirige a la lista de categorías

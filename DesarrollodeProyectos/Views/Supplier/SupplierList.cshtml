@@ -1,0 +1,53 @@
+@using DesarrollodeProyectos.Identity
+@model List<SupplierModel>
+@{
+    ViewData["Title"] = "Lista de Proveedores";
+    int numero = 0;
+}
+
+<h1>@ViewData["Title"]</h1>
+<a class="btn btn-outline-primary" asp-action="SupplierAdd" asp-asp-controller="Supplier">Agregar Proveedor</a>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Teléfono</th>
+            <th scope="col">Estado</th>
+            <th scope="col">Fecha de Registro</th>
+            <th scope="col">Materiales</th>
+            <th scope="col">Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var supplier in Model)
+        {
+            numero++;
+            <tr>
+                <th scope="row">@numero</th>
+                <td>@supplier.Name</td>
+                <td>@supplier.PhoneNumber</td>
+                <td>@(supplier.IsActive ? "Activo" : "Inactivo")</td>
+                <td>@supplier.CreationTime.ToString("dd/MM/yyyy")</td>
+                <td>
+                    @if (supplier.Materials != null && supplier.Materials.Any())
+                    {
+                        foreach (var material in supplier.Materials)
+                        {
+                            <span>@material.Name</span><br />
+                        }
+                    }
+                    else
+                    {
+                        <span>No tiene materiales asociados</span>
+                    }
+                </td>
+                <td>
+                    <a class="btn btn-outline-info" asp-action="SupplierEdit" asp-controller="Supplier" asp-route-id="@supplier.Id">Editar</a>
+                    <a class="btn btn-outline-danger" asp-action="SupplierDeleted" asp-controller="Supplier" asp-route-id="@supplier.Id">Borrar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

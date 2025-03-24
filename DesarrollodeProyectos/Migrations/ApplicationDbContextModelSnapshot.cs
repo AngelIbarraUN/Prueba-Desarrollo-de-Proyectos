@@ -220,7 +220,7 @@ namespace DesarrollodeProyectos.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Supplier");
+                    b.ToTable("Suppliers");
                 });
 
             modelBuilder.Entity("DesarrollodeProyectos.Identity.Sweater", b =>
@@ -270,6 +270,77 @@ namespace DesarrollodeProyectos.Migrations
                     b.HasIndex("SizeId");
 
                     b.ToTable("Sweaters");
+                });
+
+            modelBuilder.Entity("DesarrollodeProyectos.Models.Order", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("OrderDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("TotalAmount")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Orders");
+                });
+
+            modelBuilder.Entity("DesarrollodeProyectos.Models.OrderDetail", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid?>("CapId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("OrderId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<Guid>("ProductId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("ProductType")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
+                    b.Property<Guid?>("ShirtId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid?>("SweaterId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CapId");
+
+                    b.HasIndex("OrderId");
+
+                    b.HasIndex("ShirtId");
+
+                    b.HasIndex("SweaterId");
+
+                    b.ToTable("OrderDetails");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -542,6 +613,35 @@ namespace DesarrollodeProyectos.Migrations
                     b.Navigation("Size");
                 });
 
+            modelBuilder.Entity("DesarrollodeProyectos.Models.OrderDetail", b =>
+                {
+                    b.HasOne("DesarrollodeProyectos.Identity.Cap", "Cap")
+                        .WithMany()
+                        .HasForeignKey("CapId");
+
+                    b.HasOne("DesarrollodeProyectos.Models.Order", "Order")
+                        .WithMany("OrderDetails")
+                        .HasForeignKey("OrderId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("DesarrollodeProyectos.Identity.Shirt", "Shirt")
+                        .WithMany()
+                        .HasForeignKey("ShirtId");
+
+                    b.HasOne("DesarrollodeProyectos.Identity.Sweater", "Sweater")
+                        .WithMany()
+                        .HasForeignKey("SweaterId");
+
+                    b.Navigation("Cap");
+
+                    b.Navigation("Order");
+
+                    b.Navigation("Shirt");
+
+                    b.Navigation("Sweater");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -623,6 +723,11 @@ namespace DesarrollodeProyectos.Migrations
             modelBuilder.Entity("DesarrollodeProyectos.Identity.Supplier", b =>
                 {
                     b.Navigation("Materials");
+                });
+
+            modelBuilder.Entity("DesarrollodeProyectos.Models.Order", b =>
+                {
+                    b.Navigation("OrderDetails");
                 });
 #pragma warning restore 612, 618
         }

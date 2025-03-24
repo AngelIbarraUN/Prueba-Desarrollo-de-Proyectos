@@ -187,28 +187,39 @@ namespace DesarrollodeProyectos.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> QuitarRol(string email, string rol)
+public async Task<IActionResult> QuitarRol(string email, string rol)
+{
+    var user = await _userManager.FindByEmailAsync(email);
+    if (user == null)
+    {
+        return NotFound();
+    }
+
+    // Verificar si se intenta eliminar el rol "Admin"
+    if (rol == "ADMIN")
+    {
+        var admins = await _userManager.GetUsersInRoleAsync("ADMIN");
+
+        // Si solo hay un administrador, no permitir la eliminación
+        if (admins.Count == 1)
         {
-            var usuario = await _userManager.FindByEmailAsync(email);
-
-            if (usuario == null)
-            {
-                return NotFound();
-            }
-
-            var result = await _userManager.RemoveFromRoleAsync(usuario, rol);
-
-            if (result.Succeeded)
-            {
-                return RedirectToAction("List", new { msg = "Rol eliminado correctamente." });
-            }
-
-            foreach (var error in result.Errors)
-            {
-                ModelState.AddModelError("", error.Description);
-            }
-
+            TempData["ErrorMessage"] = "⚠️No puedes eliminar el último administrador del sistema.";
             return RedirectToAction("List");
         }
-    } // Esta es la llave que cierra correctamente el controlador
+    }
+
+    var result = await _userManager.RemoveFromRoleAsync(user, rol);
+    if (result.Succeeded)
+    {
+        TempData["Message"] = $"Rol {rol} eliminado correctamente.";
+    }
+    else
+    {
+        TempData["Message"] = "Hubo un problema al eliminar el rol.";
+    }
+
+    return RedirectToAction("List");
+}
+
+    } 
 }

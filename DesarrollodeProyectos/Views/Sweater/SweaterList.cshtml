@@ -20,6 +20,7 @@
             <th scope="col">Cantidad</th>
             <th scope="col">Precio</th>
             <th scope="col">Imagen</th>
+            <th scope="col">Fecha de Registro</th> <!-- Nueva columna para la fecha -->
             <th scope="col">Acciones</th>
         </tr>
     </thead>
@@ -39,9 +40,10 @@
                 <td>
                     @if (!string.IsNullOrEmpty(sweater.ImageUrl))
                     {
-                        <img src="@sweater.ImageUrl" alt="Imagen del Suéter" style="width: 100px;" />
+                        <img src="@sweater.ImageUrl" alt="Imagen del Suéter" style="width: 100px;height: 100px; object-fit: cover;" />
                     }
                 </td>
+                <td>@sweater.CreationTime.ToString("dd/MM/yyyy")</td> 
                 <td>
                     <a class="btn btn-outline-info" asp-action="SweaterEdit" asp-controller="Sweater" asp-route-id="@sweater.Id">Editar</a>
                     <a class="btn btn-outline-danger" asp-action="SweaterDeleted" asp-controller="Sweater" asp-route-id="@sweater.Id">Borrar</a>

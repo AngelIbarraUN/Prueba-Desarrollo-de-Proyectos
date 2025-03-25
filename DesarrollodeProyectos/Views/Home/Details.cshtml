@@ -1,14 +1,22 @@
-@*
-@model DesarrollodeProyectos.Entities
+@model DesarrollodeProyectos.Models.Order
 
 <div class="container mt-4">
     <h2 class="mb-4 text-center">Detalles del Pedido @Model.Id</h2>
 
     <div class="card mb-4">
         <div class="card-body">
+            <p class="card-text"><strong>Correo Electrónico:</strong> @Model.UserEmail</p>
             <p class="card-text"><strong>Fecha del pedido:</strong> @Model.OrderDate</p>
             <p class="card-text"><strong>Total:</strong> @Model.TotalAmount</p>
             <p class="card-text"><strong>Estado:</strong> @Model.Status</p>
+
+            @if (Model.Status == DesarrollodeProyectos.Models.OrderStatus.Pendiente)
+            {
+                <form asp-action="CancelOrder" method="post">
+                    <input type="hidden" name="orderId" value="@Model.Id" />
+                    <button type="submit" class="btn btn-danger">Cancelar Pedido</button>
+                </form>
+            }
         </div>
     </div>
 
@@ -17,6 +25,7 @@
         <table class="table table-striped table-bordered">
             <thead class="thead-dark">
                 <tr>
+                    <th>Imagen</th>
                     <th>Producto</th>
                     <th>Cantidad</th>
                     <th>Precio</th>
@@ -27,7 +36,13 @@
                 @foreach (var detail in Model.OrderDetails)
                 {
                     <tr>
-                        <td>@detail.ProductName</td> 
+                        <td>
+                            @if (!string.IsNullOrEmpty(detail.ImageUrl))
+                            {
+                                <img src="@detail.ImageUrl" alt="@detail.ProductName" style="max-width: 100px; max-height: 100px;" />
+                            }
+                        </td>
+                        <td>@detail.ProductName</td>
                         <td>@detail.Quantity</td>
                         <td>@detail.Price</td>
                         <td>@(detail.Quantity * detail.Price)</td>
@@ -36,4 +51,4 @@
             </tbody>
         </table>
     </div>
-</div>*@
+</div>

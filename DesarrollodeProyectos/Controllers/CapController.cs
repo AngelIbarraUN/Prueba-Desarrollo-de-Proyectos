@@ -80,13 +80,13 @@ namespace DesarrollodeProyectos.Controllers
             _context.Caps.Add(capEntity);
             await _context.SaveChangesAsync();
 
-            return RedirectToAction("CapList");
+            return RedirectToAction("CapList","Cap");
         }
 
                 public async Task<IActionResult> CapList()
         {
             var caps = await _context.Caps
-                .Where(c => c.IsActive && c.Category.IsActive ) 
+                .Where(c => c.IsActive) 
                 .Include(c => c.Size)
                 .Include(c => c.Material)
                 .Include(c => c.Category)

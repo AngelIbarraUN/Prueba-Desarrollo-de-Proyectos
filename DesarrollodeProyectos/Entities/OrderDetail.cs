@@ -24,5 +24,8 @@ namespace DesarrollodeProyectos.Models
         public Shirt? Shirt { get; set; }
         public Cap? Cap { get; set; }
         public Sweater? Sweater { get; set; }
+        public string? ProductName { get; internal set; }
+
+        public string ImageUrl { get; set; }
     }
 }

@@ -13,6 +13,8 @@ namespace DesarrollodeProyectos.Models
 
         public decimal TotalAmount { get; set; }
 
+         public string UserEmail { get; set; }
+
         public bool IsActive { get; set; } = true;
 
         public OrderStatus Status { get; set; }

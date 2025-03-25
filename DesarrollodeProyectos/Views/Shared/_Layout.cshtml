@@ -28,7 +28,9 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
-                        <li class="nav-item">
+                        
+                        @if(User.IsInRole("ADMIN"))
+                        {<li class="nav-item">
                            <a class="nav-link text-dark" asp-area="" asp-controller="Category" asp-action="CategoryList">Lista de Categorías</a>
                         </li>
                          <li class="nav-item">
@@ -49,24 +51,30 @@
                         <li class="nav-item">
                            <a class="nav-link text-dark" asp-area="" asp-controller="Sweater" asp-action="SweaterList">Listado de Sueteres</a>
                         </li>
-                         <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-controller="Product" asp-action="Index">Nuestros Productos</a>
-                        </li>
-                        <li class="nav-item">
+                            <li class="nav-item">
                          <a class="nav-link text-dark" asp-area="" asp-controller="Order" asp-action="History">Historial de Pedidos</a>
                         </li>
-                        <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-controller="Order" asp-action="MyOrders">Mis Pedidos</a>
-                        </li>>
-                        <li class="nav-item">
-                           <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="List">Lista de Usuarios</a>
-                        </li>
-                        <li class="nav-item">
+                         <li class="nav-item">
                            <a class="nav-link text-dark" asp-area="" asp-controller="Rol" asp-action="RolList">Lista de Roles</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Cart" asp-action="Index">Carrito</a>
+                           <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="List">Lista de Usuarios</a>
                         </li>
+                        }
+                        @if (User?.Identity?.IsAuthenticated == true)
+                    {
+                         <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Product" asp-action="Index">Nuestros Productos</a>
+                        </li>
+                         <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Order" asp-action="MyOrders">Mis Pedidos</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Cart" asp-action="Index">Carrito</a>
+                        </li>
+                    }
+
+
                     </ul>
                 </div>
             </div>

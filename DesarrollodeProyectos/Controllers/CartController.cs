@@ -143,63 +143,111 @@ public class CartController : Controller
     }
 
     [HttpPost]
-    public async Task<IActionResult> Checkout()
+public async Task<IActionResult> Checkout()
+{
+    var userId = _userManager.GetUserId(User);
+    if (userId == null)
     {
-        var userId = _userManager.GetUserId(User);
-        if (userId == null)
-        {
-            return Unauthorized();
-        }
-
-        var cart = await _context.Carts
-            .Include(c => c.CartItems)
-            .FirstOrDefaultAsync(c => c.UserId == userId);
-
-        if (cart == null || !cart.CartItems.Any())
-        {
-            return BadRequest("El carrito está vacío.");
-        }
-
-        var order = new Order
-        {
-            UserId = userId,
-            OrderDate = DateTime.Now,
-            TotalAmount = cart.CartItems.Sum(item => item.TotalPrice),
-            Status = OrderStatus.Pendiente,
-            OrderDetails = cart.CartItems.Select(item => new OrderDetail
-            {
-                ProductId = item.ProductId,
-                ProductType = item.ProductType,
-                Quantity = item.Quantity,
-                Price = item.Price
-            }).ToList()
-        };
-
-        foreach (var item in cart.CartItems)
-        {
-            switch (item.ProductType)
-            {
-                case "Shirt":
-                    var shirt = await _context.Shirts.FindAsync(item.ProductId);
-                    if (shirt != null) shirt.Quantity -= item.Quantity;
-                    break;
-                case "Cap":
-                    var cap = await _context.Caps.FindAsync(item.ProductId);
-                    if (cap != null) cap.Quantity -= item.Quantity;
-                    break;
-                case "Sweater":
-                    var sweater = await _context.Sweaters.FindAsync(item.ProductId);
-                    if (sweater != null) sweater.Quantity -= item.Quantity;
-                    break;
-            }
-        }
-
-        _context.Orders.Add(order);
-        _context.Carts.Remove(cart);
-        await _context.SaveChangesAsync();
-
-        return RedirectToAction("OrderConfirmation", new { orderId = order.Id });
+        return Unauthorized("Usuario no autenticado.");
     }
+
+    var cart = await _context.Carts
+        .Include(c => c.CartItems)
+        .FirstOrDefaultAsync(c => c.UserId == userId);
+
+    if (cart == null || !cart.CartItems.Any())
+    {
+        return BadRequest("El carrito está vacío.");
+    }
+
+    var user = await _userManager.FindByIdAsync(userId);
+    if (user == null)
+    {
+        return NotFound("Usuario no encontrado.");
+    }
+
+    var orderDetails = new List<OrderDetail>();
+    foreach (var item in cart.CartItems)
+    {
+        string imageUrl = null;
+        switch (item.ProductType)
+        {
+            case "Shirt":
+                var shirt = await _context.Shirts.FindAsync(item.ProductId);
+                if (shirt != null) imageUrl = shirt.ImageUrl;
+                break;
+            case "Cap":
+                var cap = await _context.Caps.FindAsync(item.ProductId);
+                if (cap != null) imageUrl = cap.ImageUrl;
+                break;
+            case "Sweater":
+                var sweater = await _context.Sweaters.FindAsync(item.ProductId);
+                if (sweater != null) imageUrl = sweater.ImageUrl;
+                break;
+            default:
+                // Manejo de tipo de producto desconocido (opcional)
+                break;
+        }
+
+        orderDetails.Add(new OrderDetail
+        {
+            ProductId = item.ProductId,
+            ProductType = item.ProductType,
+            Quantity = item.Quantity,
+            Price = item.Price,
+            ImageUrl = imageUrl
+        });
+    }
+
+    var order = new Order
+    {
+        UserId = userId,
+        UserEmail = user.Email,
+        OrderDate = DateTime.Now,
+        TotalAmount = cart.CartItems.Sum(item => item.TotalPrice),
+        Status = OrderStatus.Pendiente,
+        OrderDetails = orderDetails
+    };
+
+    foreach (var item in cart.CartItems)
+    {
+        switch (item.ProductType)
+        {
+            case "Shirt":
+                var shirt = await _context.Shirts.FindAsync(item.ProductId);
+                if (shirt != null) shirt.Quantity -= item.Quantity;
+                break;
+            case "Cap":
+                var cap = await _context.Caps.FindAsync(item.ProductId);
+                if (cap != null) cap.Quantity -= item.Quantity;
+                break;
+            case "Sweater":
+                var sweater = await _context.Sweaters.FindAsync(item.ProductId);
+                if (sweater != null) sweater.Quantity -= item.Quantity;
+                break;
+        }
+    }
+
+    using (var transaction = _context.Database.BeginTransaction())
+    {
+        try
+        {
+            _context.Orders.Add(order);
+            _context.Carts.Remove(cart);
+            await _context.SaveChangesAsync();
+            transaction.Commit();
+        }
+        catch (Exception ex)
+        {
+            transaction.Rollback();
+            // Registra el error (opcional)
+            Console.WriteLine($"Error al procesar el pedido: {ex.Message}");
+            return StatusCode(500, "Error al procesar el pedido.");
+        }
+    }
+
+    return RedirectToAction("OrderConfirmation", new { orderId = order.Id });
+}
 
     public IActionResult OrderConfirmation(Guid orderId)
     {

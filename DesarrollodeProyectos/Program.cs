@@ -12,6 +12,18 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<ApplicationDbContext>(opciones
  => opciones.UseSqlServer("name=ConexionSQL"));
 
+ builder.Services.AddHttpClient();
+
+
+ builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAll",
+        policy => policy.AllowAnyOrigin() 
+                        .AllowAnyMethod() 
+                        .AllowAnyHeader()); 
+});
+
+
 builder.Services.AddAuthentication();
 
 builder.Services.AddIdentity<IdentityUser, IdentityRole>(
@@ -39,6 +51,8 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseRouting();
+
+app.UseCors("AllowAll");
 
 app.UseAuthentication();
 app.UseAuthorization();

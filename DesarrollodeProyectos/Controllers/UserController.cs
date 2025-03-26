@@ -220,22 +220,6 @@ public async Task<IActionResult> QuitarRol(string email, string rol)
 
     return RedirectToAction("List");
 }
-
-         [HttpPost]
-        public IActionResult RecibirDatosFormulario(GoogleFormViewModel modelo)
-        {
-            if (ModelState.IsValid)
-            {
-                string email = modelo.Email;
-                string nombre = modelo.Nombre;
-                return Ok("Datos recibidos y validados con éxito.");
-            }
-            else
-            {
-                var errores = ModelState.Values.SelectMany(v => v.Errors).Select(e => e.ErrorMessage);
-                return BadRequest(errores);
-            }
-        }
-
+         
     } 
 }

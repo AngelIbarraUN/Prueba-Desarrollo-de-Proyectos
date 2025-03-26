@@ -1,4 +1,4 @@
-﻿@using DesarrollodeProyectos.Services;
+﻿@using DesarrollodeProyectos.Services
 
 <!DOCTYPE html>
 <html lang="en">
@@ -6,18 +6,79 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Creatisa</title>
-    <script type="importmap"></script>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/DesarrollodeProyectos.styles.css" asp-append-version="true" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
     <style>
-        .dropdown:hover .dropdown-menu {
+        .dropdown:hover .dropdown-menu { display: block; }
+        #productosDropdown, #datosDropdown, #usuariosDropdown { color: white !important; }
+
+        /* Sidebar styles (Imprenta theme) */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 250px;
+            height: 100%;
+            background-color: #212529; /* Dark background */
+            padding-top: 20px;
+            display: none; /* Initially hidden */
+            z-index: 1050;
+            color: white; /* Text color */
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .sidebar ul li {
+            margin: 10px 0;
+        }
+
+        .sidebar ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            padding: 10px;
             display: block;
         }
-        #productosDropdown, #datosDropdown, #usuariosDropdown {
-            color: white !important; 
+
+        .sidebar ul li a:hover {
+            background-color: #dc3545; /* Red hover effect */
         }
+
+        .sidebar .dropdown-toggle {
+            cursor: pointer;
+        }
+
+        .sidebar .dropdown-menu {
+            background-color: #343a40; /* Dark dropdown background */
+            border: none;
+            padding: 0;
+        }
+
+        .sidebar .dropdown-item {
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .sidebar .dropdown-item:hover {
+            background-color: #dc3545; /* Red hover effect */
+        }
+
+        .content-wrapper {
+            margin-left: 0;
+            transition: margin-left 0.3s;
+        }
+
+        .content-wrapper.shrink {
+            margin-left: 250px; /* Adjust content if sidebar is visible */
+        }
+
     </style>
 </head>
 <body>
@@ -25,65 +86,100 @@
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container px-5">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Creatisa Bordados y Serigrafía</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item"><a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" asp-area="" asp-controller="Home" asp-action="Privacy">Sobre Nosotros</a></li>
-                        <li class="nav-item"><a class="nav-link" asp-area="" asp-controller="Product" asp-action="Index">Nuestros Productos</a></li>
+                        <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="Index">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="Privacy">Sobre Nosotros</a></li>
+                        <li class="nav-item"><a class="nav-link" asp-controller="Product" asp-action="Index">Contacto</a></li>
+                        <li class="nav-item"><a class="nav-link" asp-controller="Product" asp-action="Index">FAQS</a></li>
+                        <li class="nav-item"><a class="nav-link" asp-controller="Product" asp-action="Index">Nuestros Productos</a></li>
 
                         @if (User.IsInRole("ADMIN"))
                         {
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="productosDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Productos
-                                </a>
-                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="productosDropdown">
-                                    <li><a class="dropdown-item" asp-area="" asp-controller="Cap" asp-action="CapList">Listado de Gorras</a></li>
-                                    <li><a class="dropdown-item" asp-area="" asp-controller="Shirt" asp-action="ShirtList">Listado de Camisas</a></li>
-                                    <li><a class="dropdown-item" asp-area="" asp-controller="Sweater" asp-action="SweaterList">Listado de Sueteres</a></li>
-                                </ul>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="datosDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Datos
-                                </a>
-                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="datosDropdown">
-                                    <li><a class="dropdown-item" asp-area="" asp-controller="Category" asp-action="CategoryList">Lista de Categorías</a></li>
-                                    <li><a class="dropdown-item" asp-area="" asp-controller="Size" asp-action="SizeList">Lista de Tallas</a></li>
-                                    <li><a class="dropdown-item" asp-area="" asp-controller="Material" asp-action="MaterialList">Tipo de Materiales</a></li>
-                                    <li><a class="dropdown-item" asp-area="" asp-controller="Supplier" asp-action="SupplierList">Listado de Proveedores</a></li>
-                                </ul>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="usuariosDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Usuarios
-                                </a>
-                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="usuariosDropdown">
-                                    <li><a class="dropdown-item" asp-area="" asp-controller="Rol" asp-action="RolList">Lista de Roles</a></li>
-                                    <li><a class="dropdown-item" asp-area="" asp-controller="User" asp-action="List">Lista de Usuarios</a></li>
-                                </ul>
-                            </li>
-                            <li class="nav-item"><a class="nav-link" asp-area="" asp-controller="Order" asp-action="History">Historial de Pedidos</a></li>
+                            <script>
+                                document.addEventListener("DOMContentLoaded", function () {
+                                    document.querySelector('.sidebar').style.display = 'block';
+                                    document.querySelector('.content-wrapper').classList.add('shrink');
+                                });
+                            </script>
                         }
-                        @if (User?.Identity?.IsAuthenticated == true)
+                        @if (User.Identity.IsAuthenticated)
                         {
-                            
-                            <li class="nav-item"><a class="nav-link" asp-area="" asp-controller="Order" asp-action="MyOrders">Mis Pedidos</a></li>
-                            <li class="nav-item"><a class="nav-link" asp-area="" asp-controller="Cart" asp-action="Index">Carrito</a></li>
-
+                            <li class="nav-item"><a class="nav-link" asp-controller="Order" asp-action="MyOrders">Mis Pedidos</a></li>
+                         <li class="nav-item"><a class="nav-link" asp-controller="Cart" asp-action="Index">
+                         <img src="~/images/carritodecomprass.png" alt="Carrito" style="width: 27px; height: 27px;" /></a></li>   
                         }
-                        <partial name="_LinksLogin">
+                        <partial name="_LinksLogin" />
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
+
+       
+    
+    @if (User.IsInRole("ADMIN"))
+    {
+        <div class="sidebar">
+            <h2><i class="bi bi-person-fill"></i> Administrador</h2>
+            <ul>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                        <i class="bi bi-box-seam"></i> Inventario
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" asp-controller="Cap" asp-action="CapList"><i class="bi bi-person-badge"></i> Listado de Gorras</a></li>
+                        <li><a class="dropdown-item" asp-controller="Shirt" asp-action="ShirtList"><i class="bi bi-shop"></i> Listado de Camisas</a></li>
+                        <li><a class="dropdown-item" asp-controller="Sweater" asp-action="SweaterList"><i class="bi bi-thermometer-half"></i> Listado de Suéteres</a></li>
+                        <li><a class="dropdown-item" asp-controller="Material" asp-action="MaterialList"><i class="bi bi-layers-fill"></i> Tipo de Materiales</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                        <i class="bi bi-gear-fill"></i> Configuración de Productos
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" asp-controller="Category" asp-action="CategoryList"><i class="bi bi-tag-fill"></i> Lista de Categorías</a></li>
+                        <li><a class="dropdown-item" asp-controller="Size" asp-action="SizeList"><i class="bi bi-rulers"></i> Lista de Tallas</a></li>
+                        <li><a class="dropdown-item" asp-controller="Supplier" asp-action="SupplierList"><i class="bi bi-truck"></i> Listado de Proveedores</a></li>
+                        <li><a class="dropdown-item" asp-controller="Material" asp-action="MaterialList"><i class="bi bi-layers-fill"></i> Tipo de Materiales</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                        <i class="bi bi-people-fill"></i> Usuarios
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" asp-controller="Rol" asp-action="RolList"><i class="bi bi-shield-lock-fill"></i> Lista de Roles</a></li>
+                        <li><a class="dropdown-item" asp-controller="User" asp-action="List"><i class="bi bi-person-lines-fill"></i> Lista de Usuarios</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="nav-link" asp-controller="Supplier" asp-action="SupplierList">
+                        <i class="bi bi-truck"></i> Listado de Proveedores
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-link" asp-controller="Order" asp-action="History">
+                        <i class="bi bi-clock-history"></i> Historial de Pedidos
+                    </a>
+                </li>
+            </ul>
+        </div>
+    }
+
+
+    <div class="content-wrapper">
+        <div class="container">
+            <main role="main" class="pb-3">
+                @RenderBody()
+            </main>
+        </div>
     </div>
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>

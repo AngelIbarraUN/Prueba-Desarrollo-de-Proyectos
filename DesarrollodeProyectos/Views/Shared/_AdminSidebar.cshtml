@@ -1,0 +1,39 @@
+@if (User.IsInRole("ADMIN"))
+{
+    <div class="d-flex flex-column flex-shrink-0 p-3 bg-light" style="width: 280px; position: fixed; height: 100vh;">
+        <hr>
+        <ul class="nav nav-pills flex-column mb-auto">
+            <li class="nav-item">
+                <a class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString() == "Cap" ? "active" : "")" asp-controller="Cap" asp-action="CapList">Listado de Gorras</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString() == "Shirt" ? "active" : "")" asp-controller="Shirt" asp-action="ShirtList">Listado de Camisas</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString() == "Sweater" ? "active" : "")" asp-controller="Sweater" asp-action="SweaterList">Listado de Suéteres</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString() == "Category" ? "active" : "")" asp-controller="Category" asp-action="CategoryList">Lista de Categorías</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString() == "Size" ? "active" : "")" asp-controller="Size" asp-action="SizeList">Lista de Tallas</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString() == "Material" ? "active" : "")" asp-controller="Material" asp-action="MaterialList">Tipo de Materiales</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString() == "Supplier" ? "active" : "")" asp-controller="Supplier" asp-action="SupplierList">Listado de Proveedores</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString() == "Rol" ? "active" : "")" asp-controller="Rol" asp-action="RolList">Lista de Roles</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString() == "User" ? "active" : "")" asp-controller="User" asp-action="List">Lista de Usuarios</a>
+            </li>
+             <li class="nav-item">
+                <a class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString() == "Order" ? "active" : "")" asp-controller="Order" asp-action="History">Historial de Pedidos</a>
+            </li>
+        </ul>
+        <hr>
+    </div>
+}

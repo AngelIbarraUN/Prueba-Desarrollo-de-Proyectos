@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "GCvCSVN8LUwrW7c9qUcIo1OQQBIKSK5uLrnIUUMI4EA=",
+  "Hash": "SwFa7lQKH3+wlytOYsZ0V6ogBeWHfJVaQcc0/GHU+JQ=",
   "Source": "DesarrollodeProyectos",
   "BasePath": "_content/DesarrollodeProyectos",
   "Mode": "Default",
@@ -708,6 +708,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\usuario\\Desktop\\Prueba2DeProyecto\\Prueba-Desarrollo-de-Proyectos\\DesarrollodeProyectos\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Identity": "C:\\Users\\usuario\\Desktop\\Prueba2DeProyecto\\Prueba-Desarrollo-de-Proyectos\\DesarrollodeProyectos\\obj\\Debug\\net9.0\\compressed\\hpr65sdqo8-9icc221vaa.gz",
+      "SourceId": "DesarrollodeProyectos",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\usuario\\Desktop\\Prueba2DeProyecto\\Prueba-Desarrollo-de-Proyectos\\DesarrollodeProyectos\\obj\\Debug\\net9.0\\compressed\\",
+      "BasePath": "_content/DesarrollodeProyectos",
+      "RelativePath": "css/styles#[.{fingerprint=9icc221vaa}]?.css.gz",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Users\\usuario\\Desktop\\Prueba2DeProyecto\\Prueba-Desarrollo-de-Proyectos\\DesarrollodeProyectos\\wwwroot\\css\\styles.css",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "vwtd3djdht",
+      "Integrity": "UYAyLJjysevcmX4FcbwvNX+njp8HjNcqMUHK1hEbCfQ=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\usuario\\Desktop\\Prueba2DeProyecto\\Prueba-Desarrollo-de-Proyectos\\DesarrollodeProyectos\\wwwroot\\css\\styles.css"
     },
     {
       "Identity": "C:\\Users\\usuario\\Desktop\\Prueba2DeProyecto\\Prueba-Desarrollo-de-Proyectos\\DesarrollodeProyectos\\obj\\Debug\\net9.0\\compressed\\i0xqvimmue-mrlpezrjn3.gz",
@@ -1424,6 +1445,27 @@
       "OriginalItemSpec": "wwwroot\\css\\site.css"
     },
     {
+      "Identity": "C:\\Users\\usuario\\Desktop\\Prueba2DeProyecto\\Prueba-Desarrollo-de-Proyectos\\DesarrollodeProyectos\\wwwroot\\css\\styles.css",
+      "SourceId": "DesarrollodeProyectos",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\usuario\\Desktop\\Prueba2DeProyecto\\Prueba-Desarrollo-de-Proyectos\\DesarrollodeProyectos\\wwwroot\\",
+      "BasePath": "_content/DesarrollodeProyectos",
+      "RelativePath": "css/styles#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "9icc221vaa",
+      "Integrity": "r9tjf64JpDDSD9uePkLLasu1MY7zLgKQPbufWT4aj9A=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\styles.css"
+    },
+    {
       "Identity": "C:\\Users\\usuario\\Desktop\\Prueba2DeProyecto\\Prueba-Desarrollo-de-Proyectos\\DesarrollodeProyectos\\wwwroot\\favicon.ico",
       "SourceId": "DesarrollodeProyectos",
       "SourceType": "Discovered",
@@ -1548,6 +1590,69 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\imagen camisa gucci.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\usuario\\Desktop\\Prueba2DeProyecto\\Prueba-Desarrollo-de-Proyectos\\DesarrollodeProyectos\\wwwroot\\images\\logologin.png",
+      "SourceId": "DesarrollodeProyectos",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\usuario\\Desktop\\Prueba2DeProyecto\\Prueba-Desarrollo-de-Proyectos\\DesarrollodeProyectos\\wwwroot\\",
+      "BasePath": "_content/DesarrollodeProyectos",
+      "RelativePath": "images/logologin#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "4hm3wul8me",
+      "Integrity": "eMNNktfAagDvZlyL5dbEYV06OLh+uqQlsizvaslhZH4=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\logologin.png"
+    },
+    {
+      "Identity": "C:\\Users\\usuario\\Desktop\\Prueba2DeProyecto\\Prueba-Desarrollo-de-Proyectos\\DesarrollodeProyectos\\wwwroot\\images\\logologins.png",
+      "SourceId": "DesarrollodeProyectos",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\usuario\\Desktop\\Prueba2DeProyecto\\Prueba-Desarrollo-de-Proyectos\\DesarrollodeProyectos\\wwwroot\\",
+      "BasePath": "_content/DesarrollodeProyectos",
+      "RelativePath": "images/logologins#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "50zc69sp33",
+      "Integrity": "yzmkFPShS+qD92e/WgVIDKurKpPMQ9vPr9aCxn2V7B0=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\logologins.png"
+    },
+    {
+      "Identity": "C:\\Users\\usuario\\Desktop\\Prueba2DeProyecto\\Prueba-Desarrollo-de-Proyectos\\DesarrollodeProyectos\\wwwroot\\images\\logouser.png",
+      "SourceId": "DesarrollodeProyectos",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\usuario\\Desktop\\Prueba2DeProyecto\\Prueba-Desarrollo-de-Proyectos\\DesarrollodeProyectos\\wwwroot\\",
+      "BasePath": "_content/DesarrollodeProyectos",
+      "RelativePath": "images/logouser#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "bhp8wdzcxj",
+      "Integrity": "ASkU9p93T4vCoo7cb7X4376gnpHiADYJjdbBdUluj4k=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\logouser.png"
     },
     {
       "Identity": "C:\\Users\\usuario\\Desktop\\Prueba2DeProyecto\\Prueba-Desarrollo-de-Proyectos\\DesarrollodeProyectos\\wwwroot\\images\\sueter algodon.jpg",
@@ -3152,6 +3257,304 @@
       ]
     },
     {
+      "Route": "css/styles.9icc221vaa.css",
+      "AssetFile": "C:\\Users\\usuario\\Desktop\\Prueba2DeProyecto\\Prueba-Desarrollo-de-Proyectos\\DesarrollodeProyectos\\obj\\Debug\\net9.0\\compressed\\hpr65sdqo8-9icc221vaa.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000033477286"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "29870"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"UYAyLJjysevcmX4FcbwvNX+njp8HjNcqMUHK1hEbCfQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 25 Mar 2025 23:15:56 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"r9tjf64JpDDSD9uePkLLasu1MY7zLgKQPbufWT4aj9A=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "9icc221vaa"
+        },
+        {
+          "Name": "label",
+          "Value": "css/styles.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-r9tjf64JpDDSD9uePkLLasu1MY7zLgKQPbufWT4aj9A="
+        }
+      ]
+    },
+    {
+      "Route": "css/styles.9icc221vaa.css",
+      "AssetFile": "C:\\Users\\usuario\\Desktop\\Prueba2DeProyecto\\Prueba-Desarrollo-de-Proyectos\\DesarrollodeProyectos\\wwwroot\\css\\styles.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "237229"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"r9tjf64JpDDSD9uePkLLasu1MY7zLgKQPbufWT4aj9A=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 25 Mar 2025 23:15:56 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "9icc221vaa"
+        },
+        {
+          "Name": "label",
+          "Value": "css/styles.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-r9tjf64JpDDSD9uePkLLasu1MY7zLgKQPbufWT4aj9A="
+        }
+      ]
+    },
+    {
+      "Route": "css/styles.9icc221vaa.css.gz",
+      "AssetFile": "C:\\Users\\usuario\\Desktop\\Prueba2DeProyecto\\Prueba-Desarrollo-de-Proyectos\\DesarrollodeProyectos\\obj\\Debug\\net9.0\\compressed\\hpr65sdqo8-9icc221vaa.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "29870"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"UYAyLJjysevcmX4FcbwvNX+njp8HjNcqMUHK1hEbCfQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 25 Mar 2025 23:15:56 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "9icc221vaa"
+        },
+        {
+          "Name": "label",
+          "Value": "css/styles.css.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-UYAyLJjysevcmX4FcbwvNX+njp8HjNcqMUHK1hEbCfQ="
+        }
+      ]
+    },
+    {
+      "Route": "css/styles.css",
+      "AssetFile": "C:\\Users\\usuario\\Desktop\\Prueba2DeProyecto\\Prueba-Desarrollo-de-Proyectos\\DesarrollodeProyectos\\obj\\Debug\\net9.0\\compressed\\hpr65sdqo8-9icc221vaa.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000033477286"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "29870"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"UYAyLJjysevcmX4FcbwvNX+njp8HjNcqMUHK1hEbCfQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 25 Mar 2025 23:15:56 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"r9tjf64JpDDSD9uePkLLasu1MY7zLgKQPbufWT4aj9A=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-r9tjf64JpDDSD9uePkLLasu1MY7zLgKQPbufWT4aj9A="
+        }
+      ]
+    },
+    {
+      "Route": "css/styles.css",
+      "AssetFile": "C:\\Users\\usuario\\Desktop\\Prueba2DeProyecto\\Prueba-Desarrollo-de-Proyectos\\DesarrollodeProyectos\\wwwroot\\css\\styles.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "237229"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"r9tjf64JpDDSD9uePkLLasu1MY7zLgKQPbufWT4aj9A=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 25 Mar 2025 23:15:56 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-r9tjf64JpDDSD9uePkLLasu1MY7zLgKQPbufWT4aj9A="
+        }
+      ]
+    },
+    {
+      "Route": "css/styles.css.gz",
+      "AssetFile": "C:\\Users\\usuario\\Desktop\\Prueba2DeProyecto\\Prueba-Desarrollo-de-Proyectos\\DesarrollodeProyectos\\obj\\Debug\\net9.0\\compressed\\hpr65sdqo8-9icc221vaa.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "29870"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"UYAyLJjysevcmX4FcbwvNX+njp8HjNcqMUHK1hEbCfQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 25 Mar 2025 23:15:56 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-UYAyLJjysevcmX4FcbwvNX+njp8HjNcqMUHK1hEbCfQ="
+        }
+      ]
+    },
+    {
       "Route": "DesarrollodeProyectos.bundle.scp.css",
       "AssetFile": "C:\\Users\\usuario\\Desktop\\Prueba2DeProyecto\\Prueba-Desarrollo-de-Proyectos\\DesarrollodeProyectos\\obj\\Debug\\net9.0\\compressed\\ws4b5w0zjr-ch09memsb8.gz",
       "Selectors": [
@@ -4452,6 +4855,252 @@
         {
           "Name": "integrity",
           "Value": "sha256-doaq/uKZXXCDSubLZPW+Tszbe7C6ytfYT2LehibS7Ro="
+        }
+      ]
+    },
+    {
+      "Route": "images/logologin.4hm3wul8me.png",
+      "AssetFile": "C:\\Users\\usuario\\Desktop\\Prueba2DeProyecto\\Prueba-Desarrollo-de-Proyectos\\DesarrollodeProyectos\\wwwroot\\images\\logologin.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5206"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"eMNNktfAagDvZlyL5dbEYV06OLh+uqQlsizvaslhZH4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 25 Mar 2025 23:25:32 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "4hm3wul8me"
+        },
+        {
+          "Name": "label",
+          "Value": "images/logologin.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-eMNNktfAagDvZlyL5dbEYV06OLh+uqQlsizvaslhZH4="
+        }
+      ]
+    },
+    {
+      "Route": "images/logologin.png",
+      "AssetFile": "C:\\Users\\usuario\\Desktop\\Prueba2DeProyecto\\Prueba-Desarrollo-de-Proyectos\\DesarrollodeProyectos\\wwwroot\\images\\logologin.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5206"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"eMNNktfAagDvZlyL5dbEYV06OLh+uqQlsizvaslhZH4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 25 Mar 2025 23:25:32 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-eMNNktfAagDvZlyL5dbEYV06OLh+uqQlsizvaslhZH4="
+        }
+      ]
+    },
+    {
+      "Route": "images/logologins.50zc69sp33.png",
+      "AssetFile": "C:\\Users\\usuario\\Desktop\\Prueba2DeProyecto\\Prueba-Desarrollo-de-Proyectos\\DesarrollodeProyectos\\wwwroot\\images\\logologins.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "89997"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"yzmkFPShS+qD92e/WgVIDKurKpPMQ9vPr9aCxn2V7B0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 25 Mar 2025 23:31:19 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "50zc69sp33"
+        },
+        {
+          "Name": "label",
+          "Value": "images/logologins.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-yzmkFPShS+qD92e/WgVIDKurKpPMQ9vPr9aCxn2V7B0="
+        }
+      ]
+    },
+    {
+      "Route": "images/logologins.png",
+      "AssetFile": "C:\\Users\\usuario\\Desktop\\Prueba2DeProyecto\\Prueba-Desarrollo-de-Proyectos\\DesarrollodeProyectos\\wwwroot\\images\\logologins.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "89997"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"yzmkFPShS+qD92e/WgVIDKurKpPMQ9vPr9aCxn2V7B0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 25 Mar 2025 23:31:19 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-yzmkFPShS+qD92e/WgVIDKurKpPMQ9vPr9aCxn2V7B0="
+        }
+      ]
+    },
+    {
+      "Route": "images/logouser.bhp8wdzcxj.png",
+      "AssetFile": "C:\\Users\\usuario\\Desktop\\Prueba2DeProyecto\\Prueba-Desarrollo-de-Proyectos\\DesarrollodeProyectos\\wwwroot\\images\\logouser.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "10374"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ASkU9p93T4vCoo7cb7X4376gnpHiADYJjdbBdUluj4k=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 25 Mar 2025 23:29:08 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "bhp8wdzcxj"
+        },
+        {
+          "Name": "label",
+          "Value": "images/logouser.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-ASkU9p93T4vCoo7cb7X4376gnpHiADYJjdbBdUluj4k="
+        }
+      ]
+    },
+    {
+      "Route": "images/logouser.png",
+      "AssetFile": "C:\\Users\\usuario\\Desktop\\Prueba2DeProyecto\\Prueba-Desarrollo-de-Proyectos\\DesarrollodeProyectos\\wwwroot\\images\\logouser.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "10374"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ASkU9p93T4vCoo7cb7X4376gnpHiADYJjdbBdUluj4k=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 25 Mar 2025 23:29:08 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-ASkU9p93T4vCoo7cb7X4376gnpHiADYJjdbBdUluj4k="
         }
       ]
     },

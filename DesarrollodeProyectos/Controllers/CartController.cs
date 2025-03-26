@@ -25,7 +25,7 @@ public class CartController : Controller
         var userId = _userManager.GetUserId(User);
         if (userId == null)
         {
-            return Unauthorized();
+            return RedirectToAction("Login", "User");
         }
 
         if (quantity < 1)

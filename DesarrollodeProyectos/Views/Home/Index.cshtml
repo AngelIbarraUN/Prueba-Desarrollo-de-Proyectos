@@ -1,8 +1,72 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Creatisa - Soluciones creativas para tu negocio">
+    <meta name="author" content="Creatisa">
+    <title>Creatisa - Soluciones Creativas</title>
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+    <style>
+        /* Reduce el tamaño del slider a 75% */
+        #carouselExampleIndicators {
+            width: 75%;
+            margin: 0 auto; /* Centra el slider */
+        }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+        .carousel-item img {
+            width: 600px;
+            height: 600px; 
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body class="d-flex flex-column h-100">
+    <main class="flex-shrink-0">
+
+        <section id="carouselExampleIndicators" class="carousel slide mt-4" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="images/creatisa2.jpg" class="d-block w-100" alt="Soluciones Innovadoras">
+                </div>
+                <div class="carousel-item">
+                    <img src="images/creatisa4.jpg" class="d-block w-100" alt="Diseño Gráfico Creativo">
+                </div>
+                <div class="carousel-item">
+                    <img src="images/creatisa3.jpg" class="d-block w-100" alt="Estrategias de Marketing">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </section>
+
+        <section class="py-5 bg-light" id="about">
+            <div class="container px-5 my-5">
+                <div class="row gx-5">
+                    <div class="col-lg-4 mb-5 mb-lg-0">
+                        <h2 class="fw-bolder mb-0">Quiénes somos</h2>
+                    </div>
+                    <div class="col-lg-8">
+                        <p>Creatisa es una agencia creativa enfocada en transformar la presencia digital de marcas mediante diseño gráfico innovador y estrategias de marketing efectivas. Nuestra misión es ayudar a los negocios a destacarse y crecer en un mundo cada vez más competitivo.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+</body>
+</html>

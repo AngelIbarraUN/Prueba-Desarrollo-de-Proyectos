@@ -9,6 +9,10 @@
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
+      "Id": "C:\\Users\\usuario\\Desktop\\Prueba2DeProyecto\\Prueba-Desarrollo-de-Proyectos\\DesarrollodeProyectos\\wwwroot\\css\\styles.css",
+      "PackagePath": "staticwebassets\\css\\styles.css"
+    },
+    {
       "Id": "C:\\Users\\usuario\\Desktop\\Prueba2DeProyecto\\Prueba-Desarrollo-de-Proyectos\\DesarrollodeProyectos\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
@@ -31,6 +35,18 @@
     {
       "Id": "C:\\Users\\usuario\\Desktop\\Prueba2DeProyecto\\Prueba-Desarrollo-de-Proyectos\\DesarrollodeProyectos\\wwwroot\\images\\imagen camisa gucci.jpg",
       "PackagePath": "staticwebassets\\images\\imagen camisa gucci.jpg"
+    },
+    {
+      "Id": "C:\\Users\\usuario\\Desktop\\Prueba2DeProyecto\\Prueba-Desarrollo-de-Proyectos\\DesarrollodeProyectos\\wwwroot\\images\\logologin.png",
+      "PackagePath": "staticwebassets\\images\\logologin.png"
+    },
+    {
+      "Id": "C:\\Users\\usuario\\Desktop\\Prueba2DeProyecto\\Prueba-Desarrollo-de-Proyectos\\DesarrollodeProyectos\\wwwroot\\images\\logologins.png",
+      "PackagePath": "staticwebassets\\images\\logologins.png"
+    },
+    {
+      "Id": "C:\\Users\\usuario\\Desktop\\Prueba2DeProyecto\\Prueba-Desarrollo-de-Proyectos\\DesarrollodeProyectos\\wwwroot\\images\\logouser.png",
+      "PackagePath": "staticwebassets\\images\\logouser.png"
     },
     {
       "Id": "C:\\Users\\usuario\\Desktop\\Prueba2DeProyecto\\Prueba-Desarrollo-de-Proyectos\\DesarrollodeProyectos\\wwwroot\\images\\sueter algodon.jpg",

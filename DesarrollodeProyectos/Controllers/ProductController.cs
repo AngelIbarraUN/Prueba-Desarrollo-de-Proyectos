@@ -68,9 +68,19 @@ namespace DesarrollodeProyectos.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddToCart(Guid productId, string productType, int quantity, decimal price)
-        {
-            return RedirectToAction("AddToCart", "Cart", new { productId, productType, quantity, price });
-        }
+public async Task<IActionResult> AddToCart(Guid productId, string productType, int quantity, decimal price)
+{
+    // Verificar si el usuario está autenticado
+    if (!User.Identity.IsAuthenticated)
+    {
+        // Redirigir al login si no está autenticado
+        return RedirectToAction("Login", "User");
+    }
+
+    // Si está logueado, redirigir a la acción AddToCart en el controlador Cart
+    // **Mover esta redirección dentro del bloque 'if' para que solo ocurra si el usuario está autenticado**
+    return RedirectToAction("AddToCart", "Cart", new { productId, productType, quantity, price });
+}
+
     }
 }

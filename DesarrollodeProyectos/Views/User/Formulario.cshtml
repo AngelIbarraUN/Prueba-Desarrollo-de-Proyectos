@@ -1,0 +1,18 @@
+@model GoogleFormViewModel
+
+<form asp-action="EnviarFormulario" method="post">
+    <label>Nombre:</label>
+    <input type="text" asp-for="Nombre" required />
+    <span asp-validation-for="Nombre"></span>
+
+    <label>Email:</label>
+    <input type="email" asp-for="Email" required />
+    <span asp-validation-for="Email"></span>
+
+    <button type="submit">Enviar</button>
+</form>
+
+@if (ViewBag.Message != null)
+{
+    <p>@ViewBag.Message</p>
+}

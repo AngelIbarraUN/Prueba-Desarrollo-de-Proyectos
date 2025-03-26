@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "4wuW6oDdtyNqoqzeabVIuAeiJXGphjk3A8y3igrvB9M=",
+  "Hash": "ErM6n0RETQczE+Dd7pIE0Mc4SHDuxnLl7RM+djUwHUk=",
   "Source": "DesarrollodeProyectos",
   "BasePath": "_content/DesarrollodeProyectos",
   "Mode": "Default",
@@ -1529,12 +1529,12 @@
       "OriginalItemSpec": "wwwroot\\images\\camisa zara.jpg"
     },
     {
-      "Identity": "C:\\Users\\usuario\\Desktop\\Prueba2DeProyecto\\Prueba-Desarrollo-de-Proyectos\\DesarrollodeProyectos\\wwwroot\\images\\carritodecompras.webp",
+      "Identity": "C:\\Users\\usuario\\Desktop\\Prueba2DeProyecto\\Prueba-Desarrollo-de-Proyectos\\DesarrollodeProyectos\\wwwroot\\images\\carritodecompras.png",
       "SourceId": "DesarrollodeProyectos",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\usuario\\Desktop\\Prueba2DeProyecto\\Prueba-Desarrollo-de-Proyectos\\DesarrollodeProyectos\\wwwroot\\",
       "BasePath": "_content/DesarrollodeProyectos",
-      "RelativePath": "images/carritodecompras#[.{fingerprint}]?.webp",
+      "RelativePath": "images/carritodecompras#[.{fingerprint}]?.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1543,11 +1543,32 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "j9smwooomb",
-      "Integrity": "lzgVLFeJQ39ney4K8mCE1VNszEgaALeFyIF1sm23CQM=",
+      "Fingerprint": "px65s6uqsk",
+      "Integrity": "o3mcbiT5gvqf5mZFhaeRPcp0bllrXbw2H4upJZeBbos=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\carritodecompras.webp"
+      "OriginalItemSpec": "wwwroot\\images\\carritodecompras.png"
+    },
+    {
+      "Identity": "C:\\Users\\usuario\\Desktop\\Prueba2DeProyecto\\Prueba-Desarrollo-de-Proyectos\\DesarrollodeProyectos\\wwwroot\\images\\carritodecomprass.png",
+      "SourceId": "DesarrollodeProyectos",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\usuario\\Desktop\\Prueba2DeProyecto\\Prueba-Desarrollo-de-Proyectos\\DesarrollodeProyectos\\wwwroot\\",
+      "BasePath": "_content/DesarrollodeProyectos",
+      "RelativePath": "images/carritodecomprass#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "1o9wvajpxr",
+      "Integrity": "8U8LKKwpgG5kMxN9WiANhheQQzV+Xk8RSxQR5o+lbUc=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\carritodecomprass.png"
     },
     {
       "Identity": "C:\\Users\\usuario\\Desktop\\Prueba2DeProyecto\\Prueba-Desarrollo-de-Proyectos\\DesarrollodeProyectos\\wwwroot\\images\\creatisa1.jpg",
@@ -4700,7 +4721,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 25 Mar 2025 00:44:15 GMT"
+          "Value": "Wed, 26 Mar 2025 08:38:16 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -4745,7 +4766,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 25 Mar 2025 00:44:15 GMT"
+          "Value": "Wed, 26 Mar 2025 08:38:16 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -4760,8 +4781,8 @@
       ]
     },
     {
-      "Route": "images/carritodecompras.j9smwooomb.webp",
-      "AssetFile": "C:\\Users\\usuario\\Desktop\\Prueba2DeProyecto\\Prueba-Desarrollo-de-Proyectos\\DesarrollodeProyectos\\wwwroot\\images\\carritodecompras.webp",
+      "Route": "images/carritodecompras.png",
+      "AssetFile": "C:\\Users\\usuario\\Desktop\\Prueba2DeProyecto\\Prueba-Desarrollo-de-Proyectos\\DesarrollodeProyectos\\wwwroot\\images\\carritodecompras.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -4770,64 +4791,19 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "9350"
+          "Value": "2574"
         },
         {
           "Name": "Content-Type",
-          "Value": "image/webp"
+          "Value": "image/png"
         },
         {
           "Name": "ETag",
-          "Value": "\"lzgVLFeJQ39ney4K8mCE1VNszEgaALeFyIF1sm23CQM=\""
+          "Value": "\"o3mcbiT5gvqf5mZFhaeRPcp0bllrXbw2H4upJZeBbos=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 26 Mar 2025 08:22:06 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "j9smwooomb"
-        },
-        {
-          "Name": "label",
-          "Value": "images/carritodecompras.webp"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-lzgVLFeJQ39ney4K8mCE1VNszEgaALeFyIF1sm23CQM="
-        }
-      ]
-    },
-    {
-      "Route": "images/carritodecompras.webp",
-      "AssetFile": "C:\\Users\\usuario\\Desktop\\Prueba2DeProyecto\\Prueba-Desarrollo-de-Proyectos\\DesarrollodeProyectos\\wwwroot\\images\\carritodecompras.webp",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "9350"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/webp"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"lzgVLFeJQ39ney4K8mCE1VNszEgaALeFyIF1sm23CQM=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 26 Mar 2025 08:22:06 GMT"
+          "Value": "Wed, 26 Mar 2025 08:30:30 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -4837,7 +4813,134 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-lzgVLFeJQ39ney4K8mCE1VNszEgaALeFyIF1sm23CQM="
+          "Value": "sha256-o3mcbiT5gvqf5mZFhaeRPcp0bllrXbw2H4upJZeBbos="
+        }
+      ]
+    },
+    {
+      "Route": "images/carritodecompras.px65s6uqsk.png",
+      "AssetFile": "C:\\Users\\usuario\\Desktop\\Prueba2DeProyecto\\Prueba-Desarrollo-de-Proyectos\\DesarrollodeProyectos\\wwwroot\\images\\carritodecompras.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2574"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"o3mcbiT5gvqf5mZFhaeRPcp0bllrXbw2H4upJZeBbos=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 26 Mar 2025 08:30:30 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "px65s6uqsk"
+        },
+        {
+          "Name": "label",
+          "Value": "images/carritodecompras.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-o3mcbiT5gvqf5mZFhaeRPcp0bllrXbw2H4upJZeBbos="
+        }
+      ]
+    },
+    {
+      "Route": "images/carritodecomprass.1o9wvajpxr.png",
+      "AssetFile": "C:\\Users\\usuario\\Desktop\\Prueba2DeProyecto\\Prueba-Desarrollo-de-Proyectos\\DesarrollodeProyectos\\wwwroot\\images\\carritodecomprass.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "10517"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"8U8LKKwpgG5kMxN9WiANhheQQzV+Xk8RSxQR5o+lbUc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 26 Mar 2025 08:32:23 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "1o9wvajpxr"
+        },
+        {
+          "Name": "label",
+          "Value": "images/carritodecomprass.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-8U8LKKwpgG5kMxN9WiANhheQQzV+Xk8RSxQR5o+lbUc="
+        }
+      ]
+    },
+    {
+      "Route": "images/carritodecomprass.png",
+      "AssetFile": "C:\\Users\\usuario\\Desktop\\Prueba2DeProyecto\\Prueba-Desarrollo-de-Proyectos\\DesarrollodeProyectos\\wwwroot\\images\\carritodecomprass.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "10517"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"8U8LKKwpgG5kMxN9WiANhheQQzV+Xk8RSxQR5o+lbUc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 26 Mar 2025 08:32:23 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-8U8LKKwpgG5kMxN9WiANhheQQzV+Xk8RSxQR5o+lbUc="
         }
       ]
     },
@@ -5438,7 +5541,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 25 Mar 2025 01:20:54 GMT"
+          "Value": "Wed, 26 Mar 2025 08:37:20 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -5483,7 +5586,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 25 Mar 2025 01:20:54 GMT"
+          "Value": "Wed, 26 Mar 2025 08:37:20 GMT"
         },
         {
           "Name": "Cache-Control",

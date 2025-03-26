@@ -33,8 +33,12 @@
       "PackagePath": "staticwebassets\\images\\camisa zara.jpg"
     },
     {
-      "Id": "C:\\Users\\usuario\\Desktop\\Prueba2DeProyecto\\Prueba-Desarrollo-de-Proyectos\\DesarrollodeProyectos\\wwwroot\\images\\carritodecompras.webp",
-      "PackagePath": "staticwebassets\\images\\carritodecompras.webp"
+      "Id": "C:\\Users\\usuario\\Desktop\\Prueba2DeProyecto\\Prueba-Desarrollo-de-Proyectos\\DesarrollodeProyectos\\wwwroot\\images\\carritodecompras.png",
+      "PackagePath": "staticwebassets\\images\\carritodecompras.png"
+    },
+    {
+      "Id": "C:\\Users\\usuario\\Desktop\\Prueba2DeProyecto\\Prueba-Desarrollo-de-Proyectos\\DesarrollodeProyectos\\wwwroot\\images\\carritodecomprass.png",
+      "PackagePath": "staticwebassets\\images\\carritodecomprass.png"
     },
     {
       "Id": "C:\\Users\\usuario\\Desktop\\Prueba2DeProyecto\\Prueba-Desarrollo-de-Proyectos\\DesarrollodeProyectos\\wwwroot\\images\\creatisa1.jpg",

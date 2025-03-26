@@ -31,7 +31,7 @@
         }
 
         .carousel-item img {
-            width: 600px;
+            width: 100%; /* Imágenes responsive */
             height: 600px;
             object-fit: cover;
         }
@@ -56,6 +56,23 @@
             background-color: rgba(0, 0, 0, 0.6);
             border-radius: 50%;
             padding: 10px;
+        }
+
+        /* Estilos adicionales para la sección "Nos ubicamos en" */
+        .location-section {
+            background-color: #f8f9fa; /* Un fondo ligeramente gris */
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .location-section h2 {
+            margin-bottom: 20px;
+            color: #343a40; /* Color de texto oscuro */
+        }
+
+        .location-section p {
+            color: #6c757d; /* Color de texto gris claro */
+            margin-bottom: 10px;
         }
     </style>
 </head>
@@ -90,19 +107,31 @@
             </button>
         </section>
 
-        <!-- Sección sobre la empresa -->
-        <section class="py-5 bg-light" id="about">
-            <div class="container px-5 my-5">
-                <div class="row gx-5">
-                    <div class="col-lg-4 mb-5 mb-lg-0">
-                        <h2 class="fw-bolder mb-0">Quiénes somos</h2>
-                    </div>
-                    <div class="col-lg-8">
-                        <p>Creatisa es una agencia creativa enfocada en transformar la presencia digital de marcas mediante diseño gráfico innovador y estrategias de marketing efectivas. Nuestra misión es ayudar a los negocios a destacarse y crecer en un mundo cada vez más competitivo.</p>
-                    </div>
+       <main class="flex-shrink-0">
+        <section id="carouselExampleIndicators" class="carousel slide mt-4" data-bs-ride="carousel">
+            </section>
+
+        <section class="about-section">
+            <div class="container">
+                <h2>Nosotros</h2>
+                <p><strong>Nombre Comercial:</strong> Creatisa Promocionales</p>
+                <p><strong>Razón Social:</strong> Tadeo Fernando Meléndez Ibarra</p>
+                <p><strong>Giro:</strong> Imprenta Textil y Digital</p>
+                <p><strong>Misión:</strong> Cumplir con las necesidades del cliente en tiempo y forma, dando soluciones Gráficas y Textiles.</p>
+                <p><strong>Visión:</strong> Contar con la capacidad de producción, versatilidad de servicios para poder cumplir con más números de clientes a menor tiempo de entrega, fortaleciéndonos con práctica en cada área.</p>
+                <p><strong>Historia:</strong> Creatisa se inició a finales del 2006 dando servicio solamente de tarjetas de presentación y diseño gráfico, contando con una computadora portátil, teniendo como clientes los negocios pequeños o personas que tenían el deseo de empezar su emprendimiento. Con el tiempo y con la bendición de Dios, fue extendiéndose a dar el servicio de impresión de Serigrafía en tela. Unos años después se adquirió la primer máquina de bordado y a partir de eso se incrementó el potencial de producción, dándonos oportunidad de llegar con clientes de mayor capacidad, añadiendo también maquinarias para rotular con vinil decorativo. El día de hoy se cuenta con máquinas de bordar, taller de serigrafía, plotter de recorte, maquila y fabricación de playeras, esperando que seamos cada día con mayor capacidad y mejor calidad.</p>
+
+                <div class="contact-info">
+                    <h3>Contacto</h3>
+                    <p><strong>Contacto:</strong> Tadeo Fernando Meléndez Ibarra (Dueño)</p>
+                    <p><strong>Teléfono:</strong> 811208-8348, 8125185982</p>
+                    <p><strong>Email:</strong> tadeo.melendez@gmail.com</p>
+                    <p><strong>Ubicación:</strong> Progreso 1551 Col. Terminal Mty, N.L.</p>
+                    <p><strong>URL:</strong> <a href="https://www.facebook.com/creatisapromocionales" target="_blank">Facebook de Creatisa</a></p>
                 </div>
             </div>
         </section>
+         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3595.4787451904926!2d-100.2984897!3d25.6885685!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x866295ef5b9169e9%3A0xedf66dbaa69cf17d!2sCreatisa%20Promocionales!5e0!3m2!1ses-419!2smx!4v1742978640226!5m2!1ses-419!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>

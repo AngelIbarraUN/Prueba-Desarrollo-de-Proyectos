@@ -3,6 +3,16 @@
 <div class="container mt-4">
     <h2 class="mb-4 text-center">Nuestros Productos</h2>
 
+    <form asp-controller="Product" asp-action="Search" method="get" class="form-inline mb-4">
+        <input type="text" name="searchTerm" class="form-control form-control-sm" placeholder="Buscar..." />
+        <button type="submit" class="btn btn-primary btn-sm ml-2">Buscar productos...</button>
+    </form>
+    
+    <form asp-controller="Product" asp-action="ClearFilter" method="get" class="form-inline mb-4">
+    <button type="submit" class="btn btn-secondary btn-sm ml-2">Dejar de filtrar productos.</button>
+    </form>
+
+
     @if (TempData["Message"] != null)
     {
         <div class="alert alert-success">

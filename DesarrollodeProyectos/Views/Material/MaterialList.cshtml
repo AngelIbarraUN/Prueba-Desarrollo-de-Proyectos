@@ -1,15 +1,18 @@
 @using DesarrollodeProyectos.Identity
 @model List<MaterialModel>
 
+<br>
 @{
     ViewData["Title"] = "Lista de Materiales";
     int numero = 0;
 }
 
-<h1>@ViewData["Title"]</h1>
+<h1 style="text-align: center;">@ViewData["Title"]</h1>
+<center>
 <a class="btn btn-outline-primary" asp-action="MaterialAdd" asp-asp-controller="Material">Agregar Material</a>
-
-<table class="table table-striped">
+</center>
+<br>
+<table class="table table-bordered">
     <thead>
         <tr>
             <th scope="col">#</th>

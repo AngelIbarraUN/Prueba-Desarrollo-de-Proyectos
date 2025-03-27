@@ -18,22 +18,24 @@ namespace DesarrollodeProyectos.Controllers
 
         public async Task<IActionResult> CapAdd()
         {
-            CapModel model = new CapModel();
+    CapModel model = new CapModel();
+    model.SizeList = await _context.Sizes
+        .Where(s => s.IsActive) 
+        .Select(s => new SelectListItem { Value = s.Id.ToString(), Text = s.Name })
+        .ToListAsync();
 
-            model.SizeList = await _context.Sizes
-                .Select(s => new SelectListItem { Value = s.Id.ToString(), Text = s.Name })
-                .ToListAsync();
+    model.MaterialList = await _context.Materials
+        .Where(m => m.IsActive) 
+        .Select(m => new SelectListItem { Value = m.Id.ToString(), Text = m.Name })
+        .ToListAsync();
 
-            model.MaterialList = await _context.Materials
-                .Select(m => new SelectListItem { Value = m.Id.ToString(), Text = m.Name })
-                .ToListAsync();
+    model.CategoryList = await _context.Categories
+        .Where(c => c.IsActive)
+        .Select(c => new SelectListItem { Value = c.Id.ToString(), Text = c.Name })
+        .ToListAsync();
 
-            model.CategoryList = await _context.Categories
-                .Select(c => new SelectListItem { Value = c.Id.ToString(), Text = c.Name })
-                .ToListAsync();
-
-            return View(model);
-        }
+    return View(model);
+    }
 
         [HttpPost]
         public async Task<IActionResult> CapAdd(CapModel capModel)
@@ -80,7 +82,7 @@ namespace DesarrollodeProyectos.Controllers
             _context.Caps.Add(capEntity);
             await _context.SaveChangesAsync();
 
-            return RedirectToAction("CapList","Cap");
+            return RedirectToAction("CapList");
         }
 
                 public async Task<IActionResult> CapList()
@@ -133,9 +135,9 @@ namespace DesarrollodeProyectos.Controllers
                 Quantity = cap.Quantity,
                 CategoryId = cap.CategoryId,
                 ImageUrl = cap.ImageUrl,
-                SizeList = await _context.Sizes.Select(s => new SelectListItem { Value = s.Id.ToString(), Text = s.Name }).ToListAsync(),
-                MaterialList = await _context.Materials.Select(m => new SelectListItem { Value = m.Id.ToString(), Text = m.Name }).ToListAsync(),
-                CategoryList = await _context.Categories.Select(c => new SelectListItem { Value = c.Id.ToString(), Text = c.Name }).ToListAsync()
+                SizeList = await _context.Sizes.Where(s => s.IsActive).Select(s => new SelectListItem { Value = s.Id.ToString(), Text = s.Name }).ToListAsync(),
+                MaterialList = await _context.Materials.Where(m => m.IsActive).Select(m => new SelectListItem { Value = m.Id.ToString(), Text = m.Name }).ToListAsync(),
+                CategoryList = await _context.Categories.Where(c => c.IsActive).Select(c => new SelectListItem { Value = c.Id.ToString(), Text = c.Name }).ToListAsync()
             };
 
             return View(capModel);

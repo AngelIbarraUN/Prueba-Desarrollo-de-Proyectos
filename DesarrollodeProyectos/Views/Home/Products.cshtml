@@ -7,16 +7,22 @@
         <input type="text" name="searchTerm" class="form-control form-control-sm" placeholder="Buscar..." />
         <button type="submit" class="btn btn-primary btn-sm ml-2">Buscar productos...</button>
     </form>
-    
-    <form asp-controller="Product" asp-action="ClearFilter" method="get" class="form-inline mb-4">
-    <button type="submit" class="btn btn-secondary btn-sm ml-2">Dejar de filtrar productos.</button>
-    </form>
 
+    <form asp-controller="Product" asp-action="ClearFilter" method="get" class="form-inline mb-4">
+        <button type="submit" class="btn btn-secondary btn-sm ml-2">Dejar de filtrar productos.</button>
+    </form>
 
     @if (TempData["Message"] != null)
     {
         <div class="alert alert-success">
             @TempData["Message"]
+        </div>
+    }
+
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger">
+            @TempData["ErrorMessage"]
         </div>
     }
 
@@ -49,14 +55,14 @@
                                     <td>@shirt.Price</td>
                                     <td>@shirt.Quantity</td>
                                     <td>
-                                        <form asp-controller="Cart" asp-action="AddToCart" method="post" class="form-inline">
+                                        <form asp-controller="Cart" asp-action="AddToCart" method="post" class="form-inline" id="shirt-form-@shirt.Id">
                                             <input type="hidden" name="productId" value="@shirt.Id" />
                                             <input type="hidden" name="productType" value="Shirt" />
                                             <div class="form-group mr-2">
-                                                <input type="number" name="quantity" value="1" min="1" max="@shirt.Quantity" class="form-control form-control-sm" />
+                                                <input type="number" name="quantity" value="1" min="1" max="@shirt.Quantity" class="form-control form-control-sm" id="shirt-quantity-@shirt.Id" />
                                             </div>
                                             <input type="hidden" name="price" value="@shirt.Price" />
-                                            <button type="submit" class="btn btn-primary btn-sm">Agregar</button>
+                                            <button type="button" class="btn btn-primary btn-sm" onclick="validateAndSubmit('shirt-form-@shirt.Id', 'shirt-quantity-@shirt.Id', @shirt.Quantity, 'shirt-error-@shirt.Id')">Agregar</button>
                                             <p class="text-danger mt-1" id="shirt-error-@shirt.Id" style="display: none;">
                                                 La cantidad debe ser de al menos 1 y un máximo de @shirt.Quantity.
                                             </p>
@@ -104,14 +110,14 @@
                                     <td>@sweater.Price</td>
                                     <td>@sweater.Quantity</td>
                                     <td>
-                                        <form asp-controller="Cart" asp-action="AddToCart" method="post" class="form-inline">
+                                        <form asp-controller="Cart" asp-action="AddToCart" method="post" class="form-inline" id="sweater-form-@sweater.Id">
                                             <input type="hidden" name="productId" value="@sweater.Id" />
                                             <input type="hidden" name="productType" value="Sweater" />
                                             <div class="form-group mr-2">
-                                                <input type="number" name="quantity" value="1" min="1" max="@sweater.Quantity" class="form-control form-control-sm" />
+                                                <input type="number" name="quantity" value="1" min="1" max="@sweater.Quantity" class="form-control form-control-sm" id="sweater-quantity-@sweater.Id" />
                                             </div>
                                             <input type="hidden" name="price" value="@sweater.Price" />
-                                            <button type="submit" class="btn btn-primary btn-sm">Agregar</button>
+                                            <button type="button" class="btn btn-primary btn-sm" onclick="validateAndSubmit('sweater-form-@sweater.Id', 'sweater-quantity-@sweater.Id', @sweater.Quantity, 'sweater-error-@sweater.Id')">Agregar</button>
                                             <p class="text-danger mt-1" id="sweater-error-@sweater.Id" style="display: none;">
                                                 La cantidad debe ser de al menos 1 y un máximo de @sweater.Quantity.
                                             </p>
@@ -159,14 +165,14 @@
                                     <td>@cap.Price</td>
                                     <td>@cap.Quantity</td>
                                     <td>
-                                        <form asp-controller="Cart" asp-action="AddToCart" method="post" class="form-inline">
+                                        <form asp-controller="Cart" asp-action="AddToCart" method="post" class="form-inline" id="cap-form-@cap.Id">
                                             <input type="hidden" name="productId" value="@cap.Id" />
                                             <input type="hidden" name="productType" value="Cap" />
                                             <div class="form-group mr-2">
-                                                <input type="number" name="quantity" value="1" min="1" max="@cap.Quantity" class="form-control form-control-sm" />
+                                                <input type="number" name="quantity" value="1" min="1" max="@cap.Quantity" class="form-control form-control-sm" id="cap-quantity-@cap.Id" />
                                             </div>
                                             <input type="hidden" name="price" value="@cap.Price" />
-                                            <button type="submit" class="btn btn-primary btn-sm">Agregar</button>
+                                            <button type="button" class="btn btn-primary btn-sm" onclick="validateAndSubmit('cap-form-@cap.Id', 'cap-quantity-@cap.Id', @cap.Quantity, 'cap-error-@cap.Id')">Agregar</button>
                                             <p class="text-danger mt-1" id="cap-error-@cap.Id" style="display: none;">
                                                 La cantidad debe ser de al menos 1 y un máximo de @cap.Quantity.
                                             </p>
@@ -179,9 +185,29 @@
                 </div>
             }
             else
-            {
-                <p class="text-muted">No hay gorras disponibles.</p>
+            {<p class="text-muted">No hay gorras disponibles.</p>
             }
         </div>
     </div>
 </div>
+
+<script>
+    function validateAndSubmit(formId, quantityId, maxQuantity, errorId) {
+        var quantityValue = document.getElementById(quantityId).value;
+        if (quantityValue.trim() === "") {
+            document.getElementById(errorId).style.display = 'block';
+            document.getElementById(errorId).textContent = "Por favor, introduce una cantidad.";
+            return false;
+        }
+
+        var quantity = parseInt(quantityValue);
+        if (isNaN(quantity) || quantity < 1 || quantity > maxQuantity) {
+            document.getElementById(errorId).style.display = 'block';
+            document.getElementById(errorId).textContent = "La cantidad debe ser de al menos 1 y un máximo de " + maxQuantity + ".";
+            return false;
+        } else {
+            document.getElementById(errorId).style.display = 'none';
+            document.getElementById(formId).submit();
+        }
+    }
+</script>

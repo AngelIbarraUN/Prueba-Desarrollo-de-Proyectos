@@ -21,14 +21,17 @@ namespace DesarrollodeProyectos.Controllers
             SweaterModel model = new SweaterModel();
 
             model.SizeList = await _context.Sizes
+                .Where(s => s.IsActive)
                 .Select(s => new SelectListItem { Value = s.Id.ToString(), Text = s.Name })
                 .ToListAsync();
 
             model.MaterialList = await _context.Materials
+                .Where(m => m.IsActive)
                 .Select(m => new SelectListItem { Value = m.Id.ToString(), Text = m.Name })
                 .ToListAsync();
 
             model.CategoryList = await _context.Categories
+                .Where(c => c.IsActive)
                 .Select(c => new SelectListItem { Value = c.Id.ToString(), Text = c.Name })
                 .ToListAsync();
 

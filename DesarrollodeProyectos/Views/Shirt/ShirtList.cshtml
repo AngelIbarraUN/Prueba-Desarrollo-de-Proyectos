@@ -20,7 +20,7 @@
             <th scope="col">Cantidad</th>
             <th scope="col">Precio</th>
             <th scope="col">Imagen</th>
-            <th scope="col">Fecha de Registro</th> <!-- Nueva columna para la fecha -->
+            <th scope="col">Fecha de Registro</th>
             <th scope="col">Acciones</th>
         </tr>
     </thead>
@@ -32,9 +32,9 @@
                 <th scope="row">@numero</th>
                 <td>@shirt.Name</td>
                 <td>@shirt.Color</td>
-                <td>@shirt.Size.Name</td>
-                <td>@shirt.Material.Name</td>
-                <td>@shirt.Category.Name</td>
+                <td>@(shirt.Size != null ? shirt.Size.Name : "Tamaño no disponible")</td>
+                <td>@(shirt.Material != null ? shirt.Material.Name : "Material no disponible")</td>
+                <td>@(shirt.Category != null ? shirt.Category.Name : "Categoría no disponible")</td>
                 <td>@shirt.Quantity</td>
                 <td>@shirt.Price</td>
                 <td>
@@ -43,7 +43,7 @@
                         <img src="@shirt.ImageUrl" alt="Imagen de la Camisa" style="width: 100px;height: 100px; object-fit: cover;" />
                     }
                 </td>
-                <td>@shirt.CreationTime.ToString("dd/MM/yyyy")</td> 
+                <td>@shirt.CreationTime.ToString("dd/MM/yyyy")</td>
                 <td>
                     <a class="btn btn-outline-info" asp-action="ShirtEdit" asp-controller="Shirt" asp-route-id="@shirt.Id">Editar</a>
                     <a class="btn btn-outline-danger" asp-action="ShirtDeleted" asp-controller="Shirt" asp-route-id="@shirt.Id">Borrar</a>

@@ -16,60 +16,59 @@ namespace DesarrollodeProyectos.Controllers
             _context = context;
         }
 
-        // Acción para agregar una nueva talla
+        // Método para mostrar la vista de agregar tamaño
         public IActionResult SizeAdd()
         {
-            return View();
+            var model = new SizeModel();
+            return View(model);
         }
 
-        // Acción POST para agregar una nueva talla
+        // Método POST para agregar un nuevo tamaño
         [HttpPost]
         public async Task<IActionResult> SizeAdd(SizeModel sizeModel)
         {
             if (!ModelState.IsValid)
             {
-                _logger.LogError("El modelo de talla no es válido");
+                _logger.LogError("El modelo de la talla no es válido");
                 return View(sizeModel);
             }
 
-            // Crear la nueva talla en la base de datos
             var sizeEntity = new Size
             {
                 Id = Guid.NewGuid(),
-                Name = sizeModel.Name
+                Name = sizeModel.Name,
+                CreationTime = DateTime.Now,
+                IsActive = sizeModel.IsActive
             };
 
             _context.Sizes.Add(sizeEntity);
             await _context.SaveChangesAsync();
 
-            return RedirectToAction("SizeList"); // Redirige a la lista de tallas
+            return RedirectToAction("SizeList");
         }
 
-        // Acción para listar las tallas
+        // Método para listar las tallas
         public async Task<IActionResult> SizeList()
         {
-            var sizes = await _context.Sizes.ToListAsync();
+            var sizes = await _context.Sizes
+                .Where(s => s.IsActive) // Solo tallas activas
+                .ToListAsync();
 
-            // Mapear las entidades a modelos de vista
             var sizeModels = sizes.Select(s => new SizeModel
             {
                 Id = s.Id,
-                Name = s.Name
+                Name = s.Name,
+                CreationTime = s.CreationTime,
+                IsActive = s.IsActive
             }).ToList();
 
-            return View(sizeModels); // Pasar los modelos a la vista
+            return View(sizeModels);
         }
 
-        // Acción para editar una talla
+        // Método para editar una talla existente
         public async Task<IActionResult> SizeEdit(Guid id)
         {
-            if (id == Guid.Empty)
-            {
-                return NotFound();
-            }
-
-            var size = await _context.Sizes.FindAsync(id);
-
+            var size = await _context.Sizes.FirstOrDefaultAsync(s => s.Id == id);
             if (size == null)
             {
                 return NotFound();
@@ -78,78 +77,81 @@ namespace DesarrollodeProyectos.Controllers
             var sizeModel = new SizeModel
             {
                 Id = size.Id,
-                Name = size.Name
+                Name = size.Name,
+                CreationTime = size.CreationTime,
+                IsActive = size.IsActive
             };
 
             return View(sizeModel);
         }
 
-        // Acción POST para editar una talla
+        // Método POST para actualizar la talla
         [HttpPost]
-        public async Task<IActionResult> SizeEdit(SizeModel sizeModel)
+        public async Task<IActionResult> SizeEdit(SizeModel model)
         {
             if (!ModelState.IsValid)
             {
-                _logger.LogError("El modelo de talla no es válido");
-                return View(sizeModel);
+                return View(model);
             }
 
-            var sizeEntity = await _context.Sizes.FindAsync(sizeModel.Id);
-
-            if (sizeEntity == null)
+            var sizeToUpdate = await _context.Sizes.FindAsync(model.Id);
+            if (sizeToUpdate == null)
             {
                 return NotFound();
             }
 
-            // Actualizar la talla
-            sizeEntity.Name = sizeModel.Name;
+            sizeToUpdate.Name = model.Name;
+            sizeToUpdate.IsActive = model.IsActive;
 
-            _context.Sizes.Update(sizeEntity);
+            _context.Update(sizeToUpdate);
             await _context.SaveChangesAsync();
 
-            return RedirectToAction("SizeList"); // Redirige a la lista de tallas
+            return RedirectToAction("SizeList");
         }
 
-        // Acción para eliminar una talla
-        [HttpGet]
-        public async Task<IActionResult> SizeDelete(Guid id)
+        // Método para eliminar una talla
+        public async Task<IActionResult> SizeDeleted(Guid id)
         {
-            if (id == Guid.Empty)
-            {
-                return NotFound();
-            }
-
-            var size = await _context.Sizes.FindAsync(id);
+            var size = await _context.Sizes
+                .Where(s => s.Id == id)
+                .FirstOrDefaultAsync();
 
             if (size == null)
             {
-                return NotFound();
+                _logger.LogError("No se encontró la talla");
+                return RedirectToAction("SizeList");
             }
 
             var model = new SizeModel
             {
                 Id = size.Id,
-                Name = size.Name
+                Name = size.Name,
+                IsActive = size.IsActive
             };
 
-            return View(model); // Devolver la vista con el modelo
+            return View(model);
         }
 
+        // Método POST para eliminar una talla (marcar como inactiva)
         [HttpPost]
-        public async Task<IActionResult> SizeDelete(SizeModel sizeModel)
+        public async Task<IActionResult> SizeDeleted(SizeModel size)
         {
-            var sizeEntity = await _context.Sizes.FindAsync(sizeModel.Id);
+            var sizeEntity = await _context.Sizes
+                .Where(s => s.Id == size.Id)
+                .FirstOrDefaultAsync();
 
             if (sizeEntity == null)
             {
-                return NotFound();
+                _logger.LogError("No se encontró la talla");
+                return View(size);
             }
 
-            // Eliminar la talla
-            _context.Sizes.Remove(sizeEntity);
+            sizeEntity.IsActive = false; // Marcar la talla como inactiva
+
+            _context.Update(sizeEntity);
             await _context.SaveChangesAsync();
 
-            return RedirectToAction("SizeList"); // Redirige a la lista de tallas
+            return RedirectToAction("SizeList");
         }
     }
 }

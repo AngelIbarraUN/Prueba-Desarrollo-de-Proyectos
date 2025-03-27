@@ -5,18 +5,18 @@
     ViewData["Title"] = "Alta de Gorra";
 }
 
-<h1>Alta de Gorra</h1>
+<h1 style="text-align: center;">Alta de Gorra</h1>
 
 <form asp-action="CapAdd" asp-controller="Cap" enctype="multipart/form-data">
 
     <div class="form-floating mb-3">
-        <input type="text" class="form-control" asp-for="Name" placeholder="Nombre de la gorra">
+        <input type="text" class="form-control" asp-for="Name">
         <label asp-for="Name">Nombre</label>
         <span asp-validation-for="Name" class="text-danger"></span>
     </div>
 
     <div class="form-floating mb-3">
-        <input type="text" class="form-control" asp-for="Color" placeholder="Color de la gorra">
+        <input type="text" class="form-control" asp-for="Color">
         <label asp-for="Color">Color</label>
         <span asp-validation-for="Color" class="text-danger"></span>
     </div>

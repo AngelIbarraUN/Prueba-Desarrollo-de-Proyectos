@@ -1,25 +1,22 @@
-@using DesarrollodeProyectos.Identity
-@model SizeModel
-
+@model DesarrollodeProyectos.Identity.SizeModel
 @{
     ViewData["Title"] = "Editar Talla";
 }
 
 <h1>@ViewData["Title"]</h1>
 
-<form asp-action="SizeEdit" asp-controller="Size">
-    <input type="hidden" asp-for="Id">
-
-    <div class="form-floating mb-3">
-        <input type="text" class="form-control" asp-for="Name" placeholder="Nombre de la talla">
-        <label asp-for="Name">Talla</label>
+<form method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label for="Name">Nombre de la Talla</label>
+        <input type="text" class="form-control" id="Name" name="Name" value="@Model.Name" required />
         <span asp-validation-for="Name" class="text-danger"></span>
     </div>
 
-    <button type="submit" class="btn btn-outline-primary">Guardar</button>
-    <a class="btn btn-outline-secondary" asp-action="SizeList" asp-controller="Size">Regresar</a>
+    <button type="submit" class="btn btn-primary">Guardar cambios</button>
 </form>
 
+<a href="@Url.Action("SizeList", "Size")" class="btn btn-secondary mt-2">Cancelar</a>
+
 @section Scripts {
-    <partial name="_ValidationScriptsPartial"/>
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

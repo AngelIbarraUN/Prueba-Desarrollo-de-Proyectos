@@ -32,9 +32,9 @@
                 <th scope="row">@numero</th>
                 <td>@sweater.Name</td>
                 <td>@sweater.Color</td>
-                <td>@sweater.Size.Name</td>
-                <td>@sweater.Material.Name</td>
-                <td>@sweater.Category.Name</td>
+                <td>@(sweater.Size != null ? sweater.Size.Name : "Tamaño no disponible")</td> <!-- Validación para Size -->
+                <td>@(sweater.Material != null ? sweater.Material.Name : "Material no disponible")</td> <!-- Validación para Material -->
+                <td>@(sweater.Category != null ? sweater.Category.Name : "Categoría no disponible")</td> <!-- Validación para Category -->
                 <td>@sweater.Quantity</td>
                 <td>@sweater.Price</td>
                 <td>
@@ -43,7 +43,7 @@
                         <img src="@sweater.ImageUrl" alt="Imagen del Suéter" style="width: 100px;height: 100px; object-fit: cover;" />
                     }
                 </td>
-                <td>@sweater.CreationTime.ToString("dd/MM/yyyy")</td> 
+                <td>@sweater.CreationTime.ToString("dd/MM/yyyy")</td>
                 <td>
                     <a class="btn btn-outline-info" asp-action="SweaterEdit" asp-controller="Sweater" asp-route-id="@sweater.Id">Editar</a>
                     <a class="btn btn-outline-danger" asp-action="SweaterDeleted" asp-controller="Sweater" asp-route-id="@sweater.Id">Borrar</a>

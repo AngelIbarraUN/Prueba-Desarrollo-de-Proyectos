@@ -1,13 +1,19 @@
-@using DesarrollodeProyectos.Identity
-@model SizeModel
+@model DesarrollodeProyectos.Identity.SizeModel
 @{
-    ViewData["Title"] = "Tamaño Eliminado";
+    ViewData["Title"] = "Eliminar Talla";
 }
 
-<h3 class="mb-3">El tamaño ha sido eliminado correctamente</h3>
+<h1>@ViewData["Title"]</h1>
 
-<div class="alert alert-success" role="alert">
-    El tamaño <strong>@Model.Name</strong> ha sido eliminado con éxito.
-</div>
+<p>¿Está seguro de que desea eliminar la talla <strong>@Model.Name</strong>?</p>
 
-<a class="btn btn-outline-primary" asp-action="SizeList" asp-controller="Size">Volver a la lista de tamaños</a>
+<form method="post">
+    <input type="hidden" name="Id" value="@Model.Id" />
+    <div class="form-group">
+        <label for="Name">Nombre de la Talla</label>
+        <input type="text" class="form-control" id="Name" name="Name" value="@Model.Name" readonly />
+    </div>
+
+    <button type="submit" class="btn btn-danger">Eliminar</button>
+    <a href="@Url.Action("SizeList", "Size")" class="btn btn-secondary">Cancelar</a>
+</form>

@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using DesarrollodeProyectos.Identity;
+
 
 namespace DesarrollodeProyectos.Identity
 {
@@ -43,5 +45,8 @@ namespace DesarrollodeProyectos.Identity
          public bool IsActive { get; set; } = true;
 
 
+
+        [Display(Name = "Proveedor seleccionado")]
+        public Guid? SupplierId { get; set; }  // Agregar esta propiedad
     }
 }

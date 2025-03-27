@@ -17,225 +17,225 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = DesarrollodeProyectos
 build_property.RootNamespace = DesarrollodeProyectos
-build_property.ProjectDir = C:\Users\usuario\Desktop\Prueba2DeProyecto\Prueba-Desarrollo-de-Proyectos\DesarrollodeProyectos\
+build_property.ProjectDir = C:\Users\Angel Ibarra\Desktop\CarpetaProyectoFinalDesarrollodeProyectos\Prueba-Desarrollo-de-Proyectos\DesarrollodeProyectos\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 9.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\usuario\Desktop\Prueba2DeProyecto\Prueba-Desarrollo-de-Proyectos\DesarrollodeProyectos
+build_property.MSBuildProjectDirectory = C:\Users\Angel Ibarra\Desktop\CarpetaProyectoFinalDesarrollodeProyectos\Prueba-Desarrollo-de-Proyectos\DesarrollodeProyectos
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 9.0
 build_property.EnableCodeStyleSeverity = 
 
-[C:/Users/usuario/Desktop/Prueba2DeProyecto/Prueba-Desarrollo-de-Proyectos/DesarrollodeProyectos/Views/Cap/CapAdd.cshtml]
+[C:/Users/Angel Ibarra/Desktop/CarpetaProyectoFinalDesarrollodeProyectos/Prueba-Desarrollo-de-Proyectos/DesarrollodeProyectos/Views/Cap/CapAdd.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FwXENhcEFkZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/usuario/Desktop/Prueba2DeProyecto/Prueba-Desarrollo-de-Proyectos/DesarrollodeProyectos/Views/Cap/CapDeleted.cshtml]
+[C:/Users/Angel Ibarra/Desktop/CarpetaProyectoFinalDesarrollodeProyectos/Prueba-Desarrollo-de-Proyectos/DesarrollodeProyectos/Views/Cap/CapDeleted.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FwXENhcERlbGV0ZWQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/usuario/Desktop/Prueba2DeProyecto/Prueba-Desarrollo-de-Proyectos/DesarrollodeProyectos/Views/Cap/CapEdit.cshtml]
+[C:/Users/Angel Ibarra/Desktop/CarpetaProyectoFinalDesarrollodeProyectos/Prueba-Desarrollo-de-Proyectos/DesarrollodeProyectos/Views/Cap/CapEdit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FwXENhcEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/usuario/Desktop/Prueba2DeProyecto/Prueba-Desarrollo-de-Proyectos/DesarrollodeProyectos/Views/Cap/CapList.cshtml]
+[C:/Users/Angel Ibarra/Desktop/CarpetaProyectoFinalDesarrollodeProyectos/Prueba-Desarrollo-de-Proyectos/DesarrollodeProyectos/Views/Cap/CapList.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FwXENhcExpc3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/usuario/Desktop/Prueba2DeProyecto/Prueba-Desarrollo-de-Proyectos/DesarrollodeProyectos/Views/Category/CategoryAdd.cshtml]
+[C:/Users/Angel Ibarra/Desktop/CarpetaProyectoFinalDesarrollodeProyectos/Prueba-Desarrollo-de-Proyectos/DesarrollodeProyectos/Views/Category/CategoryAdd.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcQ2F0ZWdvcnlBZGQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/usuario/Desktop/Prueba2DeProyecto/Prueba-Desarrollo-de-Proyectos/DesarrollodeProyectos/Views/Category/CategoryDeleted.cshtml]
+[C:/Users/Angel Ibarra/Desktop/CarpetaProyectoFinalDesarrollodeProyectos/Prueba-Desarrollo-de-Proyectos/DesarrollodeProyectos/Views/Category/CategoryDeleted.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcQ2F0ZWdvcnlEZWxldGVkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/usuario/Desktop/Prueba2DeProyecto/Prueba-Desarrollo-de-Proyectos/DesarrollodeProyectos/Views/Category/CategoryEdit.cshtml]
+[C:/Users/Angel Ibarra/Desktop/CarpetaProyectoFinalDesarrollodeProyectos/Prueba-Desarrollo-de-Proyectos/DesarrollodeProyectos/Views/Category/CategoryEdit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcQ2F0ZWdvcnlFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/usuario/Desktop/Prueba2DeProyecto/Prueba-Desarrollo-de-Proyectos/DesarrollodeProyectos/Views/Category/CategoryList.cshtml]
+[C:/Users/Angel Ibarra/Desktop/CarpetaProyectoFinalDesarrollodeProyectos/Prueba-Desarrollo-de-Proyectos/DesarrollodeProyectos/Views/Category/CategoryList.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcQ2F0ZWdvcnlMaXN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/usuario/Desktop/Prueba2DeProyecto/Prueba-Desarrollo-de-Proyectos/DesarrollodeProyectos/Views/GoogleForms/GoogleForm.cshtml]
+[C:/Users/Angel Ibarra/Desktop/CarpetaProyectoFinalDesarrollodeProyectos/Prueba-Desarrollo-de-Proyectos/DesarrollodeProyectos/Views/GoogleForms/GoogleForm.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR29vZ2xlRm9ybXNcR29vZ2xlRm9ybS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/usuario/Desktop/Prueba2DeProyecto/Prueba-Desarrollo-de-Proyectos/DesarrollodeProyectos/Views/Home/Cart.cshtml]
+[C:/Users/Angel Ibarra/Desktop/CarpetaProyectoFinalDesarrollodeProyectos/Prueba-Desarrollo-de-Proyectos/DesarrollodeProyectos/Views/Home/Cart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDYXJ0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/usuario/Desktop/Prueba2DeProyecto/Prueba-Desarrollo-de-Proyectos/DesarrollodeProyectos/Views/Home/Details.cshtml]
+[C:/Users/Angel Ibarra/Desktop/CarpetaProyectoFinalDesarrollodeProyectos/Prueba-Desarrollo-de-Proyectos/DesarrollodeProyectos/Views/Home/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/usuario/Desktop/Prueba2DeProyecto/Prueba-Desarrollo-de-Proyectos/DesarrollodeProyectos/Views/Home/FAQs.cshtml]
+[C:/Users/Angel Ibarra/Desktop/CarpetaProyectoFinalDesarrollodeProyectos/Prueba-Desarrollo-de-Proyectos/DesarrollodeProyectos/Views/Home/FAQs.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxGQVFzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/usuario/Desktop/Prueba2DeProyecto/Prueba-Desarrollo-de-Proyectos/DesarrollodeProyectos/Views/Home/History.cshtml]
+[C:/Users/Angel Ibarra/Desktop/CarpetaProyectoFinalDesarrollodeProyectos/Prueba-Desarrollo-de-Proyectos/DesarrollodeProyectos/Views/Home/History.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxIaXN0b3J5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/usuario/Desktop/Prueba2DeProyecto/Prueba-Desarrollo-de-Proyectos/DesarrollodeProyectos/Views/Home/Index.cshtml]
+[C:/Users/Angel Ibarra/Desktop/CarpetaProyectoFinalDesarrollodeProyectos/Prueba-Desarrollo-de-Proyectos/DesarrollodeProyectos/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/usuario/Desktop/Prueba2DeProyecto/Prueba-Desarrollo-de-Proyectos/DesarrollodeProyectos/Views/Home/MyOrders.cshtml]
+[C:/Users/Angel Ibarra/Desktop/CarpetaProyectoFinalDesarrollodeProyectos/Prueba-Desarrollo-de-Proyectos/DesarrollodeProyectos/Views/Home/MyOrders.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxNeU9yZGVycy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/usuario/Desktop/Prueba2DeProyecto/Prueba-Desarrollo-de-Proyectos/DesarrollodeProyectos/Views/Home/OrderConfirmation.cshtml]
+[C:/Users/Angel Ibarra/Desktop/CarpetaProyectoFinalDesarrollodeProyectos/Prueba-Desarrollo-de-Proyectos/DesarrollodeProyectos/Views/Home/OrderConfirmation.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxPcmRlckNvbmZpcm1hdGlvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/usuario/Desktop/Prueba2DeProyecto/Prueba-Desarrollo-de-Proyectos/DesarrollodeProyectos/Views/Home/Privacy.cshtml]
+[C:/Users/Angel Ibarra/Desktop/CarpetaProyectoFinalDesarrollodeProyectos/Prueba-Desarrollo-de-Proyectos/DesarrollodeProyectos/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/usuario/Desktop/Prueba2DeProyecto/Prueba-Desarrollo-de-Proyectos/DesarrollodeProyectos/Views/Home/Products.cshtml]
+[C:/Users/Angel Ibarra/Desktop/CarpetaProyectoFinalDesarrollodeProyectos/Prueba-Desarrollo-de-Proyectos/DesarrollodeProyectos/Views/Home/Products.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcm9kdWN0cy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/usuario/Desktop/Prueba2DeProyecto/Prueba-Desarrollo-de-Proyectos/DesarrollodeProyectos/Views/Material/MaterialAdd.cshtml]
+[C:/Users/Angel Ibarra/Desktop/CarpetaProyectoFinalDesarrollodeProyectos/Prueba-Desarrollo-de-Proyectos/DesarrollodeProyectos/Views/Material/MaterialAdd.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWF0ZXJpYWxcTWF0ZXJpYWxBZGQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/usuario/Desktop/Prueba2DeProyecto/Prueba-Desarrollo-de-Proyectos/DesarrollodeProyectos/Views/Material/MaterialDeleted.cshtml]
+[C:/Users/Angel Ibarra/Desktop/CarpetaProyectoFinalDesarrollodeProyectos/Prueba-Desarrollo-de-Proyectos/DesarrollodeProyectos/Views/Material/MaterialDeleted.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWF0ZXJpYWxcTWF0ZXJpYWxEZWxldGVkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/usuario/Desktop/Prueba2DeProyecto/Prueba-Desarrollo-de-Proyectos/DesarrollodeProyectos/Views/Material/MaterialEdit.cshtml]
+[C:/Users/Angel Ibarra/Desktop/CarpetaProyectoFinalDesarrollodeProyectos/Prueba-Desarrollo-de-Proyectos/DesarrollodeProyectos/Views/Material/MaterialEdit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWF0ZXJpYWxcTWF0ZXJpYWxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/usuario/Desktop/Prueba2DeProyecto/Prueba-Desarrollo-de-Proyectos/DesarrollodeProyectos/Views/Material/MaterialList.cshtml]
+[C:/Users/Angel Ibarra/Desktop/CarpetaProyectoFinalDesarrollodeProyectos/Prueba-Desarrollo-de-Proyectos/DesarrollodeProyectos/Views/Material/MaterialList.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWF0ZXJpYWxcTWF0ZXJpYWxMaXN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/usuario/Desktop/Prueba2DeProyecto/Prueba-Desarrollo-de-Proyectos/DesarrollodeProyectos/Views/Rol/RolAdd.cshtml]
+[C:/Users/Angel Ibarra/Desktop/CarpetaProyectoFinalDesarrollodeProyectos/Prueba-Desarrollo-de-Proyectos/DesarrollodeProyectos/Views/Rol/RolAdd.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9sXFJvbEFkZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/usuario/Desktop/Prueba2DeProyecto/Prueba-Desarrollo-de-Proyectos/DesarrollodeProyectos/Views/Rol/RolDeleted.cshtml]
+[C:/Users/Angel Ibarra/Desktop/CarpetaProyectoFinalDesarrollodeProyectos/Prueba-Desarrollo-de-Proyectos/DesarrollodeProyectos/Views/Rol/RolDeleted.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9sXFJvbERlbGV0ZWQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/usuario/Desktop/Prueba2DeProyecto/Prueba-Desarrollo-de-Proyectos/DesarrollodeProyectos/Views/Rol/RolEdit.cshtml]
+[C:/Users/Angel Ibarra/Desktop/CarpetaProyectoFinalDesarrollodeProyectos/Prueba-Desarrollo-de-Proyectos/DesarrollodeProyectos/Views/Rol/RolEdit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9sXFJvbEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/usuario/Desktop/Prueba2DeProyecto/Prueba-Desarrollo-de-Proyectos/DesarrollodeProyectos/Views/Rol/RolList.cshtml]
+[C:/Users/Angel Ibarra/Desktop/CarpetaProyectoFinalDesarrollodeProyectos/Prueba-Desarrollo-de-Proyectos/DesarrollodeProyectos/Views/Rol/RolList.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9sXFJvbExpc3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/usuario/Desktop/Prueba2DeProyecto/Prueba-Desarrollo-de-Proyectos/DesarrollodeProyectos/Views/Shared/Error.cshtml]
+[C:/Users/Angel Ibarra/Desktop/CarpetaProyectoFinalDesarrollodeProyectos/Prueba-Desarrollo-de-Proyectos/DesarrollodeProyectos/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/usuario/Desktop/Prueba2DeProyecto/Prueba-Desarrollo-de-Proyectos/DesarrollodeProyectos/Views/Shared/_AdminSidebar.cshtml]
+[C:/Users/Angel Ibarra/Desktop/CarpetaProyectoFinalDesarrollodeProyectos/Prueba-Desarrollo-de-Proyectos/DesarrollodeProyectos/Views/Shared/_AdminSidebar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9BZG1pblNpZGViYXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/usuario/Desktop/Prueba2DeProyecto/Prueba-Desarrollo-de-Proyectos/DesarrollodeProyectos/Views/Shared/_LinksLogin.cshtml]
+[C:/Users/Angel Ibarra/Desktop/CarpetaProyectoFinalDesarrollodeProyectos/Prueba-Desarrollo-de-Proyectos/DesarrollodeProyectos/Views/Shared/_LinksLogin.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MaW5rc0xvZ2luLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/usuario/Desktop/Prueba2DeProyecto/Prueba-Desarrollo-de-Proyectos/DesarrollodeProyectos/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/Angel Ibarra/Desktop/CarpetaProyectoFinalDesarrollodeProyectos/Prueba-Desarrollo-de-Proyectos/DesarrollodeProyectos/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/usuario/Desktop/Prueba2DeProyecto/Prueba-Desarrollo-de-Proyectos/DesarrollodeProyectos/Views/Shirt/ShirtAdd.cshtml]
+[C:/Users/Angel Ibarra/Desktop/CarpetaProyectoFinalDesarrollodeProyectos/Prueba-Desarrollo-de-Proyectos/DesarrollodeProyectos/Views/Shirt/ShirtAdd.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hpcnRcU2hpcnRBZGQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/usuario/Desktop/Prueba2DeProyecto/Prueba-Desarrollo-de-Proyectos/DesarrollodeProyectos/Views/Shirt/ShirtDeleted.cshtml]
+[C:/Users/Angel Ibarra/Desktop/CarpetaProyectoFinalDesarrollodeProyectos/Prueba-Desarrollo-de-Proyectos/DesarrollodeProyectos/Views/Shirt/ShirtDeleted.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hpcnRcU2hpcnREZWxldGVkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/usuario/Desktop/Prueba2DeProyecto/Prueba-Desarrollo-de-Proyectos/DesarrollodeProyectos/Views/Shirt/ShirtEdit.cshtml]
+[C:/Users/Angel Ibarra/Desktop/CarpetaProyectoFinalDesarrollodeProyectos/Prueba-Desarrollo-de-Proyectos/DesarrollodeProyectos/Views/Shirt/ShirtEdit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hpcnRcU2hpcnRFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/usuario/Desktop/Prueba2DeProyecto/Prueba-Desarrollo-de-Proyectos/DesarrollodeProyectos/Views/Shirt/ShirtList.cshtml]
+[C:/Users/Angel Ibarra/Desktop/CarpetaProyectoFinalDesarrollodeProyectos/Prueba-Desarrollo-de-Proyectos/DesarrollodeProyectos/Views/Shirt/ShirtList.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hpcnRcU2hpcnRMaXN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/usuario/Desktop/Prueba2DeProyecto/Prueba-Desarrollo-de-Proyectos/DesarrollodeProyectos/Views/Size/SizeAdd.cshtml]
+[C:/Users/Angel Ibarra/Desktop/CarpetaProyectoFinalDesarrollodeProyectos/Prueba-Desarrollo-de-Proyectos/DesarrollodeProyectos/Views/Size/SizeAdd.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2l6ZVxTaXplQWRkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/usuario/Desktop/Prueba2DeProyecto/Prueba-Desarrollo-de-Proyectos/DesarrollodeProyectos/Views/Size/SizeDeleted.cshtml]
+[C:/Users/Angel Ibarra/Desktop/CarpetaProyectoFinalDesarrollodeProyectos/Prueba-Desarrollo-de-Proyectos/DesarrollodeProyectos/Views/Size/SizeDeleted.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2l6ZVxTaXplRGVsZXRlZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/usuario/Desktop/Prueba2DeProyecto/Prueba-Desarrollo-de-Proyectos/DesarrollodeProyectos/Views/Size/SizeEdit.cshtml]
+[C:/Users/Angel Ibarra/Desktop/CarpetaProyectoFinalDesarrollodeProyectos/Prueba-Desarrollo-de-Proyectos/DesarrollodeProyectos/Views/Size/SizeEdit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2l6ZVxTaXplRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/usuario/Desktop/Prueba2DeProyecto/Prueba-Desarrollo-de-Proyectos/DesarrollodeProyectos/Views/Size/SizeList.cshtml]
+[C:/Users/Angel Ibarra/Desktop/CarpetaProyectoFinalDesarrollodeProyectos/Prueba-Desarrollo-de-Proyectos/DesarrollodeProyectos/Views/Size/SizeList.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2l6ZVxTaXplTGlzdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/usuario/Desktop/Prueba2DeProyecto/Prueba-Desarrollo-de-Proyectos/DesarrollodeProyectos/Views/Supplier/SupplierAdd.cshtml]
+[C:/Users/Angel Ibarra/Desktop/CarpetaProyectoFinalDesarrollodeProyectos/Prueba-Desarrollo-de-Proyectos/DesarrollodeProyectos/Views/Supplier/SupplierAdd.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3VwcGxpZXJcU3VwcGxpZXJBZGQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/usuario/Desktop/Prueba2DeProyecto/Prueba-Desarrollo-de-Proyectos/DesarrollodeProyectos/Views/Supplier/SupplierDeleted.cshtml]
+[C:/Users/Angel Ibarra/Desktop/CarpetaProyectoFinalDesarrollodeProyectos/Prueba-Desarrollo-de-Proyectos/DesarrollodeProyectos/Views/Supplier/SupplierDeleted.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3VwcGxpZXJcU3VwcGxpZXJEZWxldGVkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/usuario/Desktop/Prueba2DeProyecto/Prueba-Desarrollo-de-Proyectos/DesarrollodeProyectos/Views/Supplier/SupplierEdit.cshtml]
+[C:/Users/Angel Ibarra/Desktop/CarpetaProyectoFinalDesarrollodeProyectos/Prueba-Desarrollo-de-Proyectos/DesarrollodeProyectos/Views/Supplier/SupplierEdit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3VwcGxpZXJcU3VwcGxpZXJFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/usuario/Desktop/Prueba2DeProyecto/Prueba-Desarrollo-de-Proyectos/DesarrollodeProyectos/Views/Supplier/SupplierList.cshtml]
+[C:/Users/Angel Ibarra/Desktop/CarpetaProyectoFinalDesarrollodeProyectos/Prueba-Desarrollo-de-Proyectos/DesarrollodeProyectos/Views/Supplier/SupplierList.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3VwcGxpZXJcU3VwcGxpZXJMaXN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/usuario/Desktop/Prueba2DeProyecto/Prueba-Desarrollo-de-Proyectos/DesarrollodeProyectos/Views/Sweater/SweaterAdd.cshtml]
+[C:/Users/Angel Ibarra/Desktop/CarpetaProyectoFinalDesarrollodeProyectos/Prueba-Desarrollo-de-Proyectos/DesarrollodeProyectos/Views/Sweater/SweaterAdd.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3dlYXRlclxTd2VhdGVyQWRkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/usuario/Desktop/Prueba2DeProyecto/Prueba-Desarrollo-de-Proyectos/DesarrollodeProyectos/Views/Sweater/SweaterDeleted.cshtml]
+[C:/Users/Angel Ibarra/Desktop/CarpetaProyectoFinalDesarrollodeProyectos/Prueba-Desarrollo-de-Proyectos/DesarrollodeProyectos/Views/Sweater/SweaterDeleted.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3dlYXRlclxTd2VhdGVyRGVsZXRlZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/usuario/Desktop/Prueba2DeProyecto/Prueba-Desarrollo-de-Proyectos/DesarrollodeProyectos/Views/Sweater/SweaterEdit.cshtml]
+[C:/Users/Angel Ibarra/Desktop/CarpetaProyectoFinalDesarrollodeProyectos/Prueba-Desarrollo-de-Proyectos/DesarrollodeProyectos/Views/Sweater/SweaterEdit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3dlYXRlclxTd2VhdGVyRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/usuario/Desktop/Prueba2DeProyecto/Prueba-Desarrollo-de-Proyectos/DesarrollodeProyectos/Views/Sweater/SweaterList.cshtml]
+[C:/Users/Angel Ibarra/Desktop/CarpetaProyectoFinalDesarrollodeProyectos/Prueba-Desarrollo-de-Proyectos/DesarrollodeProyectos/Views/Sweater/SweaterList.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3dlYXRlclxTd2VhdGVyTGlzdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/usuario/Desktop/Prueba2DeProyecto/Prueba-Desarrollo-de-Proyectos/DesarrollodeProyectos/Views/User/List.cshtml]
+[C:/Users/Angel Ibarra/Desktop/CarpetaProyectoFinalDesarrollodeProyectos/Prueba-Desarrollo-de-Proyectos/DesarrollodeProyectos/Views/User/List.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxMaXN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/usuario/Desktop/Prueba2DeProyecto/Prueba-Desarrollo-de-Proyectos/DesarrollodeProyectos/Views/User/Login.cshtml]
+[C:/Users/Angel Ibarra/Desktop/CarpetaProyectoFinalDesarrollodeProyectos/Prueba-Desarrollo-de-Proyectos/DesarrollodeProyectos/Views/User/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/usuario/Desktop/Prueba2DeProyecto/Prueba-Desarrollo-de-Proyectos/DesarrollodeProyectos/Views/User/Registry.cshtml]
+[C:/Users/Angel Ibarra/Desktop/CarpetaProyectoFinalDesarrollodeProyectos/Prueba-Desarrollo-de-Proyectos/DesarrollodeProyectos/Views/User/Registry.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxSZWdpc3RyeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/usuario/Desktop/Prueba2DeProyecto/Prueba-Desarrollo-de-Proyectos/DesarrollodeProyectos/Views/User/_layout.cshtml]
+[C:/Users/Angel Ibarra/Desktop/CarpetaProyectoFinalDesarrollodeProyectos/Prueba-Desarrollo-de-Proyectos/DesarrollodeProyectos/Views/User/_layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxfbGF5b3V0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/usuario/Desktop/Prueba2DeProyecto/Prueba-Desarrollo-de-Proyectos/DesarrollodeProyectos/Views/_ViewImports.cshtml]
+[C:/Users/Angel Ibarra/Desktop/CarpetaProyectoFinalDesarrollodeProyectos/Prueba-Desarrollo-de-Proyectos/DesarrollodeProyectos/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/usuario/Desktop/Prueba2DeProyecto/Prueba-Desarrollo-de-Proyectos/DesarrollodeProyectos/Views/_ViewStart.cshtml]
+[C:/Users/Angel Ibarra/Desktop/CarpetaProyectoFinalDesarrollodeProyectos/Prueba-Desarrollo-de-Proyectos/DesarrollodeProyectos/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/usuario/Desktop/Prueba2DeProyecto/Prueba-Desarrollo-de-Proyectos/DesarrollodeProyectos/Views/Shared/_Layout.cshtml]
+[C:/Users/Angel Ibarra/Desktop/CarpetaProyectoFinalDesarrollodeProyectos/Prueba-Desarrollo-de-Proyectos/DesarrollodeProyectos/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-opjn1rmfo1

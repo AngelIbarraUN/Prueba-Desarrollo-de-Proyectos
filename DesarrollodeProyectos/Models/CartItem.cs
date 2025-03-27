@@ -39,5 +39,7 @@ namespace DesarrollodeProyectos.Models
 
     
         public Cart? Cart { get; set; } // Relación con la entidad Cart
+        public int AvailableStock { get; set; }
+        
     }
 }

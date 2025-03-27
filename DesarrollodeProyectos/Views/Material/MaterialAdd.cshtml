@@ -1,23 +1,31 @@
-@model DesarrollodeProyectos.Identity.MaterialModel
+@using DesarrollodeProyectos.Identity
+@model MaterialModel
 
 @{
-    ViewData["Title"] = "Agregar Material";
+    ViewData["Title"] = "Alta de Material";
 }
 
-<h2>@ViewData["Title"]</h2>
+<h1>Alta de Material</h1>
 
-<form asp-action="MaterialAdd" method="post">
-    <div class="form-group">
-        <label asp-for="Name"></label>
-        <input asp-for="Name" class="form-control" />
+<form asp-action="MaterialAdd" asp-controller="Material" enctype="multipart/form-data">
+
+    <div class="form-floating mb-3">
+        <input type="text" class="form-control" asp-for="Name">
+        <label asp-for="Name">Nombre del material</label>
         <span asp-validation-for="Name" class="text-danger"></span>
     </div>
-    
-    <div class="form-group">
-        <label asp-for="Description"></label>
-        <input asp-for="Description" class="form-control" />
+
+    <div class="form-floating mb-3">
+        <input type="text" class="form-control" asp-for="Description">
+        <label asp-for="Description">Descripción del material</label>
         <span asp-validation-for="Description" class="text-danger"></span>
     </div>
-    
-    <button type="submit" class="btn btn-primary">Agregar Material</button>
+
+    <button type="submit" class="btn btn-outline-primary">Guardar</button>
+    <a class="btn btn-outline-secondary" asp-action="MaterialList" asp-controller="Material">Regresar</a>
+
 </form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial"/>
+}

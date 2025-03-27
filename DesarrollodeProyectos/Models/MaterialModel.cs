@@ -29,6 +29,9 @@ namespace DesarrollodeProyectos.Identity
         [Display(Name = "Fecha de creación")]
         public DateTime CreationTime { get; set; } = DateTime.Now;
 
+        [Required(ErrorMessage = "El campo {0} es requerido")]
+        public int Quantity { get; set; }
+
 
         [Display(Name = "Camisas")]
         public List<SelectListItem> ShirtList { get; set; }

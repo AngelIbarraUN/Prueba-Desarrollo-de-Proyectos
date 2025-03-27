@@ -2,46 +2,30 @@
 @model SupplierModel
 
 @{
-    ViewData["Title"] = "Alta de Proveedor";
+    ViewData["Title"] = "Agregar Proveedor";
 }
 
 <h1 style="text-align: center;">@ViewData["Title"]</h1>
 
-<form asp-action="SupplierAdd" asp-controller="Supplier" enctype="multipart/form-data">
+<form asp-action="SupplierAdd" method="post" enctype="multipart/form-data">
 
-    <!-- Nombre del Proveedor -->
     <div class="form-floating mb-3">
-        <input type="text" class="form-control" asp-for="Name" placeholder="Nombre del proveedor">
-        <label asp-for="Name">Nombre del proveedor</label>
+        <input type="text" class="form-control" asp-for="Name" >
+        <label asp-for="Name">Nombre del proveedor</del></DEL></label>
         <span asp-validation-for="Name" class="text-danger"></span>
     </div>
 
-    <!-- Número de Teléfono -->
     <div class="form-floating mb-3">
-        <input type="text" class="form-control" asp-for="PhoneNumber" placeholder="Número de teléfono">
-        <label asp-for="PhoneNumber">Número de Teléfono</label>
+        <input type="text" class="form-control" asp-for="PhoneNumber" >
+        <label asp-for="PhoneNumber">Teléfono del proveedor</label>
         <span asp-validation-for="PhoneNumber" class="text-danger"></span>
     </div>
-    <!-- Botón de Guardar -->
-    <button type="submit" class="btn btn-outline-primary">Guardar</button>
 
-    <!-- Botón de Regresar -->
-    <a class="btn btn-outline-secondary" asp-action="SupplierList" asp-controller="Supplier">Regresar</a>
+    <button type="submit" class="btn btn-outline-primary">Guardar Proveedor</button>
+    <a class="btn btn-outline-secondary" href="@Url.Action("SupplierList", "Supplier")">Volver a la lista</a>
+
 </form>
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial"/>
-    <script>
-        // Abre el explorador de archivos cuando el usuario haga clic en el botón
-        document.getElementById('selectImageButton').addEventListener('click', function () {
-            document.getElementById('imageInput').click();
-        });
-
-        // Opcional: Muestra el nombre del archivo seleccionado
-        document.getElementById('imageInput').addEventListener('change', function (event) {
-            if (event.target.files.length > 0) {
-                alert("Archivo seleccionado: " + event.target.files[0].name);
-            }
-        });
-    </script>
 }

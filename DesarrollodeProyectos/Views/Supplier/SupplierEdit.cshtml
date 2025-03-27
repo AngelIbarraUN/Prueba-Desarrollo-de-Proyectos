@@ -6,26 +6,20 @@
 
 <h1 style="text-align: center;">@ViewData["Title"]</h1>
 
-<form asp-action="SupplierEdit" asp-controller="Supplier" enctype="multipart/form-data">
+<form asp-action="SupplierEdit" asp-controller="Supplier">
     <input type="hidden" asp-for="Id">
 
-    <!-- Nombre del Proveedor -->
     <div class="form-floating mb-3">
         <input type="text" class="form-control" asp-for="Name" placeholder="Nombre del proveedor">
-        <label asp-for="Name">Nombre del proveedor</label>
+        <label asp-for="Name">Nombre</label>
         <span asp-validation-for="Name" class="text-danger"></span>
     </div>
 
-    <!-- Número de Teléfono -->
     <div class="form-floating mb-3">
         <input type="text" class="form-control" asp-for="PhoneNumber" placeholder="Número de teléfono">
         <label asp-for="PhoneNumber">Número de Teléfono</label>
         <span asp-validation-for="PhoneNumber" class="text-danger"></span>
     </div>
-
-    <!-- Botón de Guardar -->
     <button class="btn btn-outline-primary">Guardar</button>
-    
-    <!-- Botón de Regresar -->
     <a class="btn btn-outline-secondary" asp-action="SupplierList" asp-controller="Supplier">Regresar</a>
 </form>

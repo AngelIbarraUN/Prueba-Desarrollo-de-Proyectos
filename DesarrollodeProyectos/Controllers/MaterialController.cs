@@ -2,6 +2,9 @@ using DesarrollodeProyectos.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using System;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace DesarrollodeProyectos.Controllers
 {
@@ -17,28 +20,42 @@ namespace DesarrollodeProyectos.Controllers
         }
 
         // Acción para agregar un nuevo material
-        public IActionResult MaterialAdd()
+        public async Task<IActionResult> MaterialAdd()
         {
-            var materialModel = new MaterialModel
+            var model = new MaterialModel
             {
-                ShirtList = _context.Shirts.Select(s => new SelectListItem
-                {
-                    Value = s.Id.ToString(),
-                    Text = s.Name
-                }).ToList(),
-                SweaterList = _context.Sweaters.Select(s => new SelectListItem
-                {
-                    Value = s.Id.ToString(),
-                    Text = s.Name
-                }).ToList(),
-                CapList = _context.Caps.Select(c => new SelectListItem
-                {
-                    Value = c.Id.ToString(),
-                    Text = c.Name
-                }).ToList()
+                // Cargar listas de opciones para los campos
+                ShirtList = await _context.Shirts
+                    .Where(s => s.IsActive)
+                    .Select(s => new SelectListItem
+                    {
+                        Value = s.Id.ToString(),
+                        Text = s.Name
+                    }).ToListAsync(),
+                SweaterList = await _context.Sweaters
+                    .Where(s => s.IsActive)
+                    .Select(s => new SelectListItem
+                    {
+                        Value = s.Id.ToString(),
+                        Text = s.Name
+                    }).ToListAsync(),
+                CapList = await _context.Caps
+                    .Where(c => c.IsActive)
+                    .Select(c => new SelectListItem
+                    {
+                        Value = c.Id.ToString(),
+                        Text = c.Name
+                    }).ToListAsync(),
+                SupplierList = await _context.Suppliers
+                    .Where(s => s.IsActive)
+                    .Select(s => new SelectListItem
+                    {
+                        Value = s.Id.ToString(),
+                        Text = s.Name
+                    }).ToListAsync()
             };
 
-            return View(materialModel);
+            return View(model);
         }
 
         // Acción POST para agregar un nuevo material
@@ -51,12 +68,15 @@ namespace DesarrollodeProyectos.Controllers
                 return View(materialModel);
             }
 
-            // Crear el nuevo material en la base de datos
             var materialEntity = new Material
             {
                 Id = Guid.NewGuid(),
                 Name = materialModel.Name,
-                Description = materialModel.Description
+                Description = materialModel.Description,
+                Quantity = materialModel.Quantity,
+                CreationTime = DateTime.Now,
+                IsActive = materialModel.IsActive,
+                SupplierId = materialModel.SupplierId
             };
 
             _context.Materials.Add(materialEntity);
@@ -65,19 +85,25 @@ namespace DesarrollodeProyectos.Controllers
             return RedirectToAction("MaterialList"); // Redirige a la lista de materiales
         }
 
-        // Acción para listar todos los materiales
+        // Acción para listar los materiales
         public async Task<IActionResult> MaterialList()
         {
-            var materials = await _context.Materials.ToListAsync();
+            var materials = await _context.Materials
+                                   .Where(m => m.IsActive)
+                                   .ToListAsync();
 
             var materialModels = materials.Select(m => new MaterialModel
             {
                 Id = m.Id,
                 Name = m.Name,
-                Description = m.Description
+                Description = m.Description,
+                Quantity = m.Quantity,
+                CreationTime = m.CreationTime,
+                IsActive = m.IsActive,
+                SupplierId = m.SupplierId
             }).ToList();
 
-            return View(materialModels); // Pasar los modelos a la vista
+            return View(materialModels); 
         }
 
         // Acción para editar un material
@@ -100,21 +126,46 @@ namespace DesarrollodeProyectos.Controllers
                 Id = material.Id,
                 Name = material.Name,
                 Description = material.Description,
-                // Cargar proveedores
-                SupplierList = await _context.Suppliers.Select(s => new SelectListItem
-                {
-                    Value = s.Id.ToString(),
-                    Text = s.Name
-                }).ToListAsync(),
-                SupplierId = material.SupplierId // Si el material tiene un proveedor, lo asignamos
+                Quantity = material.Quantity,
+                CreationTime = material.CreationTime,
+                IsActive = material.IsActive,
+                SupplierId = material.SupplierId,
+                // Cargar listas de opciones
+                ShirtList = await _context.Shirts
+                    .Where(s => s.IsActive)
+                    .Select(s => new SelectListItem
+                    {
+                        Value = s.Id.ToString(),
+                        Text = s.Name
+                    }).ToListAsync(),
+                SweaterList = await _context.Sweaters
+                    .Where(s => s.IsActive)
+                    .Select(s => new SelectListItem
+                    {
+                        Value = s.Id.ToString(),
+                        Text = s.Name
+                    }).ToListAsync(),
+                CapList = await _context.Caps
+                    .Where(c => c.IsActive)
+                    .Select(c => new SelectListItem
+                    {
+                        Value = c.Id.ToString(),
+                        Text = c.Name
+                    }).ToListAsync(),
+                SupplierList = await _context.Suppliers
+                    .Where(s => s.IsActive)
+                    .Select(s => new SelectListItem
+                    {
+                        Value = s.Id.ToString(),
+                        Text = s.Name
+                    }).ToListAsync()
             };
 
             return View(materialModel);
         }
 
-
         // Acción POST para editar un material
-               [HttpPost]
+        [HttpPost]
         public async Task<IActionResult> MaterialEdit(MaterialModel materialModel)
         {
             if (!ModelState.IsValid)
@@ -130,20 +181,19 @@ namespace DesarrollodeProyectos.Controllers
                 return NotFound();
             }
 
-            // Actualizar el material
+            // Actualizar material
             materialEntity.Name = materialModel.Name;
             materialEntity.Description = materialModel.Description;
-            materialEntity.SupplierId = materialModel.SupplierId; // Asignar el proveedor seleccionado
+            materialEntity.Quantity = materialModel.Quantity;
+            materialEntity.SupplierId = materialModel.SupplierId;
 
             _context.Materials.Update(materialEntity);
             await _context.SaveChangesAsync();
 
-            return RedirectToAction("MaterialList","Material"); // Redirige a la lista de materiales
+            return RedirectToAction("MaterialList"); // Redirige a la lista de materiales
         }
 
-
         // Acción para eliminar un material (GET)
-        [HttpGet]
         public async Task<IActionResult> MaterialDelete(Guid id)
         {
             if (id == Guid.Empty)
@@ -158,14 +208,15 @@ namespace DesarrollodeProyectos.Controllers
                 return NotFound();
             }
 
-            var materialModel = new MaterialModel
+            var model = new MaterialModel
             {
                 Id = material.Id,
                 Name = material.Name,
-                Description = material.Description
+                Description = material.Description,
+                Quantity = material.Quantity
             };
 
-            return View(materialModel); // Devolver la vista MaterialDelete.cshtml con el modelo
+            return View("MaterialDeleted", model); // Devolver vista MaterialDeleted.cshtml con el modelo
         }
 
         // Acción POST para eliminar un material
@@ -179,28 +230,11 @@ namespace DesarrollodeProyectos.Controllers
                 return NotFound();
             }
 
-            // Actualizar productos asociados para asignarles un material nulo (si corresponde)
-            var shirts = await _context.Shirts.Where(s => s.MaterialId == materialModel.Id).ToListAsync();
-            var sweaters = await _context.Sweaters.Where(s => s.MaterialId == materialModel.Id).ToListAsync();
-            var caps = await _context.Caps.Where(c => c.MaterialId == materialModel.Id).ToListAsync();
+            // Marcar el material como inactivo
+            materialEntity.IsActive = false;
 
-            foreach (var shirt in shirts)
-            {
-                shirt.MaterialId = null;
-            }
-
-            foreach (var sweater in sweaters)
-            {
-                sweater.MaterialId = null;
-            }
-
-            foreach (var cap in caps)
-            {
-                cap.MaterialId = null;
-            }
-
-            // Eliminar el material
-            _context.Materials.Remove(materialEntity);
+            // Guardar cambios en la base de datos
+            _context.Update(materialEntity);
             await _context.SaveChangesAsync();
 
             return RedirectToAction("MaterialList"); // Redirige a la lista de materiales

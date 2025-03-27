@@ -21,18 +21,9 @@
         <label asp-for="Description">Descripción</label>
         <span asp-validation-for="Description" class="text-danger"></span>
     </div>
-
-    <!-- Selector para Proveedores -->
-    <div class="form-floating mb-3">
-        <select asp-for="SupplierId" class="form-select" asp-items="Model.SupplierList">
-            <option value="">Seleccione un proveedor</option>
-        </select>
-        <label asp-for="SupplierId">Proveedor</label>
-        <span asp-validation-for="SupplierId" class="text-danger"></span>
-    </div>
-
     <button type="submit" class="btn btn-outline-primary">Guardar</button>
     <a class="btn btn-outline-secondary" asp-action="MaterialList" asp-controller="Material">Regresar</a>
+
 </form>
 
 @section Scripts {

@@ -20,7 +20,7 @@ namespace DesarrollodeProyectos.Controllers
         {
             SupplierModel model = new SupplierModel();
 
-            // Cargar la lista de materiales asociados al proveedor
+            // Cargar la lista de materiales disponibles
             model.MaterialList = await _context.Materials
                 .Select(m => new SelectListItem { Value = m.Id.ToString(), Text = m.Name })
                 .ToListAsync();
@@ -34,6 +34,7 @@ namespace DesarrollodeProyectos.Controllers
             if (!ModelState.IsValid)
             {
                 _logger.LogError("El modelo del proveedor no es válido");
+                // Volver a cargar la lista de materiales
                 supplierModel.MaterialList = await _context.Materials
                     .Select(m => new SelectListItem { Value = m.Id.ToString(), Text = m.Name })
                     .ToListAsync();
@@ -47,7 +48,7 @@ namespace DesarrollodeProyectos.Controllers
                 PhoneNumber = supplierModel.PhoneNumber,
                 IsActive = supplierModel.IsActive,
                 CreationTime = DateTime.Now,
-                Materials = supplierModel.Materials
+                Materials = supplierModel.Materials // Asociar materiales seleccionados
             };
 
             _context.Suppliers.Add(supplierEntity);
@@ -79,7 +80,7 @@ namespace DesarrollodeProyectos.Controllers
         public async Task<IActionResult> SupplierEdit(Guid id)
         {
             var supplier = await _context.Suppliers
-                .Include(s => s.Materials)
+                .Include(s => s.Materials) // Incluir materiales asociados al proveedor
                 .FirstOrDefaultAsync(s => s.Id == id);
 
             if (supplier == null)
@@ -95,7 +96,7 @@ namespace DesarrollodeProyectos.Controllers
                 IsActive = supplier.IsActive,
                 CreationTime = supplier.CreationTime,
                 MaterialList = await _context.Materials.Select(m => new SelectListItem { Value = m.Id.ToString(), Text = m.Name }).ToListAsync(),
-                Materials = supplier.Materials
+                Materials = supplier.Materials // Cargar los materiales ya asociados
             };
 
             return View(supplierModel);
@@ -118,7 +119,7 @@ namespace DesarrollodeProyectos.Controllers
             supplierToUpdate.Name = model.Name;
             supplierToUpdate.PhoneNumber = model.PhoneNumber;
             supplierToUpdate.IsActive = model.IsActive;
-            supplierToUpdate.Materials = model.Materials;
+            supplierToUpdate.Materials = model.Materials; // Actualizar los materiales asociados
 
             _context.Update(supplierToUpdate);
             await _context.SaveChangesAsync();

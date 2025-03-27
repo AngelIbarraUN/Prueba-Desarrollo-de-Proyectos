@@ -1,17 +1,16 @@
-@using DesarrollodeProyectos.Identity
-@model List<MaterialModel>
+@model List<DesarrollodeProyectos.Identity.MaterialModel>
 
-<br>
 @{
     ViewData["Title"] = "Lista de Materiales";
     int numero = 0;
 }
 
 <h1 style="text-align: center;">@ViewData["Title"]</h1>
-<center>
-<a class="btn btn-outline-primary" asp-action="MaterialAdd" asp-asp-controller="Material">Agregar Material</a>
-</center>
-<br>
+
+<p>
+    <a href="@Url.Action("MaterialAdd", "Material")" class="btn btn-outline-primary">Agregar Nuevo Material</a>
+</p>
+
 <table class="table table-bordered">
     <thead>
         <tr>
@@ -30,8 +29,8 @@
                 <td>@material.Name</td>
                 <td>@material.Description</td>
                 <td>
-                    <a class="btn btn-outline-info" asp-action="MaterialEdit" asp-controller="Material" asp-route-id="@material.Id">Editar</a>
-                    <a class="btn btn-outline-danger" asp-action="MaterialDelete" asp-controller="Material" asp-route-id="@material.Id">Borrar</a>
+                    <a href="@Url.Action("MaterialEdit", "Material", new { id = material.Id })" class="btn btn-outline-info btn-sm">Editar</a>
+                    <a href="@Url.Action("MaterialDelete", "Material", new { id = material.Id })" class="btn btn-outline-danger btn-sm" onclick="return confirm('¿Estás seguro de que deseas eliminar este material?');">Eliminar</a>
                 </td>
             </tr>
         }

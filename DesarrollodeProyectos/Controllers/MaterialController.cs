@@ -100,28 +100,21 @@ namespace DesarrollodeProyectos.Controllers
                 Id = material.Id,
                 Name = material.Name,
                 Description = material.Description,
-                ShirtList = _context.Shirts.Select(s => new SelectListItem
+                // Cargar proveedores
+                SupplierList = await _context.Suppliers.Select(s => new SelectListItem
                 {
                     Value = s.Id.ToString(),
                     Text = s.Name
-                }).ToList(),
-                SweaterList = _context.Sweaters.Select(s => new SelectListItem
-                {
-                    Value = s.Id.ToString(),
-                    Text = s.Name
-                }).ToList(),
-                CapList = _context.Caps.Select(c => new SelectListItem
-                {
-                    Value = c.Id.ToString(),
-                    Text = c.Name
-                }).ToList()
+                }).ToListAsync(),
+                SupplierId = material.SupplierId // Si el material tiene un proveedor, lo asignamos
             };
 
             return View(materialModel);
         }
 
+
         // Acción POST para editar un material
-        [HttpPost]
+               [HttpPost]
         public async Task<IActionResult> MaterialEdit(MaterialModel materialModel)
         {
             if (!ModelState.IsValid)
@@ -140,12 +133,14 @@ namespace DesarrollodeProyectos.Controllers
             // Actualizar el material
             materialEntity.Name = materialModel.Name;
             materialEntity.Description = materialModel.Description;
+            materialEntity.SupplierId = materialModel.SupplierId; // Asignar el proveedor seleccionado
 
             _context.Materials.Update(materialEntity);
             await _context.SaveChangesAsync();
 
-            return RedirectToAction("MaterialList"); // Redirige a la lista de materiales
+            return RedirectToAction("MaterialList","Material"); // Redirige a la lista de materiales
         }
+
 
         // Acción para eliminar un material (GET)
         [HttpGet]

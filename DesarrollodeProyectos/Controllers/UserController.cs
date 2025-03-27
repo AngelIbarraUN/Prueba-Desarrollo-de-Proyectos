@@ -220,6 +220,39 @@ public async Task<IActionResult> QuitarRol(string email, string rol)
 
     return RedirectToAction("List");
 }
-         
+        [HttpPost]
+public async Task<IActionResult> EliminarUsuario(string email)
+{
+    var usuario = await _userManager.FindByEmailAsync(email);
+
+    if (usuario == null)
+    {
+        return NotFound();
+    }
+
+    // Verificar si el usuario tiene el rol "ADMIN"
+    var isAdmin = await _userManager.IsInRoleAsync(usuario, "ADMIN");
+    if (isAdmin)
+    {
+        TempData["ErrorMessage"] = "⚠️No puedes eliminar el usuario administrador.";
+        return RedirectToAction("List");
+    }
+
+    var result = await _userManager.DeleteAsync(usuario);
+
+    if (result.Succeeded)
+    {
+        TempData["Message"] = "Usuario eliminado correctamente.";
+    }
+    else
+    {
+        TempData["ErrorMessage"] = "Hubo un problema al eliminar el usuario.";
+    }
+
+    return RedirectToAction("List");
+}
+ 
+
+
     } 
 }

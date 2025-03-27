@@ -65,6 +65,14 @@
                             <span class="badge bg-info">@role</span>
                         }
                     </td>
+                    <td>
+                        @if (!usuario.Roles.Contains("ADMIN"))
+                        {
+                            <form method="post" class="d-inline" asp-action="EliminarUsuario" asp-route-email="@usuario.Email">
+                                <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
+                            </form>
+                        }
+                    </td>
                 </tr>
             }
         </tbody>
